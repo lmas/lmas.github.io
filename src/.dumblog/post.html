@@ -1,0 +1,22 @@
+{{template "layout" .}}
+{{define "title"}}{{.Current.Meta.Title}}{{end}}
+{{define "body"}}
+<h1>{{.Current.Meta.Title}}</h1>
+<span class="post-meta">
+        <p class="post-published">{{.Current.Meta.Published | prettydate}}</p>
+        <!-- <p class="post-ttr">1234 words, 10 minute read</p> -->
+        {{if .Current.Meta.Tags}}
+        <p class="tag-links">
+                {{range .Current.Meta.Tags}}
+                <a href="/blog/tags.html#{{. | slugify}}">#{{.}}</a>
+                {{end}}
+        </p>
+        {{end}}
+</span>
+<!-- <blockquote class="post-summary">
+        <p>Summary: {{.Current.Meta.Short}}</p>
+</blockquote> -->
+<article>
+{{.Current.Body | safehtml}}
+</article>
+{{end}}

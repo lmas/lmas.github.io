@@ -1,0 +1,76 @@
+settings:
+  output: src/feeds/
+  maxitems: 20
+  timeout: 30
+  verbose: true
+
+feeds:
+  - title: Comics - Dresden Codak
+    url:  https://Feeds2.feedburner.com/rsspect/fJur
+  - title: Comics - Kill Six Billion Demons
+    url:  https://killsixbilliondemons.com/feed/
+  - title: Comics - Oglaf
+    url:  http://oglaf.com/feeds/rss/
+  - title: Comics - Order of the Stick
+    url:  https://www.giantitp.com/comics/oots.rss
+  - title: Comics - Schlock
+    url:  https://www.schlockmercenary.com/rss/
+  - title: Comics - xkcd
+    url:  https://xkcd.com/rss.xml
+  - title: Fun - /r/ProgrammerHumor
+    url:  https://old.reddit.com/r/ProgrammerHumor/top/.rss?sort=top&t=year
+  - title: News - SVT Utrikes
+    url:  https://www.svt.se/nyheter/utrikes/rss.xml
+  - title: News - SVT Vetenskap
+    url:  https://www.svt.se/nyheter/vetenskap/rss.xml
+  - title: News - SVT Väst
+    url:  https://www.svt.se/nyheter/lokalt/vast/rss.xml
+  - title: News - SVT Norrbotten
+    url:  https://www.svt.se/nyheter/lokalt/norrbotten/rss.xml
+  - title: Services - DuckDuckGo
+    url:  https://spreadprivacy.com/rss/
+  - title: Services - Fastmail
+    url:  https://fastmail.blog/rss/
+  - title: Services - FreeBSD
+    url:  https://www.freebsd.org/news/feed.xml
+  - title: Services - NetBSD
+    url:  https://www.netbsd.org/changes/rss-netbsd.xml
+  - title: Services - Let's Encrypt
+    url:  https://letsencrypt.org/feed.xml
+  - title: Services - Mozilla
+    url:  https://blog.mozilla.org/security/feed/
+  - title: Services - Github
+    url:  https://github.blog/feed/
+  - title: Services - Libera.chat
+    url:  https://libera.chat/atom.xml
+  - title: Services - Golang
+    url:  https://blog.golang.org/feed.atom
+  - title: Tech - /r/Godot
+    url:  https://old.reddit.com/r/godot/top/.rss?sort=top&t=week
+  - title: Tech - /r/Golang
+    url:  https://old.reddit.com/r/golang/top/.rss?sort=top&t=week
+  - title: Tech - /r/Netsec
+    url:  https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week
+  - title: Tech - /r/Programming
+    url:  https://old.reddit.com/r/programming/top/.rss?sort=top&t=week
+  - title: Tech - Cryptography Dispatches
+    url:  https://buttondown.email/cryptography-dispatches/rss
+  - title: Tech - Schneier
+    url:  https://www.schneier.com/blog/atom.xml
+  - title: Tech - The Go Blog
+    url:  https://blog.golang.org/feed.atom
+  - title: Tech - TorrentFreak
+    url:  https://torrentfreak.com/feed/
+  - title: Tech - Underjord
+    url:  https://underjord.io/feed.xml
+
+  - title: Tech - Hacker News
+    url: https://news.ycombinator.com/
+    parser:
+      rule: (?sU)class="storylink">(?P<title>[^<]+)</a>.*<a href="(?P<url>[^"]*)">\d+&nbsp;comments
+      host: https://news.ycombinator.com/
+
+  - title: Tech - Swedish Tech Weekly
+    url: https://us19.campaign-archive.com/home/?u=bfe614a90430055a899f181ba&id=752eb1e3d7
+    parser:
+      rule: (?sU)<li class="campaign">.+<a href="(?P<url>[^"]+)".+>(?P<title>[^<]+)<\/a><\/li>

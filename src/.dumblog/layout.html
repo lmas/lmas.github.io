@@ -1,0 +1,49 @@
+{{define "layout"}}
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="/style/theme.css">
+        <title>
+        {{block "title" .}}MISSING TITLE{{end}} | {{.Meta.Title}}
+        </title>
+        <!--Open Graph Data for prettier social media links-->
+        <meta property="og:title" content="{{if isset "Current" .}}{{.Current.Meta.Title}} | {{end}}{{.Meta.Title}}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{.Meta.Site}}{{if isset "Current" .}}{{.Current.Link}}{{end}}" />
+        <meta property="og:image" content="{{.Meta.Site}}/style/logo.png" />
+        <meta property="og:description" content="{{if isset "Current" .}}{{.Current.Meta.Short}}{{else}}{{.Meta.Short}}{{end}}" />
+        <!--Give a extra hand to search engines-->
+        <meta name="description" content="{{if isset "Current" .}}{{.Current.Meta.Short}}{{else}}{{.Meta.Short}}{{end}}">
+        <!--Fix for older versions of Internet Explorer-->
+        <!--[if lt IE 9]>
+                haha noooope not on this site! Psych!
+        <![endif]-->
+</head>
+<body>
+        <header>
+                <span class="link-list header-links">
+                        <a class="header-logo" href="/">{{.Meta.Title}}</a>
+                        <a class="link-list-item" href="/blog/">Blog</a>
+                        <a class="link-list-item" href="/feeds/">Feeds</a>
+                        <a class="link-list-item" href="{{.Meta.Github}}" rel="noopener nofollow">Github</a>
+                </span>
+        </header>
+        <main>
+        {{block "body" .}}{{end}}
+        </main>
+        <footer>
+                <span class="link-list">
+                        <!-- <a href="/stats/">Stats</a> -->
+                        <a class="link-list-item" href="/feed.xml">Blog Feed</a>
+                        <a class="link-list-item" href="https://github.com/lmas/dumblog" rel="noopener nofollow">Generator</a>
+                        <a class="link-list-item" href="https://github.com/lmas/larus.se" rel="noopener nofollow">Source</a>
+                        <!-- <a href="/legal/">Legal</a> -->
+                </span>
+                <p>Content {{.Meta.Copyright}} and licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener nofollow noreferrer">CC BY-SA 4.0</a> unless stated otherwise.</p>
+        </footer>
+</body>
+</html>
+{{end}}

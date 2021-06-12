@@ -1,0 +1,26 @@
+{{template "layout" .}}
+{{define "title"}}Archive{{end}}
+{{define "body"}}
+<h1>Archive</h1>
+<p>
+You can subscribe to this archive with the <a href="/feed.xml">blog feed</a>.
+</p>
+<ul class="blog-list">
+        {{range .Posts | postsbydir "blog" -}}
+        <li class="blog-list-item">
+                <p class="blog-list-date">{{.Meta.Published | shortdate}}</p>
+                <span>
+                <h2 class="list-title"><a href="{{.Link}}">{{.Meta.Title}}</a></h2>
+                <p class="list-short">{{.Meta.Short}}</p>
+                {{if .Meta.Tags}}
+                <p class="tag-links">
+                        {{range .Meta.Tags}}
+                        <a href="/blog/tags.html#{{. | slugify}}">#{{.}}</a>
+                        {{end}}
+                </p>
+                {{end}}
+                </span>
+        </li>
+        {{- end}}
+</ul>
+{{end}}

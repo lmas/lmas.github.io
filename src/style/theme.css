@@ -1,0 +1,204 @@
+/* Most common elements and site-wide theming */
+
+* {
+        margin: 0;
+        padding: 0;
+}
+:root {
+        --logo-brand: #EFA22F;      /* Based on original brand, but constrast corrected 5:1 for the dark background */
+        --logo-color: #FFF8E7;      /* The cosmic latte */
+        --logo-background: #403E3A; /* cosmic latte but with brightness dropped to 25% */
+        --brand: var(--logo-brand);
+        --color: var(--logo-color);
+        --background: var(--logo-background);
+        --width: 960px;
+        --spacing: 1rem;
+        line-height: 1.5;
+        font-size: 16px;
+        font-family: 'stylish', sans-serif;
+        color: var(--color);
+        background-color: var(--background);
+        scroll-behavior: smooth;
+}
+@media (prefers-color-scheme: light) {
+        :root {
+                --brand: #D51515; /* Based on #E00 but constrast corrected to a 5:1 ratio */
+                --color: var(--logo-background);
+                --background: var(--logo-color);
+        }
+}
+@media screen and (max-width: 480px){
+        :root {
+                --width: 480px;
+        }
+        .link-list, .about {
+                flex-direction: column;
+        }
+}
+@font-face {
+        font-family: 'stylish';
+        src: url('/style/fonts/lato-regular.woff2') format('woff2');
+}
+@font-face {
+        font-family: 'code';
+        src: url('/style/fonts/roboto_mono-regular.woff2') format('woff2');
+}
+@font-face {
+        font-family: 'neon';
+        src: url('/style/fonts/library_3_am-regular.woff2') format('woff2');
+}
+body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+}
+a {
+        color: var(--brand);
+        text-decoration: none;
+}
+a:hover {
+        text-decoration: underline;
+}
+header {
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: var(--logo-background);
+        box-shadow: 5px 5px 10px #000;
+}
+main {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto auto auto;
+        padding: var(--spacing);
+        max-width: calc(var(--width) - var(--spacing) * 2);
+        border-radius: 5px;
+}
+footer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.75rem;
+        margin: 0 auto var(--spacing) auto;
+        max-width: var(--width);
+}
+.link-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: var(--width);
+}
+.link-list-item {
+        margin-right: var(--spacing);
+}
+.header-logo {
+        font-size: 2rem;
+        font-family: 'neon', monospace;
+        color: var(--logo-brand);
+        margin-right: var(--spacing);
+        text-shadow: 0 0 2rem var(--logo-brand); /* Adds a very light background "glow" */
+        filter: drop-shadow(5px 5px 1px #000);
+        animation: neon-flicker 10s cubic-bezier(.79,.14,.15,.86) 2;
+}
+.header-links > .link-list-item {
+        color: var(--logo-color);
+}
+
+/**************************************************************************************************/
+/* Per page elements and other unique stuff */
+
+blockquote {
+        quotes: auto;
+        margin: 1rem;
+        padding: 0 1rem;
+        position: relative;
+        height: max-content;
+        width: max-content;
+}
+blockquote:before, blockquote:after {
+        font-size: 3rem;
+        position: absolute;
+}
+blockquote::before {
+        content: open-quote;
+        left: -1rem;
+        top: -1rem;
+}
+blockquote::after {
+        content: close-quote;
+        right: -1rem;
+        bottom: -2.5rem; /* Depends on parent's height=max-content. Yeah it's weird, don't ask me why... */
+}
+.about {
+        display: flex;
+        align-items: center;
+}
+.about img {
+        margin: var(--spacing);
+}
+.blog-list {
+        list-style: none;
+}
+.blog-list-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: var(--spacing);
+}
+.blog-list-date {
+        margin-right: var(--spacing);
+}
+.post-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: var(--spacing);
+}
+.post-summary {
+        font-size: 1.5rem;
+        align-self: center;
+}
+.tag-links, .post-published, .post-ttr {
+        font-size: 0.75rem;
+}
+.tag-links > a {
+        margin-right: 0.5rem;
+}
+.tag-links > a:last-child {
+        margin-right: 0;
+}
+article p, article ol, article ul, article hr, article pre, article table, article dl, article div {
+        margin-bottom: var(--spacing);
+}
+article ul, article ol {
+        padding-left: var(--spacing);
+}
+article table {
+        width: 100%;
+        table-layout: fixed;
+}
+article code, article dd {
+        display: block;
+        padding: 0 0.5rem;
+        color: #f8f8f2; /* Stolen from the code highlighter */
+        background-color: #272822;
+}
+article dd {
+        margin-left: var(--spacing);
+}
+/**************************************************************************************************/
+/* Neon Flicker animation */
+
+@keyframes neon-flicker {
+        0% {opacity: 0.1; text-shadow: 0 0 10px #FF9E88;}
+        2% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
+        8% {opacity: 0.1; text-shadow: 0 0 10px #FF9E88;}
+        9% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
+        12% {opacity: 0.1; text-shadow: 0 0 10px #FF9E88;}
+        20% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
+        25% {opacity: 0.3; text-shadow: 0 0 10px #FF9E88;}
+        30% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
+        70% {opacity: 0.9; text-shadow: 0 0 20px #FF9E88;}
+        72% {opacity: 0.2; text-shadow: 0 0 10px #FF9E88;}
+        77% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
+        95% {opacity: 0.8; text-shadow: 0 0 20px #FF9E88;}
+        100% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
+}

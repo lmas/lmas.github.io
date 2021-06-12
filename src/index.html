@@ -1,0 +1,36 @@
+{{template "layout" .}}
+{{define "title"}}Home{{end}}
+{{define "body"}}
+<section class="about">
+        <img width="200" height="200" src="/style/larus.png" decoding="async" alt="Pixelated image of a seagull">
+        <span>
+                <blockquote>
+                        <p>Hello I'm Alex,<br>
+                        I write open source software,<br>
+                        sometimes I draw, too.</p>
+                </blockquote>
+                <br>
+                <p>You can find me and my projects on <a href="{{.Meta.Github}}" rel="noopener nofollow">Github</a><br>
+                or contact me directly via <a href="mailto:{{.Meta.Mail}}">mail</a>.</p>
+        </span>
+</section>
+<h1>Latest Posts</h1>
+<ul class="blog-list">
+        {{range .Posts | postsbydir "blog" | postslimit 5 -}}
+        <li class="blog-list-item">
+                <p class="blog-list-date">{{.Meta.Published | shortdate}}</p>
+                <span>
+                <h2 class="list-title"><a href="{{.Link}}">{{.Meta.Title}}</a></h2>
+                <p class="list-short">{{.Meta.Short}}</p>
+                {{if .Meta.Tags}}
+                <p class="tag-links">
+                        {{range .Meta.Tags}}
+                        <a href="/blog/tags.html#{{. | slugify}}">#{{.}}</a>
+                        {{end}}
+                </p>
+                {{end}}
+                </span>
+        </li>
+        {{- end}}
+</ul>
+{{end}}
