@@ -35,3 +35,8 @@ jobs:
           git commit -m "Automated feeds update $(date '+%Y-%m-%d')"
           git push
 
+      - name: Deploy
+        env:
+          DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
+        run: curl "$DEPLOY_URL"
+

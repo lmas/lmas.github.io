@@ -24,7 +24,6 @@ jobs:
           git config --global user.email 'gull-bot@larus.se'
           git merge origin/master
 
-
       - name: Update blog
         run: make blog
 
@@ -33,4 +32,9 @@ jobs:
           git add -A public/
           git commit -m "Automated blog update $(date '+%Y-%m-%d')"
           git push
+
+      - name: Deploy
+        env:
+          DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
+        run: curl "$DEPLOY_URL"
 
