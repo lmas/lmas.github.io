@@ -1,6 +1,7 @@
 settings:
   output: src/feeds/
   maxitems: 20
+  throttle: 2
   timeout: 30
   verbose: true
 

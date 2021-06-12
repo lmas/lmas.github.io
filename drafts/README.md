@@ -12,6 +12,8 @@ and one day I would like expand on them.
 All credits and copyrights belong to the original authors.
 
 - github actions and quirks (cron jobs running late and in UTC for example)
+  https://github.com/actions/checkout
+  https://docs.github.com/en/actions
 
 - setting up a freebsd gateway at home (dns, dhcp, firewall, wifi, storage etc.)
 
