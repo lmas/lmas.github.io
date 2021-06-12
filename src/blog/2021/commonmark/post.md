@@ -1,6 +1,6 @@
 ---
 title: Commonmark reference
-published: 2021-06-01
+published: 2021-06-12
 short: Reference for all the formatting options from commonmark
 tags:
 - commonmark

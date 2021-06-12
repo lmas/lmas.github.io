@@ -1,6 +1,6 @@
 ---
 title: Hello world
-published: 2021-06-01
+published: 2021-06-12
 short: Introduction and documentation of this site
 tags:
 - web design
