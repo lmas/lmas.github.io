@@ -10,4 +10,8 @@
                 <loc>{{$site}}{{.}}</loc>
         </url>
         {{- end}}
+        {{/* List of urls not handled by dumblog automagically */}}
+        <url>
+                <loc>{{.Meta.Site}}/feeds/index.html</loc>
+        </url>
 </urlset>
