@@ -36,5 +36,5 @@ jobs:
       - name: Deploy
         env:
           DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
-        run: curl "$DEPLOY_URL"
+        run: curl --silent "$DEPLOY_URL"
 
