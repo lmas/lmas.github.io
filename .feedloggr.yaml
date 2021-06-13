@@ -1,6 +1,6 @@
 settings:
-  output: src/feeds/
-  maxitems: 20
+  output: public/feeds/
+  maxitems: 30
   throttle: 2
   timeout: 30
   verbose: true
