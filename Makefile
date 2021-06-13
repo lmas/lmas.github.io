@@ -18,3 +18,7 @@ blog:
 .PHONY: demo
 demo: blog
 	bin/dumblog web
+
+.PHONY: clean
+clean:
+	rm -r public/
