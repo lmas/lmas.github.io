@@ -54,9 +54,6 @@ body {
 }
 a {
         color: var(--brand);
-        text-decoration: none;
-}
-a:hover {
         text-decoration: underline;
 }
 header {
@@ -64,6 +61,12 @@ header {
         font-weight: bold;
         background-color: var(--logo-background);
         box-shadow: 5px 5px 10px #000;
+}
+header a {
+        text-decoration: none;
+}
+header a:hover {
+        text-decoration: underline;
 }
 main {
         display: flex;
