@@ -3,23 +3,23 @@
 {{define "body"}}
 <h1>Archive</h1>
 <p>
-You can subscribe to this archive with the <a href="/feed.xml">blog feed</a>.
+You can subscribe to this blog <a href="/feed.xml">using the feed</a>.
 </p>
 <ul class="blog-list">
         {{range .Posts | postsbydir "blog" -}}
         <li class="blog-list-item">
                 <p class="blog-list-date">{{.Meta.Published | shortdate}}</p>
-                <span>
-                <h2 class="list-title"><a href="{{.Link}}">{{.Meta.Title}}</a></h2>
-                <p class="list-short">{{.Meta.Short}}</p>
-                {{if .Meta.Tags}}
-                <p class="tag-links">
-                        {{range .Meta.Tags}}
-                        <a href="/blog/tags.html#{{. | slugify}}">#{{.}}</a>
+                <div>
+                        <h2 class="list-title"><a href="{{.Link}}">{{.Meta.Title}}</a></h2>
+                        <p class="list-short">{{.Meta.Short}}</p>
+                        {{if .Meta.Tags}}
+                        <p class="tag-links">
+                                {{range .Meta.Tags}}
+                                <a href="/blog/tags.html#{{. | slugify}}">#{{.}}</a>
+                                {{end}}
+                        </p>
                         {{end}}
-                </p>
-                {{end}}
-                </span>
+                </div>
         </li>
         {{- end}}
 </ul>

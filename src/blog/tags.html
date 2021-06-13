@@ -10,10 +10,10 @@
                         {{range .Posts -}}
                         <li class="blog-list-item">
                                 <p class="blog-list-date">{{.Meta.Published | shortdate}}</p>
-                                <span>
-                                <h2 class="list-title"><a href="{{.Link}}">{{.Meta.Title}}</a></h2>
-                                <p class="list-short">{{.Meta.Short}}</p>
-                                </span>
+                                <div>
+                                        <h2 class="list-title"><a href="{{.Link}}">{{.Meta.Title}}</a></h2>
+                                        <p class="list-short">{{.Meta.Short}}</p>
+                                </div>
                         </li>
                         {{- end}}
                 </ul>

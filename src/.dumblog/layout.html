@@ -24,24 +24,25 @@
 </head>
 <body>
         <header>
-                <span class="link-list header-links">
+                <nav class="link-list header-links">
                         <a class="header-logo" href="/">{{.Meta.Title}}</a>
                         <a class="link-list-item" href="/blog/">Blog</a>
                         <a class="link-list-item" href="/feeds/">Feeds</a>
                         <a class="link-list-item" href="{{.Meta.Github}}" rel="noopener nofollow">Github</a>
-                </span>
+                </nav>
         </header>
         <main>
         {{block "body" .}}{{end}}
         </main>
         <footer>
-                <span class="link-list">
+                <div class="link-list">
                         <!-- <a href="/stats/">Stats</a> -->
                         <a class="link-list-item" href="/feed.xml">Blog Feed</a>
+                        <a class="link-list-item" href="/sitemap.xml">Site Map</a>
                         <a class="link-list-item" href="https://github.com/lmas/dumblog" rel="noopener nofollow">Generator</a>
                         <a class="link-list-item" href="https://github.com/lmas/larus.se" rel="noopener nofollow">Source</a>
                         <!-- <a href="/legal/">Legal</a> -->
-                </span>
+                </div>
                 <p>Content {{.Meta.Copyright}} and licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener nofollow noreferrer">CC BY-SA 4.0</a> unless stated otherwise.</p>
         </footer>
 </body>

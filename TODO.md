@@ -33,6 +33,7 @@
   js
   robots.txt
   accessibility
+  https://codex.wordpress.org/Validating_a_Website
 
 - blog web ring?
   https://git.sr.ht/~sircmpwn/openring
