@@ -7,9 +7,9 @@ Source code for my personal site and blog Larus.se.
 
 Unless stated otherwise, the..
 
-**blog content** is Copyright © 2021 Alex and licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
+**Blog content** is Copyright © 2021 Alex and licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
-**source code** is licensed under GPL, see the [LICENSE](LICENSE) file for details.
+**Source code** is licensed under GPL, see the [LICENSE](LICENSE) file for details.
 
 ## Bugs?
 
