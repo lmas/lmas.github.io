@@ -13,7 +13,7 @@
         <meta property="og:title" content="{{if isset "Current" .}}{{.Current.Meta.Title}} | {{end}}{{.Meta.Title}}" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{.Meta.Site}}{{if isset "Current" .}}{{.Current.Link}}{{end}}" />
-        <meta property="og:image" content="{{.Meta.Site}}/style/logo.png" />
+        <meta property="og:image" content="{{.Meta.Site}}{{.Meta.Logo}}" />
         <meta property="og:description" content="{{if isset "Current" .}}{{.Current.Meta.Short}}{{else}}{{.Meta.Short}}{{end}}" />
         <!--Give a extra hand to search engines-->
         <meta name="description" content="{{if isset "Current" .}}{{.Current.Meta.Short}}{{else}}{{.Meta.Short}}{{end}}">
