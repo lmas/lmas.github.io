@@ -30,6 +30,7 @@ jobs:
 
       - name: Commit files
         run: |
+          rm src/www/feeds/style.css # HACK: Don't want to overwrite it with the default
           cp -r src/www dst/.
           cd dst/
           git config --global user.name 'Gull-Bot'
