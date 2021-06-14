@@ -37,14 +37,17 @@
 }
 @font-face {
         font-family: 'stylish';
+        font-display: swap;
         src: url('/style/fonts/lato-regular.woff2') format('woff2');
 }
 @font-face {
         font-family: 'code';
+        font-display: swap;
         src: url('/style/fonts/roboto_mono-regular.woff2') format('woff2');
 }
 @font-face {
         font-family: 'neon';
+        font-display: swap;
         src: url('/style/fonts/library_3_am-regular.woff2') format('woff2');
 }
 body {
