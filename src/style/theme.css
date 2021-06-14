@@ -194,17 +194,17 @@ article dd {
 /* Neon Flicker animation */
 
 @keyframes neon-flicker {
-        0% {opacity: 0.1; text-shadow: 0 0 10px #FF9E88;}
-        2% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
-        8% {opacity: 0.1; text-shadow: 0 0 10px #FF9E88;}
-        9% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
-        12% {opacity: 0.1; text-shadow: 0 0 10px #FF9E88;}
-        20% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
-        25% {opacity: 0.3; text-shadow: 0 0 10px #FF9E88;}
-        30% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
-        70% {opacity: 0.9; text-shadow: 0 0 20px #FF9E88;}
-        72% {opacity: 0.2; text-shadow: 0 0 10px #FF9E88;}
-        77% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
-        95% {opacity: 0.8; text-shadow: 0 0 20px #FF9E88;}
-        100% {opacity: 1.0; text-shadow: 0 0 30px #FF9E88;}
+        0%   {opacity: 0.1;}
+        2%   {opacity: 1.0;}
+        8%   {opacity: 0.1;}
+        9%   {opacity: 1.0;}
+        12%  {opacity: 0.1;}
+        20%  {opacity: 1.0;}
+        25%  {opacity: 0.3;}
+        30%  {opacity: 1.0;}
+        70%  {opacity: 0.9;}
+        72%  {opacity: 0.2;}
+        77%  {opacity: 1.0;}
+        95%  {opacity: 0.8;}
+        100% {opacity: 1.0;}
 }
