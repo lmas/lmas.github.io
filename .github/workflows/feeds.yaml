@@ -13,24 +13,29 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it in `cwd`.
       # Also enables git commands, for more info see: https://stackoverflow.com/a/58393457
-      - uses: actions/checkout@v2
+      - name: Checkout master
+        uses: actions/checkout@v2
         with:
-          ref: public
-          fetch-depth: 0
-
-      - name: Merge master
-        run: |
-          git config --global user.name 'Gull-Bot'
-          git config --global user.email 'gull-bot@larus.se'
-          git merge origin/master
+          ref: master
+          path: src
 
       - name: Update feeds
-        run: make feeds
+        run: cd src/ && make feeds
+
+      - name: Checkout build
+        uses: actions/checkout@v2
+        with:
+          ref: build
+          path: dst
 
       - name: Commit files
         run: |
-          git add -A public/
-          git commit -m "Automated feeds update $(date '+%Y-%m-%d')"
+          cp -r src/www dst/.
+          cd dst/
+          git config --global user.name 'Gull-Bot'
+          git config --global user.email 'gull-bot@larus.se'
+          git add --all www/
+          git commit -m "Update feeds"
           git push
 
       - name: Deploy

@@ -1,5 +1,5 @@
 settings:
-  output: public/feeds/
+  output: www/feeds/
   maxitems: 30
   throttle: 2
   timeout: 30

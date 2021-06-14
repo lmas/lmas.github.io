@@ -13,7 +13,7 @@ feeds:
 
 .PHONY: blog
 blog:
-	bin/dumblog update src/
+	bin/dumblog -out=www/ update src/
 
 .PHONY: demo
 demo: blog
@@ -21,4 +21,4 @@ demo: blog
 
 .PHONY: clean
 clean:
-	rm -r public/
+	rm -r www/
