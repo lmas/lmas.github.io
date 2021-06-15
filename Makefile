@@ -40,7 +40,7 @@ postbuild:
 .PHONY: deploybuild
 deploybuild:
 	git push
-	curl --silent "$DEPLOY_URL"
+	curl --silent "${DEPLOY_URL}"
 
 .PHONY: buildfeeds
 buildfeeds: prebuild feeds postbuild deploybuild
