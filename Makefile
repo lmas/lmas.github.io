@@ -22,3 +22,28 @@ demo: blog
 .PHONY: clean
 clean:
 	rm -r www/
+
+####################################################################################################
+
+.PHONY: prebuild
+prebuild:
+	git config --local user.name "Gull-Bot"
+	git config --local user.email "gull-bot@larus.se"
+	git checkout origin/build -- www/
+
+.PHONY: postbuild
+postbuild:
+	git checkout build
+	git add --all www/
+	git commit -m "Auto build"
+
+.PHONY: deploybuild
+deploybuild:
+	git push
+	curl --silent "$DEPLOY_URL"
+
+.PHONY: buildfeeds
+buildfeeds: prebuild feeds postbuild deploybuild
+
+.PHONY: buildblog
+buildblog: prebuild blog postbuild deploybuild

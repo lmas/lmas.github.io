@@ -1,47 +1,23 @@
-name: Update blog
-
+name: Build blog
 on:
   push:
     branches:
       - master
     paths:
       - 'src/**'
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it in `cwd`.
-      # Also enables git commands, for more info see: https://stackoverflow.com/a/58393457
       - name: Checkout master
         uses: actions/checkout@v2
         with:
           ref: master
-          path: src
-
-      - name: Update blog
-        run: cd src/ && make blog
-
-      - name: Checkout build
-        uses: actions/checkout@v2
-        with:
-          ref: build
-          path: dst
-
-      - name: Commit files
-        run: |
-          cp -r src/www dst/.
-          cd dst/
-          git config --global user.name 'Gull-Bot'
-          git config --global user.email 'gull-bot@larus.se'
-          git add --all www/
-          git commit -m "Update blog"
-          git push
-
-      - name: Deploy
+          fetch-depth: 0
+      - name: Build and deploy blog
         env:
-          DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
-        run: curl --silent "$DEPLOY_URL"
-
+          DEPLOY_URL: ${{ secrets.DEPLOY_URL}}
+        run: make buildblog
