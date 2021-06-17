@@ -29,6 +29,8 @@ feeds:
     url:  https://www.svt.se/nyheter/utrikes/rss.xml
   - title: News - SVT Vetenskap
     url:  https://www.svt.se/nyheter/vetenskap/rss.xml
+  - title: News - SVT Ekonomi
+    url: https://www.svt.se/nyheter/ekonomi/rss.xml
 
   - title: Services - DuckDuckGo
     url:  https://spreadprivacy.com/rss/
@@ -53,10 +55,10 @@ feeds:
     url:  https://old.reddit.com/r/godot/top/.rss?sort=top&t=week
   - title: Tech - /r/Golang
     url:  https://old.reddit.com/r/golang/top/.rss?sort=top&t=week
-  - title: Tech - /r/Netsec
-    url:  https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week
   - title: Tech - /r/Programming
     url:  https://old.reddit.com/r/programming/top/.rss?sort=top&t=week
+  - title: Tech - /r/Netsec
+    url:  https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week
   - title: Tech - Cryptography Dispatches
     url:  https://buttondown.email/cryptography-dispatches/rss
   - title: Tech - Schneier
@@ -66,13 +68,13 @@ feeds:
   - title: Tech - Underjord
     url:  https://underjord.io/feed.xml
 
+  - title: Tech - Swedish Tech Weekly
+    url: https://us19.campaign-archive.com/home/?u=bfe614a90430055a899f181ba&id=752eb1e3d7
+    parser:
+      rule: (?sU)<li class="campaign">.+<a href="(?P<url>[^"]+)".+>(?P<title>[^<]+)<\/a><\/li>
+
   - title: Tech - Hacker News
     url: https://news.ycombinator.com/
     parser:
       rule: (?sU)class="storylink">(?P<title>[^<]+)</a>.*<a href="(?P<url>[^"]*)">\d+&nbsp;comments
       host: https://news.ycombinator.com/
-
-  - title: Tech - Swedish Tech Weekly
-    url: https://us19.campaign-archive.com/home/?u=bfe614a90430055a899f181ba&id=752eb1e3d7
-    parser:
-      rule: (?sU)<li class="campaign">.+<a href="(?P<url>[^"]+)".+>(?P<title>[^<]+)<\/a><\/li>

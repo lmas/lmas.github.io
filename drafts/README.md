@@ -38,7 +38,7 @@ All credits and copyrights belong to the original authors.
   Simplest thing to do is a 32x32px PNG, rename it to `favicon.ico` and add tag:
   <link rel="shortcut icon" type="image/png" href="/favicon.ico">
 
-- tiniest SEO using simple html elements in a page:
+- tiniest "SEO" using simple html elements in a page:
   https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
   https://developers.google.com/search/docs/advanced/crawling/special-tags
   Seems to only depend on one tag (not sure about other engines):
