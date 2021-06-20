@@ -1,6 +1,7 @@
 
 DUMBLOG=./bin/dumblog -out=www/
 FEEDLOG=./bin/feedloggr -conf .feedloggr.yaml
+BLOGDIR=./src/blog/2021
 
 .PHONY: shasum
 shasum:
@@ -21,6 +22,11 @@ blog:
 .PHONY: demo
 demo: blog
 	${DUMBLOG} web
+
+.PHONY: edit
+edit:
+	mkdir --parents "$(BLOGDIR)/$(title)"
+	$(EDITOR) "$(BLOGDIR)/$(title)/post.md"
 
 .PHONY: clean
 clean:
