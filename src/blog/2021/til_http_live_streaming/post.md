@@ -3,8 +3,8 @@ title: "TIL: HTTP Live Streaming"
 short: Streaming media with HLS
 published: 2021-06-20
 tags:
-- til
-- hls
+- today I learned
+- http live streaming
 ---
 
 [HTTP Live Streaming](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) is a protocol developed by Apple and it allows
