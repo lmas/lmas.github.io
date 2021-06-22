@@ -85,7 +85,7 @@ The validators I ran was:
 
 - https://www.ssllabs.com/ssltest/
 - https://validator.w3.org/unicorn/ (all-in-one HTML/CSS/Feed validation)
-- https://www.webpagetest.org/easy (site performance, security and [lighthouse](https://github.com/GoogleChrome/lighthouse))
+- https://www.webpagetest.org/easy (site performance, security and [lighthouse](https://web.dev/measure/) reports)
 - https://metatags.io/ (previews for social media)
 - https://search.google.com/test/mobile-friendly
 - https://validator.w3.org/checklink
