@@ -7,8 +7,6 @@ tags:
 - documentation
 ---
 
-## About
-
 This is a reference page for a small part of the formatting options from the [Commonmark specification ![Markdown](markdown-mark.png)](https://commonmark.org/)
 A couple of extra extensions has been enabled:
 

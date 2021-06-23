@@ -25,24 +25,24 @@
 </head>
 <body>
         <header>
-                <nav class="link-list header-links">
-                        <a class="header-logo" href="/">{{.Meta.Title}}</a>
-                        <a class="link-list-item" href="/">Home</a>
-                        <a class="link-list-item" href="/blog/">Blog</a>
-                        <a class="link-list-item" href="/feeds/">Feeds</a>
-                        <a class="link-list-item" href="{{.Meta.Github}}" rel="noopener nofollow">Github</a>
+                <a class="header-logo" href="/">{{.Meta.Title}}</a>
+                <nav class="header-links">
+                        <a href="/">Home</a>
+                        <a href="/blog/">Blog</a>
+                        <a href="/feeds/">Feeds</a>
+                        <a href="{{.Meta.Github}}" rel="noopener nofollow">Github</a>
                 </nav>
         </header>
         <main>
         {{block "body" .}}{{end}}
         </main>
         <footer>
-                <div class="link-list">
-                        <!-- <a href="/stats/">Stats</a> -->
-                        <a class="link-list-item" href="/feed.xml">Blog Feed</a>
-                        <a class="link-list-item" href="/sitemap.xml">Site Map</a>
-                        <a class="link-list-item" href="https://github.com/lmas/dumblog" rel="noopener nofollow">Generator</a>
-                        <a class="link-list-item" href="https://github.com/lmas/larus.se" rel="noopener nofollow">Source</a>
+                <div class="footer-links">
+                        <a href="/feed.xml">Blog Feed</a>
+                        <!-- <a href="/stats/">Visitors</a> -->
+                        <a href="/sitemap.xml">Site Map</a>
+                        <a href="https://github.com/lmas/dumblog" rel="noopener nofollow">Generator</a>
+                        <a href="https://github.com/lmas/larus.se" rel="noopener nofollow">Source</a>
                         <!-- <a href="/legal/">Legal</a> -->
                 </div>
                 <p>Content {{.Meta.Copyright}} and licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener nofollow noreferrer">CC BY-SA 4.0</a> unless stated otherwise.</p>

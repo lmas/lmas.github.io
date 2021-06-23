@@ -7,7 +7,6 @@ tags:
 - documentation
 ---
 
-## About
 Hello world! I'm Alex and this is my cave.
 
 I write open source software and run a couple of linux/freebsd servers as a hobby. Mostly it's web-related stuff.

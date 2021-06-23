@@ -1,5 +1,3 @@
-/* Most common elements and site-wide theming */
-
 * {
         margin: 0;
         padding: 0;
@@ -8,11 +6,11 @@
         --logo-brand: #EFA22F;      /* Based on original brand, but constrast corrected 5:1 for the dark background */
         --logo-color: #FFF8E7;      /* The cosmic latte */
         --logo-background: #403E3A; /* cosmic latte but with brightness dropped to 25% */
-        --brand: var(--logo-brand);
-        --color: var(--logo-color);
-        --background: var(--logo-background);
+        --brand: #D51515; /* Based on #E00 but constrast corrected to a 5:1 ratio */
+        --color: var(--logo-background);
+        --background: var(--logo-color);
         --width: 960px;
-        --spacing: 1rem;
+        --padding: 2rem;
         line-height: 1.5;
         font-size: 16px;
         font-family: 'stylish', sans-serif;
@@ -20,19 +18,21 @@
         background-color: var(--background);
         scroll-behavior: smooth;
 }
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
         :root {
-                --brand: #D51515; /* Based on #E00 but constrast corrected to a 5:1 ratio */
-                --color: var(--logo-background);
-                --background: var(--logo-color);
+                --brand: var(--logo-brand);
+                --color: var(--logo-color);
+                --background: var(--logo-background);
         }
 }
 @media screen and (max-width: 480px){
         :root {
                 --width: 480px;
+                --padding: 1rem;
         }
-        .link-list, .about {
+        header, .about {
                 flex-direction: column;
+                text-align: center;
         }
 }
 @font-face {
@@ -54,17 +54,34 @@ body {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        margin: auto;
+        padding: 0 var(--padding);
+        max-width: var(--width);
 }
 a {
         color: var(--brand);
         text-decoration: underline;
 }
 header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-size: 1.2rem;
         font-weight: bold;
         background-color: var(--logo-background);
         box-shadow: 5px 5px 10px #000;
+        /* position: relative; */
 }
+/* header:before { */
+        /* position: absolute; */
+        /* background-color: red; */
+        /* top: 0; */
+        /* bottom: 0; */
+        /* content: ""; */
+        /* z-index: -1; */
+        /* width: 100vw; */
+        /* left: calc((480px - 100vw)/2); */
+/* } */
 header a {
         text-decoration: none;
 }
@@ -74,9 +91,7 @@ header a:hover {
 main {
         display: flex;
         flex-direction: column;
-        margin: 0 auto auto auto;
-        padding: var(--spacing);
-        max-width: calc(var(--width) - var(--spacing) * 2);
+        margin: 1rem auto auto auto;
         border-radius: 5px;
 }
 footer {
@@ -84,35 +99,26 @@ footer {
         flex-direction: column;
         text-align: center;
         font-size: 0.75rem;
-        margin: 0 auto var(--spacing) auto;
-        max-width: var(--width);
-}
-.link-list {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        max-width: var(--width);
-}
-.link-list-item {
-        margin-right: var(--spacing);
+        margin: 1rem 0;
 }
 .header-logo {
         font-size: 2rem;
         font-family: 'neon', monospace;
         color: var(--logo-brand);
-        margin-right: var(--spacing);
         text-shadow: 0 0 2rem var(--logo-brand); /* Adds a very light background "glow" */
         filter: drop-shadow(5px 5px 1px #000);
         animation: neon-flicker 10s cubic-bezier(.79,.14,.15,.86) 2;
 }
-.header-links > .link-list-item {
+.header-links > a {
         color: var(--logo-color);
+        padding: 0 1rem;
 }
-
+.footer-links {
+        display: flex;
+        justify-content: space-evenly;
+}
 /**************************************************************************************************/
 /* Per page elements and other unique stuff */
-
 blockquote {
         quotes: auto;
         margin: 1rem;
@@ -140,7 +146,7 @@ blockquote::after {
         align-items: center;
 }
 .about img {
-        margin: var(--spacing);
+        margin: 1rem;
 }
 .blog-list {
         list-style: none;
@@ -148,15 +154,15 @@ blockquote::after {
 .blog-list-item {
         display: flex;
         align-items: center;
-        margin-bottom: var(--spacing);
+        margin-bottom: 1rem;
 }
 .blog-list-date {
-        margin-right: var(--spacing);
+        margin-right: 1rem;
 }
 .post-meta {
         display: flex;
         justify-content: space-between;
-        margin-bottom: var(--spacing);
+        margin-bottom: 1rem;
 }
 .post-summary {
         font-size: 1.5rem;
@@ -172,10 +178,10 @@ blockquote::after {
         margin-right: 0;
 }
 article p, article ol, article ul, article hr, article pre, article table, article dl, article div {
-        margin-bottom: var(--spacing);
+        margin-bottom: 1rem;
 }
 article ul, article ol {
-        padding-left: var(--spacing);
+        padding-left: 1rem;
 }
 article table {
         width: 100%;
@@ -186,12 +192,14 @@ article p>code, article dd, article pre {
         color: #f8f8f2; /* Stolen from the code highlighter */
         background-color: #272822;
 }
+article code {
+        white-space: pre-line;
+}
 article dd {
-        margin-left: var(--spacing);
+        margin-left: 1rem;
 }
 /**************************************************************************************************/
 /* Neon Flicker animation */
-
 @keyframes neon-flicker {
         0%   {opacity: 0.1;}
         2%   {opacity: 1.0;}
