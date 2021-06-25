@@ -2,6 +2,8 @@
 
 // WIP: Super simple and privacy friendly analytics.
 
+if (location.host != "www.larus.se") throw new Error("invalid host");
+
 function postJSON(url, data) {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
