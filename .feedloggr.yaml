@@ -21,6 +21,9 @@ feeds:
   - title: Fun - /r/ProgrammerHumor
     url:  https://old.reddit.com/r/ProgrammerHumor/top/.rss?sort=top&t=year
 
+  - title: Articles - Longform
+    url: https://longform.org/feed.rss
+
   - title: News - SVT Väst
     url:  https://www.svt.se/nyheter/lokalt/vast/rss.xml
   - title: News - SVT Norrbotten
