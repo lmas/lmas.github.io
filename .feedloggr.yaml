@@ -21,7 +21,9 @@ feeds:
   - title: Fun - /r/ProgrammerHumor
     url:  https://old.reddit.com/r/ProgrammerHumor/top/.rss?sort=top&t=year
 
-  - title: Articles - Longform
+  - title: Reading - arXiv Computer Science
+    url: https://export.arxiv.org/rss/cs
+  - title: Reading - Longform
     url: https://longform.org/feed.rss
 
   - title: News - SVT Väst
@@ -41,8 +43,6 @@ feeds:
     url:  https://fastmail.blog/rss/
   - title: Services - FreeBSD
     url:  https://www.freebsd.org/news/feed.xml
-  - title: Services - NetBSD
-    url:  https://www.netbsd.org/changes/rss-netbsd.xml
   - title: Services - Let's Encrypt
     url:  https://letsencrypt.org/feed.xml
   - title: Services - Mozilla
