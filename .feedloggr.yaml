@@ -21,8 +21,6 @@ feeds:
   - title: Fun - /r/ProgrammerHumor
     url:  https://old.reddit.com/r/ProgrammerHumor/top/.rss?sort=top&t=year
 
-  - title: Reading - arXiv Computer Science
-    url: https://export.arxiv.org/rss/cs
   - title: Reading - Longform
     url: https://longform.org/feed.rss
 
@@ -81,3 +79,6 @@ feeds:
     parser:
       rule: (?sU)class="storylink">(?P<title>[^<]+)</a>.*<a href="(?P<url>[^"]*)">\d+&nbsp;comments
       host: https://news.ycombinator.com/
+
+  - title: Tech - arXiv Computer Science
+    url: https://export.arxiv.org/rss/cs
