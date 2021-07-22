@@ -28,6 +28,8 @@ feeds:
     url:  https://www.svt.se/nyheter/lokalt/vast/rss.xml
   - title: News - SVT Norrbotten
     url:  https://www.svt.se/nyheter/lokalt/norrbotten/rss.xml
+  - title: News - SVT Inrikes
+    url:  https://www.svt.se/nyheter/inrikes/rss.xml
   - title: News - SVT Utrikes
     url:  https://www.svt.se/nyheter/utrikes/rss.xml
   - title: News - SVT Vetenskap
