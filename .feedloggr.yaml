@@ -81,6 +81,3 @@ feeds:
     parser:
       rule: (?sU)class="storylink">(?P<title>[^<]+)</a>.*<a href="(?P<url>[^"]*)">\d+&nbsp;comments
       host: https://news.ycombinator.com/
-
-  - title: Tech - arXiv Computer Science
-    url: https://export.arxiv.org/rss/cs
