@@ -37,9 +37,11 @@ feeds:
   
   - title: LTU - Nyheter
     url: https://www.ltu.se/ltu/media/news?mode=rss
+  - title: LTU - Studentnyheter
+    url: https://www.ltu.se/student/Studentnyheter?mode=rss
   - title: LTU - Studentnotiser
     url: https://www.ltu.se/student/Studentnotiser?mode=rss
-
+    
   - title: Services - DuckDuckGo
     url: https://spreadprivacy.com/rss/
   - title: Services - Fastmail
