@@ -7,7 +7,7 @@ settings:
 
 feeds:
   - title: Fun - Dresden Codak
-    url: https://dresdencodak.com/feed/rss/
+    url: https://dresdencodak.com/feed/
   - title: Fun - Kill Six Billion Demons
     url: https://killsixbilliondemons.com/feed/
   - title: Fun - Oglaf
@@ -20,6 +20,8 @@ feeds:
     url: https://xkcd.com/rss.xml
   - title: Fun - /r/ProgrammerHumor
     url: https://old.reddit.com/r/ProgrammerHumor/top/.rss?sort=top&t=year
+  - title: Fun - The Weekly Roll
+    url: https://old.reddit.com/r/theweeklyroll/top/.rss?sort=top&t=week
 
   - title: Reading - Longform
     url: https://longform.org/feed.rss
