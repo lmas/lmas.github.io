@@ -60,7 +60,7 @@ feeds:
     url: https://blog.golang.org/feed.atom
 
   - title: Tech - /r/Godot
-    url: https://old.reddit.com/r/godot/top/.rss?sort=top&t=week
+    url: https://old.reddit.com/r/godot/top/.rss?sort=top&t=month
   - title: Tech - /r/Golang
     url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week
   - title: Tech - /r/Programming
