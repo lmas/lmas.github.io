@@ -84,5 +84,5 @@ feeds:
   - title: Tech - Hacker News
     url: https://news.ycombinator.com/
     parser:
-      rule: (?sU)class="titlelink">(?P<title>[^<]+)</a>.*<a href="(?P<url>[^"]*)">\d+&nbsp;comments
+      rule: (?sU)class="titlelink"[^>]*>(?P<title>[^<]+)</a>.*<a href="(?P<url>[^"]*)">\d+&nbsp;comments
       host: https://news.ycombinator.com/
