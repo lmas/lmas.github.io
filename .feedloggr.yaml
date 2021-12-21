@@ -18,8 +18,6 @@ feeds:
     url: https://www.schlockmercenary.com/rss/
   - title: Fun - xkcd
     url: https://xkcd.com/rss.xml
-  - title: Fun - /r/ProgrammerHumor
-    url: https://old.reddit.com/r/ProgrammerHumor/top/.rss?sort=top&t=year
   - title: Fun - The Weekly Roll
     url: https://old.reddit.com/r/theweeklyroll/top/.rss?sort=top&t=week
 
@@ -73,8 +71,6 @@ feeds:
     url: https://www.schneier.com/blog/atom.xml
   - title: Tech - TorrentFreak
     url: https://torrentfreak.com/feed/
-  - title: Tech - Underjord
-    url: https://underjord.io/feed.xml
 
   - title: Tech - Swedish Tech Weekly
     url: https://us19.campaign-archive.com/home/?u=bfe614a90430055a899f181ba&id=752eb1e3d7
