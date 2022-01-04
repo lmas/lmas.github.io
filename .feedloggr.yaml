@@ -75,11 +75,6 @@ feeds:
   - title: Tech - TorrentFreak
     url: https://torrentfreak.com/feed/
 
-  - title: Tech - Swedish Tech Weekly
-    url: https://us19.campaign-archive.com/home/?u=bfe614a90430055a899f181ba&id=752eb1e3d7
-    parser:
-      rule: (?sU)<li class="campaign">.+<a href="(?P<url>[^"]+)".+>(?P<title>[^<]+)<\/a><\/li>
-
   - title: Tech - Hacker News
     url: https://news.ycombinator.com/
     parser:
