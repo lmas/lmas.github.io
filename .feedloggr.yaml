@@ -19,7 +19,7 @@ feeds:
   - title: Comics - xkcd
     url: https://xkcd.com/rss.xml
   - title: Comics - The Weekly Roll
-    url: https://old.reddit.com/r/theweeklyroll/top/.rss?sort=top&t=week
+    url: https://old.reddit.com/r/theweeklyroll/top/.rss?sort=top&t=week&limit=10
 
   - title: Reading - Longform
     url: https://longform.org/feed.rss
@@ -62,12 +62,12 @@ feeds:
   - title: Golang - research!rsc
     url: https://research.swtch.com/feed.atom
   - title: Golang - /r/Golang
-    url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week
+    url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week&limit=10
 
   - title: Tech - /r/Programming
-    url: https://old.reddit.com/r/programming/top/.rss?sort=top&t=week
+    url: https://old.reddit.com/r/programming/top/.rss?sort=top&t=week&limit=10
   - title: Tech - /r/Netsec
-    url: https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week
+    url: https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week&limit=10
   - title: Tech - Cryptography Dispatches
     url: https://buttondown.email/cryptography-dispatches/rss
   - title: Tech - Schneier
