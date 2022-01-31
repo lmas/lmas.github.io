@@ -74,6 +74,8 @@ feeds:
     url: https://buttondown.email/cryptography-dispatches/rss
   - title: Tech - Schneier
     url: https://www.schneier.com/blog/atom.xml
+  - title: Tech - The Cheapskate's Guide
+    url: https://cheapskatesguide.org/cheapskates-guide-rss-feed.xml
   - title: Tech - TorrentFreak
     url: https://torrentfreak.com/feed/
 
