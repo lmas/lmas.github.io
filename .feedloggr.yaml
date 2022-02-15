@@ -78,6 +78,8 @@ feeds:
     url: https://cheapskatesguide.org/cheapskates-guide-rss-feed.xml
   - title: Tech - TorrentFreak
     url: https://torrentfreak.com/feed/
+  - title: Tech - Bartosz Ciechanowski
+    url: https://ciechanow.ski/atom.xml
 
   - title: Tech - Hacker News
     url: https://news.ycombinator.com/
