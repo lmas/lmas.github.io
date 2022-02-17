@@ -21,11 +21,6 @@ feeds:
   - title: Comics - The Weekly Roll
     url: https://old.reddit.com/r/theweeklyroll/top/.rss?sort=top&t=week&limit=20
 
-  - title: Reading - Longform
-    url: https://longform.org/feed.rss
-  - title: Reading - Wait But Why
-    url: https://waitbutwhy.com/feed
-
   - title: News - SVT Norrbotten
     url: https://www.svt.se/nyheter/lokalt/norrbotten/rss.xml
   - title: News - SVT Inrikes
@@ -36,18 +31,31 @@ feeds:
     url: https://www.svt.se/nyheter/vetenskap/rss.xml
   - title: News - SVT Ekonomi
     url: https://www.svt.se/nyheter/ekonomi/rss.xml
-  
+
   - title: LTU - Nyheter
     url: https://www.ltu.se/ltu/media/news?mode=rss
   - title: LTU - Studentnyheter
     url: https://www.ltu.se/student/Studentnyheter?mode=rss
   - title: LTU - Studentnotiser
     url: https://www.ltu.se/student/Studentnotiser?mode=rss
-    
+
+  - title: Blogs - Wait But Why
+    url: https://waitbutwhy.com/feed
+  - title: Blogs - Ardan Labs
+    url: https://www.ardanlabs.com/blog/index.xml
+  - title: Blogs - research!rsc
+    url: https://research.swtch.com/feed.atom
+  - title: Blogs - Cryptography Dispatches
+    url: https://buttondown.email/cryptography-dispatches/rss
+  - title: Blogs - Schneier
+    url: https://www.schneier.com/blog/atom.xml
+  - title: Blogs - The Cheapskate's Guide
+    url: https://cheapskatesguide.org/cheapskates-guide-rss-feed.xml
+  - title: Blogs - Bartosz Ciechanowski
+    url: https://ciechanow.ski/atom.xml
+
   - title: Services - DuckDuckGo
     url: https://spreadprivacy.com/rss/
-  - title: Services - Fastmail
-    url: https://fastmail.blog/rss/
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
   - title: Services - Mozilla
@@ -56,30 +64,19 @@ feeds:
     url: https://github.blog/feed/
   - title: Services - Libera.chat
     url: https://libera.chat/atom.xml
-    
-  - title: Golang - Blog
+  - title: Services - SourceHut
+    url: https://sourcehut.org/blog/index.xml
+  - title: Services - Golang
     url: https://blog.golang.org/feed.atom
-  - title: Golang - Ardan Labs
-    url: https://www.ardanlabs.com/blog/index.xml
-  - title: Golang - research!rsc
-    url: https://research.swtch.com/feed.atom
-  - title: Golang - /r/Golang
-    url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week&limit=20
 
+  - title: Tech - /r/Golang
+    url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week&limit=20
   - title: Tech - /r/Programming
     url: https://old.reddit.com/r/programming/top/.rss?sort=top&t=week&limit=20
   - title: Tech - /r/Netsec
     url: https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week&limit=20
-  - title: Tech - Cryptography Dispatches
-    url: https://buttondown.email/cryptography-dispatches/rss
-  - title: Tech - Schneier
-    url: https://www.schneier.com/blog/atom.xml
-  - title: Tech - The Cheapskate's Guide
-    url: https://cheapskatesguide.org/cheapskates-guide-rss-feed.xml
   - title: Tech - TorrentFreak
     url: https://torrentfreak.com/feed/
-  - title: Tech - Bartosz Ciechanowski
-    url: https://ciechanow.ski/atom.xml
 
   - title: Tech - Hacker News
     url: https://news.ycombinator.com/
