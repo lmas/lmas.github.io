@@ -6,8 +6,6 @@ settings:
   verbose: true
 
 feeds:
-  - title: Comics - Dresden Codak
-    url: https://dresdencodak.com/feed/
   - title: Comics - Kill Six Billion Demons
     url: https://killsixbilliondemons.com/feed/
   - title: Comics - Oglaf
