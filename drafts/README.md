@@ -55,3 +55,7 @@ All credits and copyrights belong to the original authors.
   https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
   simple tool to toggle scheme in firefox:
   https://stackoverflow.com/questions/56401662/firefox-how-to-test-prefers-color-scheme/60481298#60481298
+
+- easily clean up PRs on your repo:
+  https://news.ycombinator.com/item?id=30503901
+  https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork

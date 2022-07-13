@@ -1,17 +1,9 @@
 
 # TODO
 
-- Add 404.html and 500.html and embed larus pic in the pages
-
-- Draw a self portrait for the first post?
-
 - Minimalize and cleanup:
   https://old.reddit.com/r/programming/comments/j1w9xj/bear_the_most_minimal_blogging_platform/
   and the motherfucking websites list for examples
-
-- Add js time-to-read/word count estimate?
-  https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
-  https://stackoverflow.com/questions/18679576/counting-words-in-string
 
 - Reinvestigate favicons:
   https://news.ycombinator.com/item?id=25520655
@@ -34,7 +26,7 @@
 
 - Hello world in css/js/html/console?
 
-- Walking seagull in the ~header~ background
+- Walking seagull on the hidden page:
   http://vanilla-js.com/
   https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3
   http://astronautz.com/wordpress/animateNelly.js
@@ -44,5 +36,3 @@
 - Save ref image of seagull in repo? larus fuscus has better pics
 
 - Find some way to monitor web traffic better.
-
-- Maybe find new hosting provider in the EU?
