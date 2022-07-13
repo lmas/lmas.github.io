@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="318"
+   height="155"
+   viewBox="0 0 83.8295 40.703942"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <rect
+     style="fill:#fffef7;fill-opacity:1;stroke:none;stroke-width:0.537505;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1"
+     width="83.829498"
+     height="8.9267502"
+     x="0"
+     y="31.855366"
+     rx="1.0544591" />
+  <path
+     style="fill:#fffef7;fill-opacity:1;stroke:#000000;stroke-width:1.53646;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+     id="hexa1"
+     d="M 28.24523,24.30978 14.50673,32.241706 0.76823002,24.30978 V 8.4459281 L 14.50673,0.51400172 28.24523,8.4459282 Z" />
+  <path
+     style="fill:#313137;fill-opacity:1;stroke:#000000;stroke-width:1.53646;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+     id="hexa2"
+     d="m 55.676999,24.309776 -13.7385,7.93193 L 28.2,24.309776 V 8.4459277 l 13.738499,-7.93192597 13.7385,7.93192597 z" />
+  <path
+     style="fill:#d9603b;fill-opacity:1;stroke:#000000;stroke-width:1.53646;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+     id="hexa3"
+     d="m 83.108768,24.309776 -13.7385,7.93193 -13.738499,-7.93193 V 8.4459277 l 13.738499,-7.93192597 13.7385,7.93192597 z" />
+  <text
+     xml:space="preserve"
+     transform="matrix(0.26361478,0,0,0.26361478,1.0975591,3.7252329)"
+     id="text1"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect1672);display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;image-rendering:auto"><tspan
+       x="24.238849"
+       y="122.47464"
+       id="tspan1471">#FFFEF7
+</tspan><tspan
+       x="15.116424"
+       y="135.80801"
+       id="tspan1473">Milky White</tspan></text>
+  <text
+     xml:space="preserve"
+     transform="matrix(0.26361478,0,0,0.26361478,2.0173361,3.9385619)"
+     id="text2"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect2444);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3;stroke-linejoin:bevel"><tspan
+       x="124.57804"
+       y="121.77737"
+       id="tspan1475">#313137
+</tspan><tspan
+       x="108.26028"
+       y="135.11075"
+       id="tspan1477">Solid Graphite</tspan></text>
+  <text
+     xml:space="preserve"
+     transform="matrix(0.26361478,0,0,0.26361478,4.3125948,5.237758)"
+     id="text3"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect2485);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3;stroke-linejoin:bevel"><tspan
+       x="218.913"
+       y="117.88284"
+       id="tspan1479">#D9603B
+</tspan><tspan
+       x="192.35041"
+       y="131.21622"
+       id="tspan1481">Medium Vermilion</tspan></text>
+</svg>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="generator" content="pandoc" />
+<meta name="author" content="Alex" />
+<meta name="dcterms.date" content="2021-06-13" />
+<meta name="description" content="Quick reference for Markdown." />
+<title>Markdown reference – Larus.se</title>
+<link rel="stylesheet" href="/style/theme.css" />
+<link rel="shortcut icon" type="image/png" href="/style/favicon.ico" />
+<link rel="sitemap" type="application/xml" title="sitemap" href="/sitemap.xml" />
+<link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
+</head>
+<body>
+<nav>
+<span class="logo"><a href="/">Larus.se</a></span>
+<a href="/">Home</a>
+<a href="/blog/">Blog</a>
+<a href="/news/">News</a>
+<a href="https://github.com/lmas" rel="noopener nofollow">Github</a>
+</nav>
+<main>
+<article>
+<header>
+<h1>Markdown reference</h1>
+<details class="toc">
+<summary>
+Table of Contents
+</summary>
+<ul>
+<li><a href="#inline-formatting" id="toc-inline-formatting">Inline
+formatting</a></li>
+<li><a href="#paragraphs" id="toc-paragraphs">Paragraphs</a></li>
+<li><a href="#backslash-escapes" id="toc-backslash-escapes">Backslash
+escapes</a></li>
+<li><a href="#block-quotes" id="toc-block-quotes">Block quotes</a></li>
+<li><a href="#code-blocks" id="toc-code-blocks">Code blocks</a></li>
+<li><a href="#footnotes" id="toc-footnotes">Footnotes</a></li>
+<li><a href="#headings" id="toc-headings">Headings</a></li>
+<li><a href="#horizontal-ruler" id="toc-horizontal-ruler">Horizontal
+ruler</a></li>
+<li><a href="#links" id="toc-links">Links</a></li>
+<li><a href="#images" id="toc-images">Images</a></li>
+<li><a href="#lists" id="toc-lists">Lists</a></li>
+<li><a href="#math" id="toc-math">Math</a></li>
+<li><a href="#raw-html" id="toc-raw-html">Raw HTML</a></li>
+<li><a href="#tables" id="toc-tables">Tables</a></li>
+</ul>
+</details>
+<time class="header-date">2021-06-13</time>
+<p class="header-abstract">Quick reference for Markdown.</p>
+</header>
+<p><em>Updated 2022-07-11 for Pandoc and GFM.</em></p>
+<p>This is a quick reference page for most of this blog's flavour of Markdown.
+In the back it's all running on <a
+href="https://pandoc.org/MANUAL.html">Pandoc</a> with the <a
+href="https://github.github.com/gfm/">Github Formatted Markdown</a> extension
+enabled, which in turn is based on the <a
+href="https://commonmark.org/">Commonmark Specification</a>.</p>
+<h2 id="inline-formatting">Inline formatting</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Formatted text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>*Italic*</code></td>
+<td><em>Italic</em></td>
+</tr>
+<tr class="even">
+<td><code>**Bold**</code></td>
+<td><strong>Bold</strong></td>
+</tr>
+<tr class="odd">
+<td><code>~~Strikethrough~~</code></td>
+<td><del>Strikethrough</del> *</td>
+</tr>
+<tr class="even">
+<td>`Inline code`</td>
+<td><code>Inline code</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;sub&gt;Sub&lt;/sub&gt;script</code></td>
+<td><sub>Sub</sub>script</td>
+</tr>
+<tr class="even">
+<td><code>&lt;sup&gt;Super&lt;/sup&gt;script</code></td>
+<td><sup>Super</sup>script</td>
+</tr>
+</tbody>
+</table>
+<p>* This is an extension to Commonmark.</p>
+<h2 id="paragraphs">Paragraphs</h2>
+<p>A sequence of non-blank text lines, where the newlines will be replaced with
+spaces instead.</p>
+<p>It's recommended to write a sentence per line for easier writing/editing and
+inserting blank lines between the sentences to break them up into different
+paragraphs.</p>
+<pre><code>First line.
+Second line.
+These 3 lines will form a paragraph.
+
+First line of second paragraph.</code></pre>
+<p>First line. Second line. These 3 lines will form a paragraph.</p>
+<p>First line of second paragraph.</p>
+<h2 id="backslash-escapes">Backslash escapes</h2>
+<p>Any punctuation character can be escapade with a backslash:</p>
+<pre><code>\!\&quot;\#\$\%\&amp;\&#39;\(\)\*\+\,\-\.\/\:\;\&lt;\=\&gt;\?\@\[\\\]\^\_\`\{\|\}\~</code></pre>
+<p>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
+<p>While backslashes before any other characters will be treated as a literal
+backslash:</p>
+<pre><code>\→\A\a\ \3\«</code></pre>
+<p>\→\A\a\ \3\«</p>
+<p>This can be used to cancel Markdown formatting:</p>
+<pre><code>\# This will not be formatted as a heading</code></pre>
+<p># This will not be formatted as a heading</p>
+<h2 id="block-quotes">Block quotes</h2>
+<pre><code>&gt; Hello
+&gt; World
+&gt;
+&gt; and blockuotes.</code></pre>
+<blockquote>
+<p>Hello World</p>
+<p>and blockuotes.</p>
+</blockquote>
+<h2 id="code-blocks">Code blocks</h2>
+<h3 id="indented-code-block">Indented code block</h3>
+<pre><code>&lt;four or more spaces&gt;Indented line of text
+&lt;four or more spaces&gt;**where no further styling is performed</code></pre>
+<p><em>(line break to break up the code blocks)</em></p>
+<pre><code>Indented line of text
+**where no further styling is performed</code></pre>
+<h3 id="fenced-code-block">Fenced code block</h3>
+<pre><code>```
+package main
+
+import &quot;fmt&quot;
+
+func main(){
+    fmt.Println(&quot;hello world&quot;)
+}
+```</code></pre>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main(){
+    fmt.Println(&quot;hello world&quot;)
+}</code></pre>
+<h2 id="footnotes">Footnotes</h2>
+<p>This is an extension to Commonmark.</p>
+<pre><code>Simple footnote[^1]
+
+[^1]: First note</code></pre>
+<p>Simple footnote<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<h2 id="headings">Headings</h2>
+<pre><code># Heading 1</code></pre>
+<p><em>See above heading.</em></p>
+<pre><code>## Heading 2</code></pre>
+<h3 id="heading-2">Heading 2</h3>
+<pre><code>### Heading 3</code></pre>
+<h4 id="heading-3">Heading 3</h4>
+<pre><code>#### Heading 4</code></pre>
+<h5 id="heading-4">Heading 4</h5>
+<pre><code>##### Heading 5</code></pre>
+<h6 id="heading-5">Heading 5</h6>
+<pre><code>Normal text</code></pre>
+<h2 id="horizontal-ruler">Horizontal ruler</h2>
+<pre><code>---</code></pre>
+<hr />
+<h2 id="links">Links</h2>
+<h3 id="autolink">Autolink</h3>
+<pre><code>&lt;https://www.example.com&gt;</code></pre>
+<p><a href="https://www.example.com">https://www.example.com</a></p>
+<h3 id="extended-autolink">Extended autolink</h3>
+<p>This is an extension to Commonmark.</p>
+<pre><code>www.example.com</code></pre>
+<p><a href="http://www.example.com">www.example.com</a></p>
+<h3 id="inline-link">Inline link</h3>
+<pre><code>[link](http://www.example.com &quot;title&quot;)</code></pre>
+<p><a href="http://www.example.com" title="title">link</a></p>
+<h3 id="internal-link">Internal link</h3>
+<pre><code>See the [Introduction](#introduction).</code></pre>
+<p>See the <a href="#introduction">Introduction</a>.</p>
+<h3 id="link-reference">Link reference</h3>
+<p>The link title is optional.</p>
+<pre><code>Some text with a [link].
+Some more.
+
+[link]: /url &quot;title&quot;</code></pre>
+<p>Some text with a <a href="/url" title="title">link</a>. Some more.</p>
+<h2 id="images">Images</h2>
+<pre><code>![image](/style/larus.png)</code></pre>
+<p><img src="/style/larus.png" alt="image" /></p>
+<h2 id="lists">Lists</h2>
+<h3 id="unordered-list">Unordered list</h3>
+<pre><code>- List
+- List
+- List</code></pre>
+<ul>
+<li>List</li>
+<li>List</li>
+<li>List</li>
+</ul>
+<h3 id="ordered-list">Ordered list</h3>
+<pre><code>1. One
+2. Two
+3. Three</code></pre>
+<ol type="1">
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ol>
+<h3 id="task-list">Task list</h3>
+<p>This is an extension to Commonmark.</p>
+<pre><code>- [x] foo
+- [ ] bar
+- [x] baz</code></pre>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+foo</li>
+<li><input type="checkbox" disabled="" />
+bar</li>
+<li><input type="checkbox" disabled="" checked="" />
+baz</li>
+</ul>
+<h2 id="math">Math</h2>
+<p>This is an extension to Commonmark.</p>
+<p>Full syntax for LaTeX can be found at <a
+href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">https://en.wikibooks.org/wiki/LaTeX/Mathematics</a>.</p>
+<pre><code>$\sqrt{3x-1}+(1+x)^2$</code></pre>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msqrt><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sqrt{3x-1}+(1+x)^2</annotation></semantics></math></p>
+<h2 id="raw-html">Raw HTML</h2>
+<p>Lines can begin with a standard HTML tag to produce corresponding raw HTML in
+the output. Whitelisted HTML tags:</p>
+<pre><code>address, article, aside, base, basefont, blockquote, body, caption, center, col, colgroup, dd, details, dialog, dir,
+div, dl, dt, fieldset, figcaption, figure, footer, form, frame, frameset, h1, h2, h3, h4, h5, h6, head, header, hr,
+html, iframe, legend, li, link, main, menu, menuitem, nav, noframes, ol, optgroup, option, p, param, pre, section,
+source, script, style, summary, table, tbody, td, tfoot, th, thead, title, tr, track, ul,</code></pre>
+<p>Example:</p>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;img src=&quot;img.png&quot;&gt;
+    &lt;p&gt;Hello&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<h2 id="tables">Tables</h2>
+<p>This is an extension to Commonmark.</p>
+<pre><code>| # | Column1 | Column2 |
+| - | --- | --- |
+| 1 | foo | bar |
+| 2 | baz | bim |
+| 3 | abc | def |</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Column1</th>
+<th>Column2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>foo</td>
+<td>bar</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>baz</td>
+<td>bim</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>abc</td>
+<td>def</td>
+</tr>
+</tbody>
+</table>
+<p>That's all for now!</p>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>First note<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</article>
+</main>
+<footer>
+<a href="/feed.xml">Feed</a>
+<a href="/sitemap.xml">Sitemap</a>
+<a href="https://github.com/lmas/lmas.github.io" rel="noopener nofollow">Source</a>
+<p>Copyright © 2021 Alex</p>
+</footer>
+<script data-goatcounter="https://lmas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
+</body>
+</html>

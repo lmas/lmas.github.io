@@ -1,0 +1,12 @@
+#                          _ _          _        _
+#  ___  ___  ___ _   _ _ __(_) |_ _   _ | |___  _| |_
+# / __|/ _ \/ __| | | | '__| | __| | | || __\ \/ / __|
+# \__ \  __/ (__| |_| | |  | | |_| |_| || |_ >  <| |_
+# |___/\___|\___|\__,_|_|  |_|\__|\__, (_)__/_/\_\__|
+#                                 |___/
+# https://www.larus.se
+# Copyright © 2022 Alex
+
+Contact:   securitytxt@larus.se
+Contact:   https://github.com/lmas/lmas.github.io
+Policy:    https://github.com/lmas/lmas.github.io/blob/master/SECURITY.md
