@@ -1,217 +1,241 @@
+/* Start by resetting stuff */
 * {
         margin: 0;
         padding: 0;
+        border: 0;
 }
+/**************************************************************************************************/
+/* Default theme */
 :root {
-        --logo-brand: #EFA22F;      /* Based on original brand, but constrast corrected 5:1 for the dark background */
-        --logo-color: #FFF8E7;      /* The cosmic latte */
-        --logo-background: #403E3A; /* cosmic latte but with brightness dropped to 25% */
-        --brand: #D51515; /* Based on #E00 but constrast corrected to a 5:1 ratio */
-        --color: var(--logo-background);
-        --background: var(--logo-color);
+        --color-dark: #313137;
+        --color-dark-shadow: #414146;
+        --color-light: #FFFEF7;
+        --color-light-shadow: #E6E5DF;
+        --flair: #D9603B;
+        --font-regular: Arial, Helvetica, sans-serif;
+        --font-code: "Courier New", Courier, monospace;
         --width: 960px;
-        --padding: 2rem;
-        line-height: 1.5;
-        font-size: 16px;
-        font-family: 'stylish', sans-serif;
-        color: var(--color);
-        background-color: var(--background);
-        scroll-behavior: smooth;
+        --horizontal-space: 2rem;
+        --vertical-space: calc(var(--horizontal-space) / 2);
+        --border: 2px solid var(--flair);
+        --corner: 5px;
+}
+@media screen and (max-width: 480px) {
+        :root {
+                --width: 480px;
+                --horizontal-space: 1rem;
+        }
+}
+@media (prefers-color-scheme: light) {
+        :root {
+                --primary: var(--color-dark);
+                --secondary: var(--color-light);
+                --shadow: var(--color-light-shadow);
+        }
 }
 @media (prefers-color-scheme: dark) {
         :root {
-                --brand: var(--logo-brand);
-                --color: var(--logo-color);
-                --background: var(--logo-background);
+                --primary: var(--color-light);
+                --secondary: var(--color-dark);
+                --shadow: var(--color-dark-shadow);
         }
 }
-@media screen and (max-width: 480px){
-        :root {
-                --width: 480px;
-                --padding: 1rem;
-        }
-        header, .about {
-                flex-direction: column;
-                text-align: center;
-        }
+/**************************************************************************************************/
+/* Main layout */
+body, nav, footer {
+        display: flex;
 }
-@font-face {
-        font-family: 'stylish';
-        font-display: swap;
-        src: url('/style/fonts/lato-regular.woff2') format('woff2');
-}
-@font-face {
-        font-family: 'code';
-        font-display: swap;
-        src: url('/style/fonts/roboto_mono-regular.woff2') format('woff2');
-}
-@font-face {
-        font-family: 'neon';
-        font-display: swap;
-        src: url('/style/fonts/library_3_am-regular.woff2') format('woff2');
+:root {
+        scroll-behavior: smooth;
 }
 body {
-        display: flex;
         flex-direction: column;
+        color: var(--primary);
+        background-color: var(--secondary);
+        font: normal 16px/1.6 var(--font-regular);
         min-height: 100vh;
-        margin: auto;
-        padding: 0 var(--padding);
         max-width: var(--width);
-}
-a {
-        color: var(--brand);
-        text-decoration: underline;
-}
-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 1.2rem;
-        font-weight: bold;
-        background-color: var(--logo-background);
-        box-shadow: 5px 5px 10px #000;
-        /* position: relative; */
-}
-/* header:before { */
-        /* position: absolute; */
-        /* background-color: red; */
-        /* top: 0; */
-        /* bottom: 0; */
-        /* content: ""; */
-        /* z-index: -1; */
-        /* width: 100vw; */
-        /* left: calc((480px - 100vw)/2); */
-/* } */
-header a {
-        text-decoration: none;
-}
-header a:hover {
-        text-decoration: underline;
+        margin: auto;
 }
 main {
-        display: flex;
-        flex-direction: column;
-        margin: 1rem auto auto auto;
-        border-radius: 5px;
+        margin: 0 var(--horizontal-space) auto var(--horizontal-space);
+}
+nav, footer {
+        margin: var(--vertical-space) var(--horizontal-space);
+}
+nav {
+        font-size: 1.2rem;
+        font-weight: bold;
+        align-items: center;
+        gap: var(--horizontal-space);
+}
+@media screen and (max-width: 480px) {
+        nav {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--vertical-space);
+        }
 }
 footer {
-        display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
         text-align: center;
-        font-size: 0.75rem;
-        margin: 1rem 0;
+        gap: var(--vertical-space);
 }
-.header-logo {
-        font-size: 2rem;
-        font-family: 'neon', monospace;
-        color: var(--logo-brand);
-        text-shadow: 0 0 2rem var(--logo-brand); /* Adds a very light background "glow" */
-        filter: drop-shadow(5px 5px 1px #000);
-        animation: neon-flicker 10s cubic-bezier(.79,.14,.15,.86) 2;
-}
-.header-links > a {
-        color: var(--logo-color);
-        padding: 0 1rem;
-}
-.footer-links {
-        display: flex;
-        justify-content: space-evenly;
+footer p {
+        /* Forces the copyright notice onto it's own line */
+        flex-basis: 100%;
+        margin-bottom: 0;
 }
 /**************************************************************************************************/
-/* Per page elements and other unique stuff */
+/* Custom elements */
+header, p, hr, pre, math, ul, ol, blockquote, table, figure, details, embed, time,
+h1, h2, h3, h4, h5, h6 {
+        margin-bottom: var(--vertical-space);
+}
+border-color, li:before, blockquote:before,
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+        color: var(--flair);
+}
+header, hr, a {
+        border-bottom: var(--border);
+}
+/* Links */
+a {
+        text-decoration: none;
+        color: var(--primary);
+}
+a:hover {
+        color: var(--color-light);
+        background-color: var(--flair);
+        border-radius: var(--corner);
+
+}
+/* Headings */
+h1 { font-size: 2rem; } h1:before { content: '# ' }
+h2 { font-size: 1.75rem; } h2:before { content: '# ' }
+h3 { font-size: 1.5rem; } h3:before { content: '## ' }
+h4 { font-size: 1.25rem; } h4:before { content: '### ' }
+h5 { font-size: 1.125rem; } h5:before { content: '#### ' }
+h6 { font-size: 1rem; } h6:before { content: '##### ' }
+/* Text blocks */
+blockquote, pre, code, math, details {
+        display: block;
+        background-color: var(--shadow);
+        padding: var(--vertical-space);
+        border-radius: var(--corner);
+}
+blockquote *:last-child, details *:last-child {
+        margin-bottom: 0;
+}
+pre, code, summary {
+        font-family: var(--font-code);
+}
+math {
+        text-align: center;
+}
+code {
+        display: inline;
+        padding: 0.2rem 0.25rem;
+        font-size: 14px;
+}
+details > *:nth-child(2) {
+        margin-top: var(--vertical-space);
+}
+summary {
+        border-bottom: var(--border);
+}
+pre {
+        overflow-x: auto;
+}
+pre > code {
+        padding: 0;
+        background-color: unset;
+}
 blockquote {
-        quotes: auto;
-        margin: 1rem;
-        padding: 0 1rem;
+        padding-left: calc(var(--horizontal-space) * 1.5);
         position: relative;
-        height: max-content;
-        width: max-content;
 }
-blockquote:before, blockquote:after {
-        font-size: 3rem;
+blockquote:before {
+        content: '❝';
+        font-size: calc(var(--horizontal-space) * 1.5);
         position: absolute;
+        left: 0.5rem;
+        top: 0;
 }
-blockquote::before {
-        content: open-quote;
-        left: -1rem;
-        top: -1rem;
+/* Text lists */
+ol {
+        list-style-position: inside;
 }
-blockquote::after {
-        content: close-quote;
-        right: -1rem;
-        bottom: -2.5rem; /* Depends on parent's height=max-content. Yeah it's weird, don't ask me why... */
+ul {
+        list-style-type: none;
 }
-.about {
-        display: flex;
-        align-items: center;
+ul li:before {
+        content: '-';
+        padding-right: 0.5rem;
+        font-weight: bold;
 }
-.about img {
-        margin: 1rem;
-}
-.blog-list {
-        list-style: none;
-}
-.blog-list-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-}
-.blog-list-date {
-        margin-right: 1rem;
-}
-.post-meta {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-}
-.post-summary {
-        font-size: 1.5rem;
-        align-self: center;
-}
-.tag-links, .post-published, .post-ttr {
-        font-size: 0.75rem;
-}
-.tag-links > a {
-        margin-right: 0.5rem;
-}
-.tag-links > a:last-child {
-        margin-right: 0;
-}
-article p, article ol, article ul, article hr, article pre, article table, article dl, article div {
-        margin-bottom: 1rem;
-}
-article ul, article ol {
-        padding-left: 1rem;
-}
-article table {
+/* Text tables */
+table {
         width: 100%;
-        table-layout: fixed;
+        border-spacing: 0;
 }
-article p>code, article dd, article pre {
-        padding: 0 0.5rem;
-        color: #f8f8f2; /* Stolen from the code highlighter */
-        background-color: #272822;
+th, td {
+        text-align: left;
+        padding: var(--vertical-space);
 }
-article code {
-        white-space: pre-line;
+th {
+        font-weight: bold;
+        border-bottom: var(--border);
 }
-article dd {
-        margin-left: 1rem;
+tbody tr:nth-child(odd) td {
+        background-color: var(--shadow);
 }
+tbody tr:nth-child(odd) td:first-child { border-radius: var(--corner) 0 0 var(--corner); }
+tbody tr:nth-child(odd) td:last-child { border-radius: 0 var(--corner) var(--corner) 0; }
+/* First row can't have top corners rounded 'cuz of border for th */
+tbody tr:nth-child(1) td:first-child { border-radius: 0 0 0 var(--corner); }
+tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
+
 /**************************************************************************************************/
-/* Neon Flicker animation */
-@keyframes neon-flicker {
-        0%   {opacity: 0.1;}
-        2%   {opacity: 1.0;}
-        8%   {opacity: 0.1;}
-        9%   {opacity: 1.0;}
-        12%  {opacity: 0.1;}
-        20%  {opacity: 1.0;}
-        25%  {opacity: 0.3;}
-        30%  {opacity: 1.0;}
-        70%  {opacity: 0.9;}
-        72%  {opacity: 0.2;}
-        77%  {opacity: 1.0;}
-        95%  {opacity: 0.8;}
-        100% {opacity: 1.0;}
+/* Custom classes */
+.logo {
+        flex-grow: 2;
+        font-size: 2rem;
+}
+.toc {
+        float: right;
+        margin-left: var(--horizontal-space);
+}
+.row {
+        display: flex;
+        justify-content: center;
+        gap: var(--horizontal-space);
+        margin-bottom: var(--vertical-space);
+}
+@media screen and (max-width: 480px){
+        .toc {
+                float: none;
+                margin-left: 0;
+        }
+        .row {
+                flex-direction: column;
+                align-items: center;
+        }
+}
+.blog-index li, .blog-index p {
+        display: flex;
+}
+.blog-index li {
+        align-items: center;
+}
+.blog-index li:before {
+        content: '';
+        padding: 0;
+}
+.blog-index time {
+        margin-right: var(--horizontal-space);
+}
+.blog-index p {
+        flex-direction: column;
 }

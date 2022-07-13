@@ -2,11 +2,11 @@
 #  _ __ ___ | |__   ___ | |_ ___ | |___  _| |_
 # | '__/ _ \| '_ \ / _ \| __/ __|| __\ \/ / __|
 # | | | (_) | |_) | (_) | |_\__ \| |_ >  <| |_
-# |_|  \___/|_.__/ \___/ \__|___(_)__/_/\_\\__|
+# |_|  \___/|_.__/ \___/ \__|___(_)__/_/\_\__|
 #
-# {{.Meta.Site}}
-# {{.Meta.Copyright}}
+# https://www.larus.se
+# Copyright © 2022 Alex
 
 User-agent: *
-Disallow: /feeds/
-Sitemap: {{.Meta.Site}}/sitemap.xml
+Disallow: /news/
+Sitemap: https://www.larus.se/sitemap.xml

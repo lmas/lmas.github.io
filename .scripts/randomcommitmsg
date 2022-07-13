@@ -1,0 +1,35 @@
+#!/bin/sh
+set -eu
+
+# 1st - grab all lines between # <list name> and NEWLINE
+# 2nd - filter out any lines not starting with a # (ie, empty lines)
+# 3rd - grab all lines except first one (ie, # <list name>)
+lines=$(sed -n "/# STRINGS/,/^[\t ]*$/p" "$0" | sed -n "s/^#[\t ]*\(.*\)/\1/p" | tail -n +2)
+# Randomly pick one line from the list
+msg=$(echo "$lines" | sort -R | head -n 1)
+echo "$msg"
+exit
+
+########################################################################################################################
+
+# STRINGS
+# kleew
+# klee-ew
+# kleeeee-ew
+# koo-ew
+# koooo-ew
+# kweee
+# kweee-kwee
+# meeew
+# kaaw
+# kaaw-kaw
+# *gulps*
+# *chomps*
+# *flies*
+# *soars*
+# *yoinks*
+# *swooshes*
+# *flaps*
+# *stares*
+# *pecks*
+

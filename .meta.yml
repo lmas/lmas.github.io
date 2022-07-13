@@ -1,0 +1,20 @@
+site: https://www.larus.se
+title-prefix: Larus.se
+author: Alex
+css: /style/theme.css
+toc: true
+toc-title: Table of Contents
+
+header:
+  - <a href="/">Home</a>
+  - <a href="/blog/">Blog</a>
+  - <a href="/news/">News</a>
+  - <a href="https://github.com/lmas" rel="noopener nofollow">Github</a>
+
+footer:
+  - <a href="/feed.xml">Feed</a>
+  - <a href="/sitemap.xml">Sitemap</a>
+  - <a href="https://github.com/lmas/lmas.github.io" rel="noopener nofollow">Source</a>
+  # - <a href="/stats/">Visitors</a>
+  # - <a href="/legal/">Legal</a>
+

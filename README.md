@@ -1,13 +1,13 @@
 
-# Larus.se
+# larus.se / lmas.github.io
 
-Source code for my personal site and blog Larus.se.
+Source code for my personal homepage and blog.
 
 ## License
 
 Unless stated otherwise, the..
 
-**Blog content** is Copyright © 2021 Alex and licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
+**Blog content** is Copyright © 2022 Alex and licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
 **Source code** is licensed under GPL, see the [LICENSE](LICENSE) file for details.
 

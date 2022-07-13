@@ -1,0 +1,44 @@
+name: Build news
+
+env:
+  branch: gh-pages
+  dir: docs/news
+
+on:
+  schedule:
+    - cron: '30 04 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.3'
+
+      - name: Install dependencies
+        run: go install github.com/lmas/feedloggr@dev
+
+      - name: Build news
+        run: |
+          cp .feedloggr.yml conf
+          cp .scripts/randomcommitmsg .
+          git fetch --depth 1 origin gh-pages
+          git switch $branch
+          feedloggr -conf conf
+
+      - name: Deploy build
+        run: |
+          git add --all $dir
+          git config --local user.name "gullbot"
+          git config --local user.email "gullbot@larus.se"
+          ./randomcommitmsg | git commit --file -
+          git push

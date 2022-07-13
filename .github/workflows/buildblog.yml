@@ -1,0 +1,47 @@
+name: Build blog
+
+env:
+  branch: gh-pages
+  dir: docs
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Install dependencies
+        run: |
+          wget -q "https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-1-amd64.deb"
+          sudo dpkg -i ./pandoc-2.18-1-amd64.deb
+
+      - name: Build blog
+        run: make buildblog
+
+      - name: Deploy build
+        run: |
+          mv $dir $dir-build
+          cp .scripts/randomcommitmsg .
+          git fetch --depth 1 origin gh-pages
+          git switch $branch
+          cp -r $dir/news $dir-build
+          rm -rf $dir
+          mv $dir-build $dir
+          git add --all $dir
+          git config --local user.name "gullbot"
+          git config --local user.email "gullbot@larus.se"
+          ./randomcommitmsg | git commit --file -
+          git push
