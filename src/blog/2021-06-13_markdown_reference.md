@@ -2,6 +2,7 @@
 title: Markdown reference
 date: 2021-06-13
 abstract: Quick reference for Markdown.
+toc: true
 banner: ./bg-markdown_reference.jpg
 banner-alt: Markdown code and shell script.
 ---

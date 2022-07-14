@@ -2,7 +2,6 @@
 title: HTTP Live Streaming
 date: 2021-06-20
 abstract: Streaming media with HLS
-toc: false
 ---
 
 [HTTP Live Streaming] is a protocol developed by Apple and it allows you to (you guessed it)

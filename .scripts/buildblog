@@ -190,18 +190,23 @@ done)
 echo "$FILES" | while read -r srcfile; do
         dstfile=$(getdestination "$srcfile")
         dstfile="$DST/$dstfile"
-        extra=""
+        toc=""
+        hastoc=$(getfilemeta toc "$srcfile")
+        if [ "$hastoc" = "true" ]; then
+                toc="--toc --toc-depth=2"
+        fi
+        meta=""
         # HACK: Special index files should get list of blog posts too
         if [ "$srcfile" = "$SRC/index.md" ]; then
-                extra="--metadata-file=$TEMPO"
+                meta="--metadata-file=$TEMPO"
                 echo "blog-posts:" > "$TEMPO"
                 echo "$blogposts" | head -n 5 >> "$TEMPO"
         elif [ "$srcfile" = "$SRC/blog/index.md" ]; then
-                extra="--metadata-file=$TEMPO"
+                meta="--metadata-file=$TEMPO"
                 echo "blog-posts:" > "$TEMPO"
                 echo "$blogposts" >> "$TEMPO"
         fi
-        $PANDOC --toc --toc-depth=2 --lua-filter=.filters/copyright-year.lua $extra --output="$dstfile" "$srcfile"
+        $PANDOC --lua-filter=.filters/copyright-year.lua $meta $toc --output="$dstfile" "$srcfile"
 done
 
 ########################################################################################################################

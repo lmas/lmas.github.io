@@ -2,8 +2,6 @@ site: https://www.larus.se
 title-prefix: Larus.se
 author: Alex
 css: /style/theme.css
-toc: true
-toc-title: Table of Contents
 
 header:
   - <a href="/">Home</a>

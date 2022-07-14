@@ -52,18 +52,14 @@ $endif$
 $else$
 <hr>
 $endif$
+</header>
+$endif$
 $if(toc)$$if(table-of-contents)$
 <details class="toc">
-$if(toc-title)$
-<summary>
-$toc-title$
-</summary>
-$endif$
+<summary>Table of Contents</summary>
 $table-of-contents$
 </details>
 $endif$$endif$
-</header>
-$endif$
 $body$
 $if(blog-posts)$
 <ul class="blog-index">
