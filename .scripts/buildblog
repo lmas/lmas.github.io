@@ -19,7 +19,7 @@ getfilemeta() {
         # Print everything between 1st line (---) to next --- line
         # 2nd - From matched key field at sol, print value field until eol
         sed -n "1,/^---$/p" "$2" | \
-        sed -n "s/^$1:[/t ]*\(.*\)$/\1/p"
+        sed -n "s/^$1:[\t ]*\(.*\)$/\1/p"
 }
 
 getmeta() (
