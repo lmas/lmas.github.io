@@ -2,6 +2,8 @@
 title: Markdown reference
 date: 2021-06-13
 abstract: Quick reference for Markdown.
+banner: ./bg-markdown_reference.jpg
+banner-alt: Markdown code and shell script.
 ---
 
 *Updated 2022-07-11 for Pandoc and GFM.*
