@@ -1,6 +1,10 @@
 
 # larus.se / lmas.github.io
 
+[![Build blog](https://github.com/lmas/lmas.github.io/actions/workflows/buildblog.yml/badge.svg)](https://github.com/lmas/lmas.github.io/actions/workflows/buildblog.yml)
+[![Build news](https://github.com/lmas/lmas.github.io/actions/workflows/buildnews.yml/badge.svg)](https://github.com/lmas/lmas.github.io/actions/workflows/buildnews.yml)
+
+
 Source code for my personal homepage and blog.
 
 ## License
