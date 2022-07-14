@@ -38,8 +38,21 @@ $endfor$
 $if(title)$
 <header>
 <h1>$title$</h1>
-$if(toc)$
-$if(table-of-contents)$
+$if(date)$
+<time class="header-date">$date$</time>
+$endif$
+$if(abstract)$
+<p class="header-abstract">$abstract$</p>
+$endif$
+$if(banner)$
+<img class="banner" decoding="async" width="960" height="100" src="$banner$" alt="$banner-alt$">
+$if(banner-author)$
+<p class="banner-author">Photo by <a href="$banner-source$">$banner-author$</a></p>
+$endif$
+$else$
+<hr>
+$endif$
+$if(toc)$$if(table-of-contents)$
 <details class="toc">
 $if(toc-title)$
 <summary>
@@ -48,14 +61,7 @@ $toc-title$
 $endif$
 $table-of-contents$
 </details>
-$endif$
-$endif$
-$if(date)$
-<time class="header-date">$date$</time>
-$endif$
-$if(abstract)$
-<p class="header-abstract">$abstract$</p>
-$endif$
+$endif$$endif$
 </header>
 $endif$
 $body$

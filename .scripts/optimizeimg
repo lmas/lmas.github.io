@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -eu
+
+filesize() {
+    du -h "$1" | cut -f 1
+}
+
+########################################################################################################################
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <source file> <destination file>"
+    exit 1
+fi
+
+src="$1"
+dst="$2"
+ext=${src##*.}
+before=$(filesize "$src")
+
+if [ "$ext" = "png" ]; then
+    optipng -o7 -strip all -out "$dst" "$src"
+elif [ "$ext" = "jpg" ]; then
+    jpegtran -optimize "$src" > "$dst"
+fi
+
+after=$(filesize "$dst")
+echo "File size: before=$before, after=$after"
