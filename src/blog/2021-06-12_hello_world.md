@@ -95,6 +95,30 @@ Saves bandwidth for everyone and any reader browsing the site can enjoy their ow
 
 
 
+# Artwork
+
+I wanted to spice things up a little with some art here and there.
+Currently I'm trying out showing small banners on the blog posts, with a sleek size of 960px by 100px.
+
+A good place for finding photos online has been [Unsplash] which has a fair amount of quality works,
+with a very permissive license.
+And when the need for home made art is called for, these open source tools have been helpful:
+
+- [Inkscape]: For creating vector art.
+- [Krita]: For editing and creating raster art (and has a helpful page for [saving to the web]).
+- [peek] and [scrot]: Records GIFs and takes screen shots, respectively.
+- [optipng] and [jpegtran]: Optimizes and shrinks file sizes of PNG/JPEG files.
+
+[Unsplash]: https://unsplash.com/
+[Inkscape]: https://inkscape.org/
+[Krita]: https://krita.org/en/
+[saving to the web]: https://docs.krita.org/en/tutorials/saving-for-the-web.html
+[peek]: https://github.com/phw/peek
+[scrot]: https://github.com/resurrecting-open-source-projects/scrot
+[optipng]: http://optipng.sourceforge.net/
+[jpegtran]: https://github.com/libjpeg-turbo/libjpeg-turbo
+
+
 # Site validation
 
 When the site is finally built and running on some host, it's time to run a bunch of validators against it.
