@@ -120,7 +120,6 @@ h5 { font-size: 1.125rem; } h5:before { content: '#### ' }
 h6 { font-size: 1rem; } h6:before { content: '##### ' }
 /* Text blocks */
 blockquote, pre, code, math, details {
-        display: block;
         background-color: var(--shadow);
         padding: var(--vertical-space);
         border-radius: var(--corner);
@@ -132,6 +131,7 @@ pre, code, summary {
         font-family: var(--font-code);
 }
 math {
+        display: block;
         text-align: center;
 }
 code {
@@ -155,6 +155,7 @@ pre > code {
 blockquote {
         padding-left: calc(var(--horizontal-space) * 1.5);
         position: relative;
+        width: max-content;
 }
 blockquote:before {
         content: '❝';
