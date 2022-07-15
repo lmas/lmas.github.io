@@ -55,19 +55,18 @@ body {
         font: normal 16px/1.6 var(--font-regular);
         min-height: 100vh;
         max-width: var(--width);
+        padding: 0 var(--horizontal-space);
         margin: auto;
 }
 main {
-        margin: 0 var(--horizontal-space) auto var(--horizontal-space);
-}
-nav, footer {
-        margin: var(--vertical-space) var(--horizontal-space);
+        margin-bottom: auto;
 }
 nav {
         font-size: 1.2rem;
         font-weight: bold;
         align-items: center;
         gap: var(--horizontal-space);
+        margin: var(--vertical-space) 0;
 }
 @media screen and (max-width: 480px) {
         nav {
@@ -81,6 +80,7 @@ footer {
         justify-content: center;
         text-align: center;
         gap: var(--vertical-space);
+        margin-bottom: var(--vertical-space);
 }
 footer p {
         /* Forces the copyright notice onto it's own line */

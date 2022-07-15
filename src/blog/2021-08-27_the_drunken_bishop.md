@@ -1,10 +1,10 @@
 ---
 title: The drunken bishop
 date: 2021-08-27
-abstract: Visualise digital fingerprints with ease
+abstract: Visualise digital fingerprints with ease.
 ---
 
-Some time ago I read an excellent blog post about [The drunken bishop algorithm] by James Furness.
+Some time ago I read an excellent blog post about the [Drunken Bishop] algorithm by James Furness.
 He explains how OpenSSH uses this algorithm to visualise SSH key fingerprints,
 in order to make it easier for a human to compare some (possibly) different keys.
 
@@ -28,20 +28,20 @@ It looks like this:
 
 Simple yet effective way to differentiate fingerprints.
 
-James also had a link to [An analysis by Dirk Loss, Tobias Limmer and Alexander von Gernler],
+James also had a link to an analysis by [Dirk Loss, Tobias Limmer and Alexander von Gernler],
 which had a pretty different (but great) introduction:
 
-    Bishop Peter finds himself in the middle of an ambient atrium.
-    There are walls on all four sides and apparently there is no exit.
-    The floor is paved with square tiles, strictly alternating between
-    black and white. His head heavily aching — probably from too much
-    wine he had before — he starts wandering around randomly. Well, to
-    be exact, he only makes diagonal steps — just like a bishop on a
-    chess board. When he hits a wall, he moves to the side, which
-    takes him from the black tiles to the white tiles (or vice versa).
-    And after each move, he places a coin on the floor, to remember
-    that he has been there before. After 64 steps, just when no coins
-    are left, Peter suddenly wakes up. What a strange dream!
+> Bishop Peter finds himself in the middle of an ambient atrium.\
+> There are walls on all four sides and apparently there is no exit.\
+> The floor is paved with square tiles, strictly alternating between\
+> black and white. His head heavily aching — probably from too much\
+> wine he had before — he starts wandering around randomly. Well, to\
+> be exact, he only makes diagonal steps — just like a bishop on a\
+> chess board. When he hits a wall, he moves to the side, which\
+> takes him from the black tiles to the white tiles (or vice versa).\
+> And after each move, he places a coin on the floor, to remember\
+> that he has been there before. After 64 steps, just when no coins\
+> are left, Peter suddenly wakes up. What a strange dream!
 
-[The drunken bishop algorithm]: https://www.jfurness.uk/the-drunken-bishop-algorithm/
-[An analysis by Dirk Loss, Tobias Limmer and Alexander von Gernler]: http://www.dirk-loss.de/sshvis/drunken_bishop.pdf
+[Drunken Bishop]: https://www.jfurness.uk/the-drunken-bishop-algorithm/
+[Dirk Loss, Tobias Limmer and Alexander von Gernler]: http://www.dirk-loss.de/sshvis/drunken_bishop.pdf

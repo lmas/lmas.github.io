@@ -169,14 +169,6 @@ Simple footnote[^1]
 
 <https://www.example.com>
 
-## Extended autolink
-
-This is an extension to Commonmark.
-
-    www.example.com
-
-www.example.com
-
 ## Inline link
 
     [link](http://www.example.com "title")

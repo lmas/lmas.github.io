@@ -1,7 +1,7 @@
 ---
 title: Hello world
 date: 2021-06-12
-abstract: Introduction and documentation of this site
+abstract: Introduction and documentation of this site.
 toc: true
 banner: ./bg-hello_world.jpg
 banner-alt: Flying seagulls in a blue skye.
@@ -62,16 +62,16 @@ specific, interactive thing.
 To better fit all kinds of screens today, it's a good idea to adopt responsive web design.
 Here's a few resources for that:
 
-- https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
-- https://alistapart.com/article/responsive-web-design/
-- https://web.dev/responsive-web-design-basics/
-- https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- <https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design>
+- <https://alistapart.com/article/responsive-web-design/>
+- <https://web.dev/responsive-web-design-basics/>
+- <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>
 
 While at it, one might as well add some easy tricks for improved site accessibility. It's good karma.
 
-- https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML
-- https://www.w3.org/WAI/tutorials/page-structure/
-- https://bootcamp.uxdesign.cc/beginners-guide-to-web-accessibility-514644750b0f
+- <https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML>
+- <https://www.w3.org/WAI/tutorials/page-structure/>
+- <https://bootcamp.uxdesign.cc/beginners-guide-to-web-accessibility-514644750b0f>
 
 When the basic page structure is in place, it's time to add a theme and colours.
 
