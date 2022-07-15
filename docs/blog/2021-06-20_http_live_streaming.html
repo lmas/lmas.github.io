@@ -6,7 +6,7 @@
 <meta name="generator" content="pandoc" />
 <meta name="author" content="Alex" />
 <meta name="dcterms.date" content="2021-06-20" />
-<meta name="description" content="Streaming media with HLS" />
+<meta name="description" content="Streaming media with HLS." />
 <title>HTTP Live Streaming – Larus.se</title>
 <link rel="stylesheet" href="/style/theme.css" />
 <link rel="shortcut icon" type="image/png" href="/style/favicon.ico" />
@@ -26,10 +26,10 @@
 <header>
 <h1>HTTP Live Streaming</h1>
 <time class="header-date">2021-06-20</time>
-<p class="header-abstract">Streaming media with HLS</p>
+<p class="header-abstract">Streaming media with HLS.</p>
 <hr>
-
 </header>
+
 <p><a href="https://en.wikipedia.org/wiki/HTTP_Live_Streaming">HTTP Live
 Streaming</a> is a protocol developed by Apple and it allows you to (you guessed
 it) streaming audio/video media over HTTP. And it has, apparently, pretty
@@ -39,12 +39,12 @@ delivery networks.</p>
 streaming? Never heard of it before, but it looks pretty cool.</p>
 <p>And it looks really easy to implement with the help of <a
 href="https://en.wikipedia.org/wiki/FFmpeg">FFmpeg</a>:</p>
-<pre><code>    ffmpeg -i movie.mp4 -c:v libx264 -preset veryfast -hls_time 10 -f hls test.m3u8</code></pre>
+<pre><code>ffmpeg -i movie.mp4 -c:v libx264 -preset veryfast -hls_time 10 -f hls test.m3u8</code></pre>
 <p>This command takes an input file, splits it up into 10 second long segments,
 writes them to disk as <code>.ts</code> files and adds the file names to a
 <code>.m3u8</code> playlist.</p>
 <p>To serve this playlist on a web page, you could add this HTML:</p>
-<pre><code>    &lt;video src=&quot;http://example.com/path/to/playlist.m3u8&quot; height=&quot;300&quot; width=&quot;400&quot;&gt;</code></pre>
+<pre><code>&lt;video src=&quot;http://example.com/path/to/playlist.m3u8&quot; height=&quot;300&quot; width=&quot;400&quot;&gt;</code></pre>
 <p>Then you just serve all the segments, playlist file and the page itself with
 a regular web server and boom!</p>
 <p>Live streaming!</p>

@@ -4,25 +4,32 @@
 <subtitle>The latest posts from Larus.se</subtitle>
 <link href="https://www.larus.se" />
 <link rel="self" href="https://www.larus.se/feed.xml" />
-<updated>2022-07-14T17:30:00Z</updated>
+<updated>2022-07-15T11:05:00Z</updated>
 <author>
 <name>Alex</name>
 </author>
 <rights>Copyright © 2022 Alex</rights>
 <id>https://www.larus.se/</id>
 <entry>
+<title>Quotes</title>
+<id>https://www.larus.se/blog/2022-07-14_quotes.html</id>
+<link href="https://www.larus.se/blog/2022-07-14_quotes.html" />
+<updated>2022-07-15T00:00:00Z</updated>
+<summary>List of engineering and/or optimistic quotes by other people.</summary>
+</entry>
+<entry>
 <title>The drunken bishop</title>
 <id>https://www.larus.se/blog/2021-08-27_the_drunken_bishop.html</id>
 <link href="https://www.larus.se/blog/2021-08-27_the_drunken_bishop.html" />
 <updated>2021-08-27T00:00:00Z</updated>
-<summary>Visualise digital fingerprints with ease</summary>
+<summary>Visualise digital fingerprints with ease.</summary>
 </entry>
 <entry>
 <title>HTTP Live Streaming</title>
 <id>https://www.larus.se/blog/2021-06-20_http_live_streaming.html</id>
 <link href="https://www.larus.se/blog/2021-06-20_http_live_streaming.html" />
 <updated>2021-06-20T00:00:00Z</updated>
-<summary>Streaming media with HLS</summary>
+<summary>Streaming media with HLS.</summary>
 </entry>
 <entry>
 <title>Markdown reference</title>
@@ -36,6 +43,6 @@
 <id>https://www.larus.se/blog/2021-06-12_hello_world.html</id>
 <link href="https://www.larus.se/blog/2021-06-12_hello_world.html" />
 <updated>2021-06-12T00:00:00Z</updated>
-<summary>Introduction and documentation of this site</summary>
+<summary>Introduction and documentation of this site.</summary>
 </entry>
 </feed>

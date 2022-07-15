@@ -7,7 +7,7 @@
 <meta name="author" content="Alex" />
 <meta name="dcterms.date" content="2021-06-12" />
 <meta name="description" content="Introduction and documentation of this
-site" />
+site." />
 <title>Hello world – Larus.se</title>
 <link rel="stylesheet" href="/style/theme.css" />
 <link rel="shortcut icon" type="image/png" href="/style/favicon.ico" />
@@ -27,18 +27,18 @@ site" />
 <header>
 <h1>Hello world</h1>
 <time class="header-date">2021-06-12</time>
-<p class="header-abstract">Introduction and documentation of this site</p>
+<p class="header-abstract">Introduction and documentation of this site.</p>
 <img class="banner" decoding="async" width="960" height="100" src="./bg-hello_world.jpg" alt="Flying
 seagulls in a blue skye.">
 <p class="banner-author">Photo by <a href="https://unsplash.com/photos/7OwdK-lXf6E">Darya
 Dobrovolskaya</a></p>
+</header>
 <details class="toc">
-<summary>
-Table of Contents
-</summary>
+<summary>Table of Contents</summary>
 <ul>
 <li><a href="#site-source" id="toc-site-source">Site source</a></li>
 <li><a href="#web-design" id="toc-web-design">Web design</a></li>
+<li><a href="#artwork" id="toc-artwork">Artwork</a></li>
 <li><a href="#site-validation" id="toc-site-validation">Site validation</a></li>
 <li><a href="#content-hosting" id="toc-content-hosting">Content hosting</a></li>
 <li><a href="#monitoring-and-alerting"
@@ -47,7 +47,6 @@ id="toc-monitoring-and-alerting">Monitoring and alerting</a></li>
 </ul>
 </details>
 
-</header>
 <p><em>Updated 2022-07-13 with new content that reflects current setup.</em></p>
 <p>Hello world! I'm Alex.</p>
 <p>I write open source software and have ran various Linux/FreeBSD servers as a
@@ -90,17 +89,24 @@ use...</a> can show browser compatibility.</p>
 <p>To better fit all kinds of screens today, it's a good idea to adopt
 responsive web design. Here's a few resources for that:</p>
 <ul>
-<li>https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design</li>
-<li>https://alistapart.com/article/responsive-web-design/</li>
-<li>https://web.dev/responsive-web-design-basics/</li>
-<li>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
+<li><a
+href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design">https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design</a></li>
+<li><a
+href="https://alistapart.com/article/responsive-web-design/">https://alistapart.com/article/responsive-web-design/</a></li>
+<li><a
+href="https://web.dev/responsive-web-design-basics/">https://web.dev/responsive-web-design-basics/</a></li>
+<li><a
+href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li>
 </ul>
 <p>While at it, one might as well add some easy tricks for improved site
 accessibility. It's good karma.</p>
 <ul>
-<li>https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML</li>
-<li>https://www.w3.org/WAI/tutorials/page-structure/</li>
-<li>https://bootcamp.uxdesign.cc/beginners-guide-to-web-accessibility-514644750b0f</li>
+<li><a
+href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML">https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML</a></li>
+<li><a
+href="https://www.w3.org/WAI/tutorials/page-structure/">https://www.w3.org/WAI/tutorials/page-structure/</a></li>
+<li><a
+href="https://bootcamp.uxdesign.cc/beginners-guide-to-web-accessibility-514644750b0f">https://bootcamp.uxdesign.cc/beginners-guide-to-web-accessibility-514644750b0f</a></li>
 </ul>
 <p>When the basic page structure is in place, it's time to add a theme and
 colours.</p>
@@ -117,6 +123,27 @@ decided to remove them and instead let the browser pick one from a <a
 href="https://www.w3schools.com/cssref/css_fonts_fallbacks.asp">web safe</a>
 list. Saves bandwidth for everyone and any reader browsing the site can enjoy
 their own custom font if they have one set.</p>
+<h2 id="artwork">Artwork</h2>
+<p>I wanted to spice things up a little with some art here and there. Currently
+I'm trying out showing small banners on the blog posts, with a sleek size of
+960px by 100px.</p>
+<p>A good place for finding photos online has been <a
+href="https://unsplash.com/">Unsplash</a> which has a fair amount of quality
+works, with a very permissive license. And when the need for home made art is
+called for, these open source tools have been helpful:</p>
+<ul>
+<li><a href="https://inkscape.org/">Inkscape</a>: For creating vector art.</li>
+<li><a href="https://krita.org/en/">Krita</a>: For editing and creating raster
+art (and has a helpful page for <a
+href="https://docs.krita.org/en/tutorials/saving-for-the-web.html">saving to the
+web</a>).</li>
+<li><a href="https://github.com/phw/peek">peek</a> and <a
+href="https://github.com/resurrecting-open-source-projects/scrot">scrot</a>:
+Records GIFs and takes screen shots, respectively.</li>
+<li><a href="http://optipng.sourceforge.net/">optipng</a> and <a
+href="https://github.com/libjpeg-turbo/libjpeg-turbo">jpegtran</a>: Optimizes
+and shrinks file sizes of PNG/JPEG files.</li>
+</ul>
 <h2 id="site-validation">Site validation</h2>
 <p>When the site is finally built and running on some host, it's time to run a
 bunch of validators against it. Accessibility and standards compliance is,
