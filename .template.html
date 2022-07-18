@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-<meta name="generator" content="pandoc" />
-$if(author)$
-<meta name="author" content="$author$" />
-$endif$
-$if(date)$
-<meta name="dcterms.date" content="$date$" />
-$endif$
-$if(abstract)$
-<meta name="description" content="$abstract$" />
-$endif$
-<title>$pagetitle$$if(title-prefix)$ – $title-prefix$$endif$</title>
-$for(css)$
-<link rel="stylesheet" href="$css$" />
-$endfor$
-$if(math)$
-$math$
-$endif$
-<link rel="shortcut icon" type="image/png" href="/style/favicon.ico" />
-<link rel="sitemap" type="application/xml" title="sitemap" href="/sitemap.xml" />
-<link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
-</head>
-<body>
-<nav>
-$if(title-prefix)$
-<span class="logo"><a href="/">$title-prefix$</a></span>
-$endif$
-$for(header)$
-$header$
-$endfor$
-</nav>
-<main>
-<article>
-$if(title)$
-<header>
-<h1>$title$</h1>
-$if(date)$
-<time class="header-date">$date$</time>
-$endif$
-$if(abstract)$
-<p class="header-abstract">$abstract$</p>
-$endif$
-$if(banner)$
-<img class="banner" decoding="async" width="960" height="100" src="$banner$" alt="$banner-alt$">
-$if(banner-author)$
-<p class="banner-author">Photo by <a href="$banner-source$">$banner-author$</a></p>
-$endif$
-$else$
-<hr>
-$endif$
-</header>
-$endif$
-$if(toc)$$if(table-of-contents)$
-<details class="toc">
-<summary>Table of Contents</summary>
-$table-of-contents$
-</details>
-$endif$$endif$
-$body$
-$if(blog-posts)$
-<ul class="blog-index">
-$for(blog-posts)$
-$blog-posts$
-$endfor$
-</ul>
-$endif$
-</article>
-</main>
-<footer>
-$for(footer)$
-$footer$
-$endfor$
-<p>Copyright © $if(copyright_year)$$copyright_year$$endif$ $if(author)$$author$$endif$</p>
-</footer>
-<script data-goatcounter="https://lmas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <meta name="generator" content="pandoc" />
+        $if(author)$
+        <meta name="author" content="$author$" />
+        $endif$
+        $if(date)$
+        <meta name="dcterms.date" content="$date$" />
+        $endif$
+        $if(abstract)$
+        <meta name="description" content="$abstract$" />
+        $endif$
+        <title>$pagetitle$$if(title-prefix)$ – $title-prefix$$endif$</title>
+        $for(css)$
+        <link rel="stylesheet" href="$css$" />
+        $endfor$
+        $if(math)$
+        $math$
+        $endif$
+        <link rel="shortcut icon" type="image/png" href="/style/favicon.ico" />
+        <link rel="sitemap" type="application/xml" title="sitemap" href="/sitemap.xml" />
+        <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
+    </head>
+    <body>
+        <nav>
+            $if(title-prefix)$
+            <span class="logo"><a href="/">$title-prefix$</a></span>
+            $endif$
+            $for(header)$
+            $header$
+            $endfor$
+        </nav>
+        <main>
+            <article>
+                $if(title)$
+                <header>
+                    <h1>$title$</h1>
+                    $if(date)$
+                    <time class="header-date">$date$</time>
+                    $endif$
+                    $if(abstract)$
+                    <p class="header-abstract">$abstract$</p>
+                    $endif$
+                    $if(banner)$
+                    <img class="banner" decoding="async" width="960" height="100" src="$banner$" alt="$banner-alt$">
+                    $if(banner-author)$
+                    <p class="banner-author">Photo by <a href="$banner-source$">$banner-author$</a></p>
+                    $endif$
+                    $else$
+                    <hr>
+                    $endif$
+                </header>
+                $endif$
+                $if(toc)$$if(table-of-contents)$
+                <details class="toc">
+                    <summary>Table of Contents</summary>
+                    $table-of-contents$
+                </details>
+                $endif$$endif$
+                $body$
+                $if(blog-posts)$
+                <ul class="blog-index">
+                    $for(blog-posts)$
+                    $blog-posts$
+                    $endfor$
+                </ul>
+                $endif$
+            </article>
+        </main>
+        <footer>
+            $for(footer)$
+            $footer$
+            $endfor$
+            <p>Copyright © $if(copyright_year)$$copyright_year$$endif$ $if(author)$$author$$endif$</p>
+        </footer>
+        <script data-goatcounter="https://lmas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+        <noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
+    </body>
 </html>

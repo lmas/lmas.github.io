@@ -4,85 +4,84 @@
 set -eu
 
 panic() {
-        # Print warning message to stderr and quit script
-        # arg 1: message
+    # Print warning message to stderr and quit script
+    # arg 1: message
 
-        echo "ERROR: $1" >&2
-        exit 1
+    echo "ERROR: $1" >&2
+    exit 1
 }
 
 getfilemeta() {
-        # Get frontmatter field from a file with yml frontmatter meta data
-        # arg 1: key field
-        # arg 2: source file
+    # Get frontmatter field from a file with yml frontmatter meta data
+    # arg 1: key field
+    # arg 2: source file
 
-        # Print everything between 1st line (---) to next --- line
-        # 2nd - From matched key field at sol, print value field until eol
-        sed -n "1,/^---$/p" "$2" | \
-        sed -n "s/^$1:[\t ]*\(.*\)$/\1/p"
+    # Print everything between 1st line (---) to next --- line
+    # 2nd - From matched key field at sol, print value field until eol
+    sed -n "1,/^---$/p" "$2" | \
+    sed -n "s/^$1:[\t ]*\(.*\)$/\1/p"
 }
 
 getmeta() (
-        # Get meta data field
-        # arg 1: field name
+    # Get meta data field
+    # arg 1: field name
 
-        # uses a sub shell here to scope vars locally (notice the parens for the func declaration)
-        val=$(getfilemeta "$1" "$META")
-        if [ -z "$val" ]; then
-                panic "Missing key '$1' in $META"
-        fi
-        echo "$val"
+    # uses a sub shell here to scope vars locally (notice the parens for the func declaration)
+    val=$(getfilemeta "$1" "$META")
+    if [ -z "$val" ]; then
+        panic "Missing key '$1' in $META"
+    fi
+    echo "$val"
 )
 
 getdestination() (
-        # Strips src dir from a filepath and replaces .md extension with .html
-        # arg 1: path to src markdown file
+    # Strips src dir from a filepath and replaces .md extension with .html
+    # arg 1: path to src markdown file
 
-        dst=${1#"$SRC/"}
-        echo "${dst%.md}.html"
+    dst=${1#"$SRC/"}
+    echo "${dst%.md}.html"
 )
 
 getmdfiles() {
-        # Find all markdown files in src dir and sort them by date and title
+    # Find all markdown files in src dir and sort them by date and title
 
-        (
-                find "$SRC" -iname "*.md" | while read -r file; do
-                        date=$(getfilemeta date "$file")
-                        title=$(getfilemeta title "$file")
-                        # Placement of the tab is important here, to avoid unwanted white space
-                        # Also have to use printf 'cuz POSIX don't have flags for echo cmd
-                        printf '%s %s \t%s\n' "$date" "$title" "$file"
-                done
-        ) | sort -r | while read -r line; do
-                # split the line by the tab char and keep the last field only *by rev'ersing)
-                echo "$line" | rev | cut -f 1 | rev
+    (
+        find "$SRC" -iname "*.md" | while read -r file; do
+            date=$(getfilemeta date "$file")
+            title=$(getfilemeta title "$file")
+            # Placement of the tab is important here, to avoid unwanted white space
+            # Also have to use printf 'cuz POSIX don't have flags for echo cmd
+            printf '%s %s \t%s\n' "$date" "$title" "$file"
         done
+    ) | sort -r | while read -r line; do
+        # split the line by the tab char and keep the last field only *by rev'ersing)
+        echo "$line" | rev | cut -f 1 | rev
+    done
 }
 
 filterblogposts() (
-        # Filter out blog posts from a list of src files and optionally return max <no> of posts
-        # arg 1: file list
-        # arg 2: optional max number of files to return
+    # Filter out blog posts from a list of src files and optionally return max <no> of posts
+    # arg 1: file list
+    # arg 2: optional max number of files to return
 
-        posts=$(echo "$1" | grep "$SRC/blog" | grep -v "index")
-        if [ "$#" -gt 1 ]; then
-                echo "$posts" | head -n "$2"
-        else
-                echo "$posts"
-        fi
-
+    posts=$(echo "$1" | grep "$SRC/blog" | grep -v "index")
+    if [ "$#" -gt 1 ]; then
+        echo "$posts" | head -n "$2"
+    else
+        echo "$posts"
+    fi
 )
 
 condensepost() (
-        # Summarises a blog post to a single line item
-        # arg 1: post file
+    # Summarises a blog post to a single line item
+    # arg 1: post file
 
-        src="$1"
-        dst=$(getdestination "$src")
-        title=$(getfilemeta title "$src")
-        published=$(getfilemeta date "$src")
-        abstract=$(getfilemeta abstract "$src")
-        echo "<li><time>$published</time><p><span><a href=\"/$dst\">$title</a></span>$abstract</p></li>"
+    src="$1"
+    dst=$(getdestination "$src")
+    title=$(getfilemeta title "$src")
+    published=$(getfilemeta date "$src")
+    abstract=$(getfilemeta abstract "$src")
+    echo "<li><time>$published</time><p><span><a href=\"/$dst\">$title</a></span>$abstract</p></li>"
 )
 
 ########################################################################################################################
@@ -112,9 +111,9 @@ trap 'rm -f $TEMPO' 0 1 2 3 15
 # Pre-make dir structure
 
 find "$SRC" -type d | while read -r srcdir; do
-        dstdir=${srcdir#"$SRC/"}
-        dstdir="$DST/$dstdir"
-        mkdir -p "$dstdir"
+    dstdir=${srcdir#"$SRC/"}
+    dstdir="$DST/$dstdir"
+    mkdir -p "$dstdir"
 done
 
 ########################################################################################################################
@@ -131,8 +130,8 @@ cat << EOF > "$sitemap"
 EOF
 
 echo "$FILES" | while read -r srcfile; do
-        dstfile=$(getdestination "$srcfile")
-        cat << EOF >> "$sitemap"
+    dstfile=$(getdestination "$srcfile")
+    cat << EOF >> "$sitemap"
 <url>
 <loc>$SITE/$dstfile</loc>
 </url>
@@ -161,12 +160,12 @@ cat << EOF > "$feed"
 EOF
 
 filterblogposts "$FILES" 25 | while read -r srcfile; do
-        dstfile=$(getdestination "$srcfile")
-        title=$(getfilemeta title "$srcfile")
-        # Only got a date but the feed spec wants a full RFC-3339 datetime. Just tack zero time at the end
-        published=$(getfilemeta date "$srcfile")
-        abstract=$(getfilemeta abstract "$srcfile")
-        cat << EOF >> "$feed"
+    dstfile=$(getdestination "$srcfile")
+    title=$(getfilemeta title "$srcfile")
+    # Only got a date but the feed spec wants a full RFC-3339 datetime. Just tack zero time at the end
+    published=$(getfilemeta date "$srcfile")
+    abstract=$(getfilemeta abstract "$srcfile")
+    cat << EOF >> "$feed"
 <entry>
 <title>$title</title>
 <id>$SITE/$dstfile</id>
@@ -183,37 +182,37 @@ echo "</feed>" >> "$feed"
 # Build markdown files
 
 blogposts=$(filterblogposts "$FILES" | while read -r srcfile; do
-        post=$(condensepost "$srcfile")
-        echo "  - $post"
+    post=$(condensepost "$srcfile")
+    echo "  - $post"
 done)
 
 echo "$FILES" | while read -r srcfile; do
-        dstfile=$(getdestination "$srcfile")
-        dstfile="$DST/$dstfile"
-        toc=""
-        hastoc=$(getfilemeta toc "$srcfile")
-        if [ "$hastoc" = "true" ]; then
-                toc="--toc --toc-depth=2"
-        fi
-        meta=""
-        # HACK: Special index files should get list of blog posts too
-        if [ "$srcfile" = "$SRC/index.md" ]; then
-                meta="--metadata-file=$TEMPO"
-                echo "blog-posts:" > "$TEMPO"
-                echo "$blogposts" | head -n 5 >> "$TEMPO"
-        elif [ "$srcfile" = "$SRC/blog/index.md" ]; then
-                meta="--metadata-file=$TEMPO"
-                echo "blog-posts:" > "$TEMPO"
-                echo "$blogposts" >> "$TEMPO"
-        fi
-        $PANDOC --lua-filter=.filters/copyright-year.lua $meta $toc --output="$dstfile" "$srcfile"
+    dstfile=$(getdestination "$srcfile")
+    dstfile="$DST/$dstfile"
+    toc=""
+    hastoc=$(getfilemeta toc "$srcfile")
+    if [ "$hastoc" = "true" ]; then
+        toc="--toc --toc-depth=2"
+    fi
+    meta=""
+    # HACK: Special index files should get list of blog posts too
+    if [ "$srcfile" = "$SRC/index.md" ]; then
+        meta="--metadata-file=$TEMPO"
+        echo "blog-posts:" > "$TEMPO"
+        echo "$blogposts" | head -n 5 >> "$TEMPO"
+    elif [ "$srcfile" = "$SRC/blog/index.md" ]; then
+        meta="--metadata-file=$TEMPO"
+        echo "blog-posts:" > "$TEMPO"
+        echo "$blogposts" >> "$TEMPO"
+    fi
+    $PANDOC --lua-filter=.filters/copyright-year.lua $meta $toc --output="$dstfile" "$srcfile"
 done
 
 ########################################################################################################################
 # Finally copy over all other static files (possibly overwriting previously files, if the user wants it)
 
 find "$SRC" -type f ! -iname "*.md" | while read -r srcfile; do
-        dstfile=${srcfile#"$SRC/"}
-        dstfile="$DST/$dstfile"
-        cp "$srcfile" "$dstfile"
+    dstfile=${srcfile#"$SRC/"}
+    dstfile="$DST/$dstfile"
+    cp "$srcfile" "$dstfile"
 done
