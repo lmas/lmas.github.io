@@ -11,11 +11,6 @@ It's simply a way for myself to document my own struggles and experiences with t
 and one day I would like expand on them.
 All credits and copyrights belong to the original authors.
 
-- github actions and quirks (cron jobs running late and in UTC for example)
-  https://github.com/actions/checkout
-  https://docs.github.com/en/actions
-  https://docs.github.com/en/actions/reference/encrypted-secrets
-
 - setting up a freebsd gateway at home (dns, dhcp, firewall, wifi, storage etc.)
 
 - publishing go code:
@@ -38,22 +33,9 @@ All credits and copyrights belong to the original authors.
   Simplest thing to do is a 32x32px PNG, rename it to `favicon.ico` and add tag:
   <link rel="shortcut icon" type="image/png" href="/favicon.ico">
 
-- tiniest "SEO" using simple html elements in a page:
-  https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
-  https://developers.google.com/search/docs/advanced/crawling/special-tags
-  Seems to only depend on one tag (not sure about other engines):
-  <meta name="description" content="SEO friendly description of page">
-  https://ogp.me/
-  Made by facebook and hopefully used by others (TODO: verify this!):
-  <meta property="og:type" content="website or article" />
-  <meta property="og:title" content="page title" />
-  <meta property="og:url" content="full page url" />
-  <meta property="og:image" content="page logo" />
-  <meta property="og:description" content="optional page description" />
-
 - easiest way to make a css only dark mode:
   https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
-  simple tool to toggle scheme in firefox:
+  and add note about how simple it is to toggle dark mode using firefox dev tools
   https://stackoverflow.com/questions/56401662/firefox-how-to-test-prefers-color-scheme/60481298#60481298
 
 - easily clean up PRs on your repo:
