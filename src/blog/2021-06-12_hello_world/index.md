@@ -3,7 +3,7 @@ title: Hello world
 date: 2021-06-12
 abstract: Introduction and documentation of this site.
 toc: true
-banner: ./bg-hello_world.jpg
+banner: ./banner.jpg
 banner-alt: Flying seagulls in a blue skye.
 banner-author: Darya Dobrovolskaya
 banner-source: https://unsplash.com/photos/7OwdK-lXf6E

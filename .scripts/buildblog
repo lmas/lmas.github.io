@@ -64,7 +64,7 @@ filterblogposts() (
     # arg 1: file list
     # arg 2: optional max number of files to return
 
-    posts=$(echo "$1" | grep "$SRC/blog" | grep -v "index")
+    posts=$(echo "$1" | grep "$SRC/blog" | grep -v "/blog/index.md")
     if [ "$#" -gt 1 ]; then
         echo "$posts" | head -n "$2"
     else
@@ -78,10 +78,11 @@ condensepost() (
 
     src="$1"
     dst=$(getdestination "$src")
+    dst=$(dirname "$dst")
     title=$(getfilemeta title "$src")
     published=$(getfilemeta date "$src")
     abstract=$(getfilemeta abstract "$src")
-    echo "<li><time>$published</time><p><span><a href=\"/$dst\">$title</a></span>$abstract</p></li>"
+    echo "<li><time>$published</time><p><span><a href=\"/$dst/\">$title</a></span>$abstract</p></li>"
 )
 
 ########################################################################################################################

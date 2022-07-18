@@ -2,7 +2,7 @@
 title: Quotes
 date: 2022-07-15
 abstract: List of engineering and/or optimistic quotes by other people.
-banner: ./bg-quotes.jpg
+banner: ./banner.jpg
 banner-alt:
 banner-author: capnsnap
 banner-source: https://unsplash.com/photos/utYSgMOIm5w
