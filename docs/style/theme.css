@@ -156,6 +156,7 @@ blockquote {
         padding-left: calc(var(--horizontal-space) * 1.5);
         position: relative;
         width: max-content;
+        font-style: italic;
 }
 blockquote:before {
         content: '❝';
