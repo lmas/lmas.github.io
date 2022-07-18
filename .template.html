@@ -29,9 +29,13 @@
             $if(title-prefix)$
             <span class="logo"><a href="/">$title-prefix$</a></span>
             $endif$
+            $if(header)$
+            <input type="checkbox" id="hamburger" />
+            <label for="hamburger">&#9776;</label>
             $for(header)$
             $header$
             $endfor$
+            $endif$
         </nav>
         <main>
             <article>
@@ -76,7 +80,7 @@
             $endfor$
             <p>Copyright © $if(copyright_year)$$copyright_year$$endif$ $if(author)$$author$$endif$</p>
         </footer>
-        <script data-goatcounter="https://lmas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+        <script data-goatcounter="https://lmas.goatcounter.com/count" src="//gc.zgo.at/count.js" async></script>
         <noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
     </body>
 </html>

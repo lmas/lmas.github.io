@@ -68,11 +68,19 @@ nav {
     gap: var(--horizontal-space);
     margin: var(--vertical-space) 0;
 }
+nav #hamburger, nav label {
+    display: none;
+}
 @media screen and (max-width: 480px) {
     nav {
         flex-direction: column;
-        text-align: center;
         gap: var(--vertical-space);
+    }
+    nav > a {
+        display: none;
+    }
+    nav label, nav input:checked ~ a {
+        display: block;
     }
 }
 footer {
@@ -202,7 +210,7 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 /**************************************************************************************************/
 /* Custom classes */
 .logo {
-    flex-grow: 2;
+    flex-grow: 1;
     font-size: 2rem;
 }
 .banner {
