@@ -29,7 +29,7 @@ banner-source: https://unsplash.com/photos/utYSgMOIm5w
 
 > Entropy is the logarithmic measure for information predictability.
 >
-> - [Deina Kellezi & Demira Dimitrova](https://github.blog/2021-09-23-announcing-npms-new-access-token-format)
+> - [Deina Kellezi & Demira Dimitrova](https://github.blog/2021-09-23-announcing-npms-new-access-token-format/)
 
 
 
@@ -37,5 +37,5 @@ banner-source: https://unsplash.com/photos/utYSgMOIm5w
 
 > Expensive floor camera.
 >
-> - [Larry Hammer](https://escapepod.org/2006/06/24/ep-flash-paul-bunyan-and-the-photocopier), about a photocopier
+> - [Larry Hammer](https://escapepod.org/2006/06/24/ep-flash-paul-bunyan-and-the-photocopier/), about a photocopier
 

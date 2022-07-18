@@ -41,7 +41,7 @@ Some references for the more common (or not) static files semi expected to be fo
 - [security.txt]: Quick info for "security researchers" scanning the web.
 - [humans.txt]: Quick info for "other developers" spelunking the web.
 
-[Markdown]: http://larus.se/blog/2021-06-13_markdown_reference.html
+[Markdown]: /blog/2021-06-13_markdown_reference/
 [Pandoc]: https://pandoc.org/
 [Github]: https://github.com/lmas/lmas.github.io
 [robots.txt]: http://www.robotstxt.org/

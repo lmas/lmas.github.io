@@ -177,9 +177,9 @@ Simple footnote[^1]
 
 ## Internal link
 
-    See the [Introduction](#introduction).
+    See the [Headings](#headings).
 
-See the [Introduction](#introduction).
+See the [Headings](#headings).
 
 ## Link reference
 
@@ -188,13 +188,13 @@ The link title is optional.
     Some text with a [link].
     Some more.
 
-    [link]: /url "title"
+    [link]: http://www.example.com "title"
 
 
 Some text with a [link].
 Some more.
 
-[link]: /url "title"
+[link]: http://www.example.com "title"
 
 # Images
 
