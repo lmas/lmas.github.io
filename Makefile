@@ -29,7 +29,6 @@ setupbranch: clean
 	git switch --orphan $(BUILDBRANCH)
 	mkdir -p $(DST)/news
 	touch $(DST)/news/.gitkeep
-	touch $(DST)/.nojekyll
 	git add $(DST)
 	git commit -m "Initializes build branch"
 	@echo ""
