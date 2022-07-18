@@ -73,17 +73,17 @@ This can be used to cancel Markdown formatting:
 
 
 
-# Block quotes
+# Blockquotes
 
     > Hello
     > World
     >
-    > and blockuotes.
+    > and blockquotes.
 
 > Hello
 > World
 >
-> and blockuotes.
+> and blockquotes.
 
 # Code blocks
 
