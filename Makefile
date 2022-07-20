@@ -18,6 +18,10 @@ serve: clean buildblog
 #        mkdir --parents "$(BLOGDIR)/$(title)"
 #        $(EDITOR) "$(BLOGDIR)/$(title)/post.md"
 
+.PHONY: checkscripts
+checkscripts:
+	shellcheck .scripts/*
+
 .PHONY: clean
 clean:
 	rm -rf $(DST)
