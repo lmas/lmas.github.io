@@ -43,8 +43,8 @@ feeds:
     url: https://www.ardanlabs.com/blog/index.xml
   - title: Blogs - research!rsc
     url: https://research.swtch.com/feed.atom
-  - title: Blogs - Cryptography Dispatches
-    url: https://buttondown.email/cryptography-dispatches/rss
+  - title: Blogs - Filippo Valsorda
+    url: https://words.filippo.io/rss/
   - title: Blogs - Schneier
     url: https://www.schneier.com/blog/atom.xml
   - title: Blogs - Bartosz Ciechanowski
