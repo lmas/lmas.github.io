@@ -31,6 +31,10 @@ banner-source: https://unsplash.com/photos/utYSgMOIm5w
 >
 > - [Deina Kellezi & Demira Dimitrova](https://github.blog/2021-09-23-announcing-npms-new-access-token-format/)
 
+> The smaller part of the job of programming is writing a program so that the computer can read it; \
+> the larger part is writing it so that other humans can read it.
+>
+> - Steve McConnell, Code Complete
 
 
 # Fun
