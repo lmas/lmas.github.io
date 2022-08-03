@@ -105,13 +105,14 @@ with a very permissive license.
 And when the need for home made art is called for, these open source tools have been helpful:
 
 - [Inkscape]: For creating vector art.
-- [Krita]: For editing and creating raster art (and has a helpful page for [saving to the web]).
+- [Krita] and [Gimp]: For drawing art and retouching photos (helpful page for [saving to the web]).
 - [peek] and [scrot]: Records GIFs and takes screen shots, respectively.
 - [optipng] and [jpegtran]: Optimizes and shrinks file sizes of PNG/JPEG files.
 
 [Unsplash]: https://unsplash.com/
 [Inkscape]: https://inkscape.org/
 [Krita]: https://krita.org/en/
+[Gimp]: https://www.gimp.org/
 [saving to the web]: https://docs.krita.org/en/tutorials/saving-for-the-web.html
 [peek]: https://github.com/phw/peek
 [scrot]: https://github.com/resurrecting-open-source-projects/scrot
