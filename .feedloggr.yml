@@ -63,7 +63,7 @@ feeds:
   - title: Services - SourceHut
     url: https://sourcehut.org/blog/index.xml
   - title: Services - Golang
-    url: https://blog.golang.org/feed.atom
+    url: https://go.dev/blog/feed.atom
 
   - title: Tech - /r/Golang
     url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week&limit=20
