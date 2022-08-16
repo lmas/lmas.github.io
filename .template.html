@@ -47,16 +47,17 @@ $if(title)$
 $if(date)$
 <time class="header-date">$date$</time>
 $endif$
-<h1>$title$</h1>
 $if(abstract)$
 <p class="header-abstract">$abstract$</p>
 $endif$
 $if(banner)$
-<img class="banner" decoding="async" width="960" height="100" src="$banner$" alt="$banner-alt$">
 $if(banner-author)$
 <p class="banner-author">Photo by <a href="$banner-source$">$banner-author$</a></p>
 $endif$
+<h1>$title$</h1>
+<img class="banner" decoding="async" width="960" height="100" src="$banner$" alt="$banner-alt$">
 $else$
+<h1>$title$</h1>
 <hr>
 $endif$
 </header>
