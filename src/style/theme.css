@@ -9,21 +9,13 @@
 :root {
     --font-regular: Arial, Helvetica, sans-serif;
     --font-code: "Courier New", Courier, monospace;
-    --width: 960px;
-    --horizontal-space: 2rem;
-    --vertical-space: calc(var(--horizontal-space) / 2);
+    --spacing: 1rem;
     --border: 2px solid var(--flair);
     --corner: 5px;
     --primary: #313137;
     --secondary: #FFFEF7;
     --shadow: #E6E5DF;
     --flair: #D9603B;
-}
-@media screen and (max-width: 480px) {
-    :root {
-        --width: 480px;
-        --horizontal-space: 1rem;
-    }
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -44,29 +36,30 @@ body {
     flex-direction: column;
     color: var(--primary);
     background-color: var(--secondary);
-    font: normal 16px/1.6 var(--font-regular);
+    font: normal 18px/1.6 var(--font-regular);
+    line-height: 1.6rem;
     min-height: 100vh;
-    max-width: var(--width);
-    padding: 0 var(--horizontal-space);
+    max-width: 960px;
+    padding: 0 4rem;
     margin: auto;
-}
-main {
-    margin-bottom: auto;
 }
 nav {
     font-size: 1.2rem;
     font-weight: bold;
     align-items: center;
-    gap: var(--horizontal-space);
-    margin: var(--vertical-space) 0;
+    gap: var(--spacing);
+    margin: var(--spacing) 0;
 }
 nav #hamburger, nav label {
     display: none;
 }
 @media screen and (max-width: 480px) {
+    body {
+        max-width: 480px;
+        padding: 0 2rem;
+    }
     nav {
         flex-direction: column;
-        gap: var(--vertical-space);
     }
     nav > a {
         display: none;
@@ -75,12 +68,15 @@ nav #hamburger, nav label {
         display: block;
     }
 }
+main {
+    margin-bottom: auto;
+}
 footer {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    gap: var(--vertical-space);
-    margin-bottom: var(--vertical-space);
+    gap: var(--spacing);
+    margin-bottom: var(--spacing);
 }
 footer p {
     /* Forces the copyright notice onto it's own line */
@@ -89,13 +85,15 @@ footer p {
 }
 /**************************************************************************************************/
 /* Custom elements */
-header, p, hr, pre, math, ul, ol, blockquote, table, img, figure, details, embed, time,
+header, p, hr, pre, math, ul, ol, li, blockquote, table, img, figure, details, embed, time,
 h1, h2, h3, h4, h5, h6 {
-    margin-bottom: var(--vertical-space);
+    margin-bottom: var(--spacing);
 }
-border-color, li:before, blockquote:before,
-h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+border-color, li:before, blockquote:before {
     color: var(--flair);
+}
+time {
+    display: block;
 }
 hr, a {
     border-bottom: var(--border);
@@ -112,16 +110,19 @@ a:hover {
 
 }
 /* Headings */
-h1 { font-size: 2rem; } h1:before { content: '# ' }
-h2 { font-size: 1.75rem; } h2:before { content: '# ' }
-h3 { font-size: 1.5rem; } h3:before { content: '## ' }
-h4 { font-size: 1.25rem; } h4:before { content: '### ' }
-h5 { font-size: 1.125rem; } h5:before { content: '#### ' }
-h6 { font-size: 1rem; } h6:before { content: '##### ' }
+header, h2, h3, h4, h5, h6 {
+    margin-top: calc(var(--spacing) * 2);
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
 /* Text blocks */
 blockquote, pre, code, math, details {
     background-color: var(--shadow);
-    padding: var(--vertical-space);
+    padding: var(--spacing);
     border-radius: var(--corner);
 }
 blockquote *:last-child, details *:last-child {
@@ -140,7 +141,7 @@ code {
     font-size: 14px;
 }
 details > *:nth-child(2) {
-    margin-top: var(--vertical-space);
+    margin-top: var(--spacing);
 }
 summary {
     border-bottom: var(--border);
@@ -153,17 +154,16 @@ pre > code {
     background-color: unset;
 }
 blockquote {
-    padding-left: calc(var(--horizontal-space) * 1.5);
+    padding-left: 3rem;
     position: relative;
     width: max-content;
     font-style: italic;
 }
 blockquote:before {
     content: '❝';
-    font-size: calc(var(--horizontal-space) * 1.5);
+    font-size: 3rem;
     position: absolute;
     left: 0.5rem;
-    top: 0;
 }
 /* Text lists */
 ol {
@@ -184,7 +184,7 @@ table {
 }
 th, td {
     text-align: left;
-    padding: var(--vertical-space);
+    padding: var(--spacing);
 }
 th {
     font-weight: bold;
@@ -220,13 +220,13 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 }
 .toc {
     float: right;
-    margin-left: var(--horizontal-space);
+    margin-left: var(--spacing);
 }
 .row {
     display: flex;
     justify-content: center;
-    gap: var(--horizontal-space);
-    margin-bottom: var(--vertical-space);
+    gap: var(--spacing);
+    margin-bottom: var(--spacing);
 }
 @media screen and (max-width: 480px){
     .toc {
@@ -238,10 +238,8 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
         align-items: center;
     }
 }
-.blog-index li, .blog-index p {
-    display: flex;
-}
 .blog-index li {
+    display: flex;
     align-items: center;
 }
 .blog-index li:before {
@@ -249,8 +247,11 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
     padding: 0;
 }
 .blog-index time {
-    margin-right: var(--horizontal-space);
+    margin-right: var(--spacing);
+    margin-bottom: 0;
 }
 .blog-index p {
+    display: flex;
     flex-direction: column;
+    margin-bottom: 0;
 }
