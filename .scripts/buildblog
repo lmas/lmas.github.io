@@ -34,6 +34,21 @@ getmeta() (
     echo "$val"
 )
 
+getabstract() {
+    # Get abstract of a markdown page (for now it's the first paragraph of the content).
+    # Double quotes has to be stripped.
+    # arg 1: source file
+
+    cat "$1" | sed -e '1,/^---$/d' | awk 'BEGIN{RS=ORS="\n\n"} NR==1 {$1=$1; print}' | tr -d '"'
+}
+
+getcommit() {
+    # Get the commit hash and date of a file's latest commit.
+    # arg 1: source file
+
+    git log -1 --format="%h %cs" "$1"
+}
+
 getdestination() (
     # Strips src dir from a filepath and replaces .md extension with .html
     # arg 1: path to src markdown file
@@ -80,9 +95,9 @@ condensepost() (
     dst=$(getdestination "$src")
     dst=$(dirname "$dst")
     title=$(getfilemeta title "$src")
-    published=$(getfilemeta date "$src")
-    abstract=$(getfilemeta abstract "$src")
-    echo "<li><time>$published</time><p><span><a href=\"/$dst/\">$title</a></span>$abstract</p></li>"
+    date=$(getfilemeta date "$src")
+    abstract=$(getabstract "$src")
+    echo "<li><time>$date</time><p><span><a href=\"/$dst/\">$title</a></span>$abstract</p></li>"
 )
 
 ########################################################################################################################
@@ -164,14 +179,14 @@ filterblogposts "$FILES" 25 | while read -r srcfile; do
     dstfile=$(getdestination "$srcfile")
     title=$(getfilemeta title "$srcfile")
     # Only got a date but the feed spec wants a full RFC-3339 datetime. Just tack zero time at the end
-    published=$(getfilemeta date "$srcfile")
-    abstract=$(getfilemeta abstract "$srcfile")
+    date=$(getfilemeta date "$srcfile")
+    abstract=$(getabstract "$srcfile")
     cat << EOF >> "$feed"
 <entry>
 <title>$title</title>
 <id>$SITE/$dstfile</id>
 <link href="$SITE/$dstfile" />
-<updated>${published}T00:00:00Z</updated>
+<updated>${date}T00:00:00Z</updated>
 <summary>$abstract</summary>
 </entry>
 EOF
@@ -195,17 +210,25 @@ echo "$FILES" | while read -r srcfile; do
     if [ "$hastoc" = "true" ]; then
         toc="--toc --toc-depth=2"
     fi
-    meta=""
-    # HACK: Special index files should get list of blog posts too
+    meta="--metadata-file=$TEMPO"
+    echo -n > "$TEMPO" # clears the file
+
+    # HACK: somewhat messy way to handle certain files differently, but it works
     if [ "$srcfile" = "$SRC/index.md" ]; then
-        meta="--metadata-file=$TEMPO"
-        echo "blog-posts:" > "$TEMPO"
+        echo "blog-posts:" >> "$TEMPO"
         echo "$blogposts" | head -n 5 >> "$TEMPO"
+
     elif [ "$srcfile" = "$SRC/blog/index.md" ]; then
-        meta="--metadata-file=$TEMPO"
-        echo "blog-posts:" > "$TEMPO"
+        echo "blog-posts:" >> "$TEMPO"
         echo "$blogposts" >> "$TEMPO"
+
+    elif echo "$(dirname "$srcfile")" | grep -q "$SRC/blog/*"; then
+        printf 'abstract: "%s"\n' "$(getabstract "$srcfile")" >> "$TEMPO"
+        commit=$(getcommit "$srcfile")
+        printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
+        printf 'updated: %s\n' "$(echo "$commit" | cut -d ' ' -f 2)" >> "$TEMPO"
     fi
+
     $PANDOC --lua-filter=.filters/copyright-year.lua $meta $toc --output="$dstfile" "$srcfile"
 done
 

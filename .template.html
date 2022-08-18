@@ -47,9 +47,6 @@ $if(title)$
 $if(date)$
 <time class="header-date">$date$</time>
 $endif$
-$if(abstract)$
-<p class="header-abstract">$abstract$</p>
-$endif$
 $if(banner)$
 $if(banner-author)$
 <p class="banner-author">Photo by <a href="$banner-source$">$banner-author$</a></p>
@@ -78,6 +75,10 @@ $for(blog-posts)$
 $blog-posts$
 $endfor$
 </ul>
+$endif$
+
+$if(commit)$
+<p>Last updated on <a href="https://github.com/lmas/lmas.github.io/commit/$commit$">$updated$</a>.</p>
 $endif$
 
 </article>
