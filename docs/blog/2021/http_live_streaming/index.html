@@ -6,7 +6,8 @@
 <meta name="generator" content="pandoc" />
 <meta name="author" content="Alex" />
 <meta name="dcterms.date" content="2021-06-20" />
-<meta name="description" content="Streaming media with HLS." />
+<meta name="description" content="HTTP Live Streaming is a protocol originally
+developed by Apple and it allows you to stream A/V media over HTTP." />
 <title>HTTP Live Streaming – Larus.se</title>
 <link rel="stylesheet" href="/style/theme.css" />
 <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
@@ -29,22 +30,20 @@
 <article>
 
 <header>
-<h1>HTTP Live Streaming</h1>
 <time class="header-date">2021-06-20</time>
-<p class="header-abstract">Streaming media with HLS.</p>
+<h1>HTTP Live Streaming</h1>
 <hr>
 </header>
 
 
 
-<p><a href="https://en.wikipedia.org/wiki/HTTP_Live_Streaming">HTTP Live
-Streaming</a> is a protocol developed by Apple and it allows you to (you guessed
-it) streaming audio/video media over HTTP. And it has, apparently, pretty
-widespread support in most of the major web browsers, servers and content
-delivery networks.</p>
-<p>So I guess that's how iTunes/VLC/Plex/Kodi/et al. has implemented their
-streaming? Never heard of it before, but it looks pretty cool.</p>
-<p>And it looks really easy to implement with the help of <a
+<p>HTTP Live Streaming is a protocol originally developed by Apple and it allows
+you to stream A/V media over HTTP.</p>
+<p>And it has, apparently, pretty widespread support in most of the major web
+browsers, servers and content delivery networks. So I guess that's how
+iTunes/VLC/Plex/Kodi/et al. has implemented their streaming? Never heard of it
+before, but it looks pretty cool.</p>
+<p>It looks really easy to implement with the help of <a
 href="https://en.wikipedia.org/wiki/FFmpeg">FFmpeg</a>:</p>
 <pre><code>ffmpeg -i movie.mp4 -c:v libx264 -preset veryfast -hls_time 10 -f hls test.m3u8</code></pre>
 <p>This command takes an input file, splits it up into 10 second long segments,
@@ -53,16 +52,20 @@ writes them to disk as <code>.ts</code> files and adds the file names to a
 <p>To serve this playlist on a web page, you could add this HTML:</p>
 <pre><code>&lt;video src=&quot;http://example.com/path/to/playlist.m3u8&quot; height=&quot;300&quot; width=&quot;400&quot;&gt;</code></pre>
 <p>Then you just serve all the segments, playlist file and the page itself with
-a regular web server and boom!</p>
-<p>Live streaming!</p>
+a regular web server.</p>
+<p>And boom! Live streaming!</p>
 <h2 id="references">References</h2>
 <ul>
+<li><a
+href="https://en.wikipedia.org/wiki/HTTP_Live_Streaming">Wikipedia</a></li>
 <li><a href="https://developer.apple.com/streaming/">Apple's reference
 docs</a></li>
 <li><a href="https://trac.ffmpeg.org/wiki/Encode/H.264">Tuning options for
 H.264</a></li>
 </ul>
 
+
+<p>Last updated on <a href="https://github.com/lmas/lmas.github.io/commit/334ea79">2022-08-18</a>.</p>
 
 </article>
 </main>
