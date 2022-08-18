@@ -2,7 +2,7 @@
 title: Quotes
 date: 2022-07-15
 banner: ./banner.jpg
-banner-alt:
+banner-alt: Hanging decors
 banner-author: capnsnap
 banner-source: https://unsplash.com/photos/utYSgMOIm5w
 ---

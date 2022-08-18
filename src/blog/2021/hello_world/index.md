@@ -3,7 +3,7 @@ title: Hello world
 date: 2021-06-12
 toc: true
 banner: ./banner.jpg
-banner-alt: Flying seagulls in a blue skye.
+banner-alt: Flying seagulls in a blue skye
 banner-author: Darya Dobrovolskaya
 banner-source: https://unsplash.com/photos/7OwdK-lXf6E
 ---

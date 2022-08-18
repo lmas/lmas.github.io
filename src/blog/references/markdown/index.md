@@ -3,7 +3,7 @@ title: Markdown reference
 date: 2021-06-13
 toc: true
 banner: ./banner.jpg
-banner-alt: Markdown code and shell script.
+banner-alt: Markdown code and shell script
 ---
 
 A quick reference page for most of this blog's flavour of Markdown.
