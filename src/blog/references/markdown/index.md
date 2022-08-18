@@ -1,15 +1,13 @@
 ---
 title: Markdown reference
 date: 2021-06-13
-abstract: Quick reference for Markdown.
 toc: true
 banner: ./banner.jpg
 banner-alt: Markdown code and shell script.
 ---
 
-*Updated 2022-07-11 for Pandoc and GFM.*
+A quick reference page for most of this blog's flavour of Markdown.
 
-This is a quick reference page for most of this blog's flavour of Markdown.
 In the back it's all running on [Pandoc] with the [Github Formatted Markdown] extension enabled,
 which in turn is based on the [Commonmark Specification].
 

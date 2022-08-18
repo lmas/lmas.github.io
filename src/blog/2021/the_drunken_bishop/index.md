@@ -1,8 +1,9 @@
 ---
 title: The drunken bishop
 date: 2021-08-27
-abstract: Visualise digital fingerprints with ease.
 ---
+
+How do you easily compare long, complex strings such as digital fingerprints or cryptographic hashes?
 
 Some time ago I read an excellent blog post about the [Drunken Bishop] algorithm by James Furness.
 He explains how OpenSSH uses this algorithm to visualise SSH key fingerprints,

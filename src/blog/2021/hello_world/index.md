@@ -1,7 +1,6 @@
 ---
 title: Hello world
 date: 2021-06-12
-abstract: Introduction and documentation of this site.
 toc: true
 banner: ./banner.jpg
 banner-alt: Flying seagulls in a blue skye.
@@ -9,11 +8,10 @@ banner-author: Darya Dobrovolskaya
 banner-source: https://unsplash.com/photos/7OwdK-lXf6E
 ---
 
-*Updated 2022-07-13 with new content that reflects current setup.*
+Hello world! This is the introduction and documentation of my site.
 
-Hello world! I'm Alex.
-
-I write open source software and have ran various Linux/FreeBSD servers as a hobby for myself for the last 10 years.
+I'm Alex and I write open source software and have ran various Linux/FreeBSD servers as a hobby for myself for
+the last 10 years.
 Mostly it's been web-related stuff, services and random tinkering.
 
 I decided to getting started on this blog as a personal space for myself,

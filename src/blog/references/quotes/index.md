@@ -1,13 +1,15 @@
 ---
 title: Quotes
 date: 2022-07-15
-abstract: List of engineering and optimistic quotes by other people.
 banner: ./banner.jpg
 banner-alt:
 banner-author: capnsnap
 banner-source: https://unsplash.com/photos/utYSgMOIm5w
 ---
 
+This is a collection of interesting engineering and optimistic quotes by other people.
+
+*I'll try to keep track of the original authors and linkable sources as best as I can.*
 
 # Science
 
