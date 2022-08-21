@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="generator" content="pandoc" />
+<meta name="author" content="Alex" />
+<meta name="dcterms.date" content="2022-08-21" />
+<meta name="description" content="While I was having a summer vacation, I wanted
+to do a short and simple weekend project trying to simulate a school of fish
+floating around on the screen. I also wanted to focus on making it look good and
+smooth, as a way for me to release some sort of artistic creativity during those
+sunny days." />
+<title>Introducing an aquatic simulation of Boids – Larus.se</title>
+<link rel="stylesheet" href="/style/theme.css" />
+<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+<link rel="sitemap" type="application/xml" title="sitemap" href="/sitemap.xml" />
+<link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
+</head>
+<body>
+
+<nav>
+<span class="logo"><a href="/">Larus.se</a></span>
+<input type="checkbox" id="hamburger" />
+<label for="hamburger">&#9776;</label>
+<a href="/">Home</a>
+<a href="/blog/">Blog</a>
+<a href="/news/">News</a>
+<a href="https://github.com/lmas" rel="noopener nofollow">Github</a>
+</nav>
+
+<main>
+<article>
+
+<header>
+<time class="header-date">2022-08-21</time>
+<p class="banner-author">Photo by <a href="https://unsplash.com/photos/tQk3y00flv4">David
+Dvořáček</a></p>
+<h1>Introducing an aquatic simulation of Boids</h1>
+<img class="banner" decoding="async" width="960" height="100" src="banner.jpg" alt="School
+of Koi">
+</header>
+
+<details class="toc">
+<summary>Contents</summary>
+<ul>
+<li><a href="#optimisations" id="toc-optimisations">Optimisations</a></li>
+<li><a href="#art" id="toc-art">Art</a></li>
+<li><a href="#shader" id="toc-shader">Shader</a></li>
+<li><a href="#results" id="toc-results">Results</a></li>
+</ul>
+</details>
+
+
+<p>While I was having a summer vacation, I wanted to do a short and simple
+weekend project trying to simulate a school of fish floating around on the
+screen. I also wanted to focus on making it look good and smooth, as a way for
+me to release some sort of artistic creativity during those sunny days.</p>
+<p>So what's the simplest way to simulate life-like fish? With Boids of
+course.</p>
+<blockquote>
+<p>Boids is an artificial life program, developed by <a
+href="https://www.red3d.com/cwr/boids/">Craig Reynolds</a> in 1986, which
+simulates the flocking behaviour of birds.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Boids">Wikipedia</a></li>
+</ul>
+</blockquote>
+<p>Using the three simple rules that Mr. Reynolds defined initially, one is able
+to simulate the emergent flocking behaviour of animals. Never mind it was
+originally used to simulate flocks of birds, it looks equally great when applied
+to schools of fish.</p>
+<p>Now then, the three rules are:</p>
+<p><img src="rules.png" alt="boid rules" /></p>
+<ul>
+<li><strong>Cohesion:</strong> A single Boid tries to move towards the center of
+a nearby group of other Boids.</li>
+<li><strong>Alignment:</strong> And it should try to match it's velocity and
+direction with it's neighbours.</li>
+<li><strong>Separation:</strong> While moving, it should also try to avoid
+collisions with the closest neighbours.</li>
+</ul>
+<p>This results in the interesting behaviour of birds or fish, as mentioned
+before, that moves around in a big coordinated group which mimics real life
+pretty accurately. <a
+href="https://vergenet.net/~conrad/boids/pseudocode.html">Complementary
+rules</a> and <a
+href="https://gamedevelopment.tutsplus.com/series/understanding-steering-behaviors--gamedev-12732">steering
+behaviours</a> allows one to limit the movement speed, bounding the whole flock
+to a position, following routes (or a leader) and more.</p>
+<p>With this short introduction done, I'm documenting how I ended up with a two
+week long struggle with optimisations, poor programmer art and a rabbit hole
+down into shader magic. And it was only supposed to be a fun, quick thing for a
+day.</p>
+<p><em>Skip down to <a href="#results">Results</a> for a sample clip of how it
+looks.</em></p>
+<h2 id="optimisations">Optimisations</h2>
+<p><em>I've left out the code to keep this page shorter and instead recommend
+taking a look at the <a href="https://github.com/lmas/akvarium">project
+repo</a>.</em></p>
+<p>My initial, naive code was actually able to render the simulation at sixty
+frames per second for about five hundred boids without much trouble. But I
+wanted to run much more boids at the same time, let's say about 10 000 boids for
+the hell of it. And the boids themselves have to run expensive distance
+calculations to keep them moving about in an orderly manner. These calculations
+were running for each single frame so that was going to be a huge performance
+drain of course.</p>
+<p>Initial benchmark reported, for 500 boids:</p>
+<pre><code>cpu: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+BenchmarkBoids-4         547       2604258 ns/op           0 B/op          0 allocs/op</code></pre>
+<p>Not that great.</p>
+<p>First round of optimisations was to start up a group of goroutines and let
+them handle updates for their own group of boids in parallel. And then only run
+the updates ten times per second. This resulted in a neat boost:</p>
+<pre><code>BenchmarkBoids-4        7471        860253 ns/op           2 B/op          0 allocs/op</code></pre>
+<p>Next thing to do was dividing up the boids into smaller regions, using a
+simple form of a <a
+href="https://en.wikipedia.org/wiki/Spatial_database#Spatial_index">spatial
+index</a>, so each boid didn't have to measure it's distance to all the other
+four hundred and ninety nine boids all the time.</p>
+<p>My simple index is just a normal hash map that gets reconstructed on each
+update, where the values are arrays of integer IDs for the boids in the region.
+For the map keys I'm using a rounded off value of the coordinates from the
+boids:</p>
+<pre><code>floor( x / offset ), floor( y / offset )</code></pre>
+<p>Where <code>offset</code> is the amount of pixels in a quadratic region
+(currently it's set to 50 pixels, which divides the screen into 50×50 pixel
+regions). Now each boid only have to check it's distance to the boids in current
+region and the other eight regions surrounding it, which gave a smaller
+boost:</p>
+<pre><code>BenchmarkBoids-4        9891        559058 ns/op        4295 B/op          6 allocs/op</code></pre>
+<p>After this I wanted to replace my dumb index with a more efficient data
+structure<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>, like a <a
+href="https://en.wikipedia.org/wiki/K-d_tree">k-d tree</a> or locality-sensitive
+hashing<a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a> but I think I was using them wrongly as the
+benchmark tanked. At this point I realised how low my CPU usage was while
+running the simulation and that I already could run 10 000 boids at the same
+time at a somewhat stable 60 FPS. Well, no further optimisations was actually
+needed so I dropped my buggy k-d tree and moved on.</p>
+<h2 id="art">Art</h2>
+<p>Happy with the results from a week of optimisations, I decided to instead
+focus on cleaning up the code and replace my shitty programmer art with
+something fancy.</p>
+<p>I found a couple of pretty photographs of Koi and Clown fish on <a
+href="https://unsplash.com/">Unsplash</a> that I could use as reference. Then I
+decided to do vector tracing in Inkscape, which has a great tool for automatic
+tracing of images, so I would get SVG art that can be exported to any other
+image format with high quality.</p>
+<p><img src="tracing-fish.png" alt="tracing fish in inkscape" /></p>
+<p>Then with the trace done there was a couple of hours of cleaning up the trace
+and making smaller adjustments until satisfaction (mostly fixing small details,
+overlaps and nudging things around). I was pretty happy with the result:</p>
+<p><img src="boid-clownfish.png" alt="finished clownfish boid" /></p>
+<p>Then it's just a matter of exporting it as a small PNG and use it in the
+simulation. Done.</p>
+<h2 id="shader">Shader</h2>
+<p>Next up was the background.</p>
+<p>I wanted rays of light on the surface and a gradual shift down to deep
+darkness at the bottom. I was initially using a SVG colour gradient, easy but
+dirty, until I got the bright (heh) idea to use a shader.</p>
+<p>Now I haven't mentioned yet what graphics framework I use for Go. It's <a
+href="https://ebiten.org/">Ebitengine</a>. And it's got support for fragment
+shaders, using it's own shader language called <a
+href="https://ebiten.org/documents/shader.html">Kage</a>. It looks much like
+regular Go code and as a bonus, you can run <code>gofmt</code> on it to have it
+formatted for you.</p>
+<p>Using Kage I could render sun rays using a function from a shader script
+found on <a href="https://www.shadertoy.com/view/MdXGW7">Shadertoy</a>. Apply
+some light attenuation to the rays and a gradual smooth darkness over the whole
+screen and the shader is done:</p>
+<pre><code>// Sun rays initially sourced from: https://www.shadertoy.com/view/MdXGW7
+func sunRay(coord, raySource, rayDirection vec2, seedA, seedB, speed float) vec4 {
+        sourceToCoord := coord - raySource
+        cosAngle := dot(normalize(sourceToCoord), rayDirection)
+        val := (0.45 + 0.15 * sin(cosAngle * seedA + Time * speed)) + (0.3 + 0.2 * cos(-cosAngle * seedB + Time * speed))
+        strength := (Resolution.x - length(sourceToCoord)) / Resolution.x
+        return vec4(1.0, 1.0, 1.0, 1.0) * clamp(val, 0.0, 1.0) * clamp(strength, 0.5, 1.0)
+}
+
+func Fragment(position vec4, texCoord vec2, color vec4) vec4 {
+        var fragColor vec4
+
+        // Render sunrays
+        fragColor += sunRay(
+                texCoord, vec2(Resolution.x*0.7, Resolution.y*-0.4), normalize(vec2(1.0, 0.2843)), 15.1869, 29.5428, 1.1,
+        ) * 0.4
+        fragColor += sunRay(
+                texCoord, vec2(Resolution.x*0.8, Resolution.y*-0.6), normalize(vec2(1.0, -0.0596)), 21.4852, 17.9246, 1.5,
+        ) * 0.5
+
+        // Emulate light attenuation for the rays
+        fragColor *= (1 - smoothstep(0, Resolution.y, texCoord.y)) * 0.7
+
+        // Apply smooth darkness towards the depths
+        fragColor += vec4(0, 0, 0, 1) * smoothstep(0, Resolution.y, texCoord.y)
+
+        return fragColor
+}</code></pre>
+<h2 id="results">Results</h2>
+<p>When done with all that, here's a small sample of the end product from the
+optimisations, art and shader magic.</p>
+<p><video src="boids.mp4" controls=""><a href="boids.mp4">school of
+clownfish</a></video></p>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Interestingly, there was a recent <a
+href="https://news.ycombinator.com/item?id=32187176">HN thread</a> around this
+time, about various data structures and spatial hashing was suggested. I also
+found an article about <a
+href="https://towardsdatascience.com/optimising-boids-algorithm-with-unsupervised-learning-ba464891bdba">optimising
+boids</a>.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p><a
+href="https://en.wikipedia.org/wiki/Locality-sensitive_hashing">LSH on
+wikipedia</a>. I also found a <a
+href="https://www.pinecone.io/learn/locality-sensitive-hashing-random-projection/">easy
+to follow</a> guide with simple code and a more <a
+href="https://tylerneylon.com/a/lsh1/">theoretical</a> one, but with great
+visuals.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<p>Last updated on <a href="https://github.com/lmas/lmas.github.io/commit/2bcf22f">2022-08-21</a>.</p>
+
+</article>
+</main>
+
+<footer>
+<a href="/feed.xml">Feed</a>
+<a href="/sitemap.xml">Sitemap</a>
+<a href="https://github.com/lmas/lmas.github.io" rel="noopener nofollow">Source</a>
+<p>Copyright © 2022 Alex</p>
+</footer>
+<script data-goatcounter="https://lmas.goatcounter.com/count" src="//gc.zgo.at/count.js" async></script>
+<noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
+</body>
+</html>
