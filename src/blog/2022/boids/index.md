@@ -1,24 +1,31 @@
 ---
 title: Introducing an aquatic simulation of Boids
-date: 2022-08-19
+date: 2022-08-21
+toc: true
 banner: banner.jpg
 banner-alt: School of Koi
 banner-author: David Dvořáček
 banner-source: https://unsplash.com/photos/tQk3y00flv4
 ---
 
+While I was having a summer vacation,
+I wanted to do a short and simple weekend project trying to simulate a school of fish floating around on the screen.
+I also wanted to focus on making it look good and smooth,
+as a way for me to release some sort of artistic creativity during those sunny days.
 
-So here's a fun project I recently did.
-A Boids simulation.
-
-![school of clownfish]
+So what's the simplest way to simulate life-like fish?
+With Boids of course.
 
 > Boids is an artificial life program, developed by [Craig Reynolds] in 1986,
 > which simulates the flocking behaviour of birds.
 > - [Wikipedia]
 
-Using three simple rules one is able to simulate emergent flocking behaviour, in a life like way.
-The three rules are:
+Using the three simple rules that Mr. Reynolds defined initially,
+one is able to simulate the emergent flocking behaviour of animals.
+Never mind it was originally used to simulate flocks of birds,
+it looks equally great when applied to schools of fish.
+
+Now then, the three rules are:
 
 ![boid rules]
 
@@ -26,22 +33,24 @@ The three rules are:
 - **Alignment:** And it should try to match it's velocity and direction with it's neighbours.
 - **Separation:** While moving, it should also try to avoid collisions with the closest neighbours.
 
-This results in the interesting movement of birds or fish, for example,
-that mimics real life pretty accurately.
+This results in the interesting behaviour of birds or fish, as mentioned before,
+that moves around in a big coordinated group which mimics real life pretty accurately.
 [Complementary rules] and [steering behaviours] allows one to limit the movement speed,
 bounding the whole flock to a position, following routes (or a leader) and more.
 
-Now with this short introduction done,
-I'm going to document how a fun weekend project ended up as a two week long struggle with optimisations,
+With this short introduction done,
+I'm documenting how I ended up with a two week long struggle with optimisations,
 poor programmer art and a rabbit hole down into shader magic.
 And it was only supposed to be a fun, quick thing for a day.
 
-[school of clownfish]: boids.mp4
+*Skip down to [Results] for a sample clip of how it looks.*
+
 [Craig Reynolds]: https://www.red3d.com/cwr/boids/
 [Wikipedia]: https://en.wikipedia.org/wiki/Boids
 [boid rules]: rules.png
 [Complementary rules]: https://vergenet.net/~conrad/boids/pseudocode.html
 [steering behaviours]: https://gamedevelopment.tutsplus.com/series/understanding-steering-behaviors--gamedev-12732
+[Results]: #results
 
 # Optimisations
 
@@ -90,19 +99,20 @@ BenchmarkBoids-4   	    9891	    559058 ns/op	    4295 B/op	       6 allocs/op
 ```
 
 After this I wanted to replace my dumb index with a more efficient data structure[^1],
-like a [k-d tree] or [locality-sensitive hashing] [^2] but I think I was using them wrongly as the benchmark tanked.
+like a [k-d tree] or locality-sensitive hashing[^2] but I think I was using them wrongly as the benchmark tanked.
 At this point I realised how low my CPU usage was while running the simulation and that I already could run
 10 000 boids at the same time at a somewhat stable 60 FPS.
 Well, no further optimisations was actually needed so I dropped my buggy k-d tree and moved on.
 
 [^1]: Interestingly, there was a recent [HN thread] around this time, about various data structures and
       spatial hashing was suggested. I also found an article about [optimising boids].
-[^2]: I found a [easy to follow] guide with simple code and a more [theoretical] one but with great visuals.
+[^2]: [LSH on wikipedia]. I also found a [easy to follow] guide with simple code and a more [theoretical] one,
+      but with great visuals.
 
 [project repo]: https://github.com/lmas/akvarium
 [spatial index]: https://en.wikipedia.org/wiki/Spatial_database#Spatial_index
 [k-d tree]: https://en.wikipedia.org/wiki/K-d_tree
-[locality-sensitive hashing]: https://en.wikipedia.org/wiki/Locality-sensitive_hashing
+[LSH on wikipedia]: https://en.wikipedia.org/wiki/Locality-sensitive_hashing
 [HN thread]: https://news.ycombinator.com/item?id=32187176
 [optimising boids]: https://towardsdatascience.com/optimising-boids-algorithm-with-unsupervised-learning-ba464891bdba
 [easy to follow]: https://www.pinecone.io/learn/locality-sensitive-hashing-random-projection/
@@ -113,7 +123,7 @@ Well, no further optimisations was actually needed so I dropped my buggy k-d tre
 Happy with the results from a week of optimisations,
 I decided to instead focus on cleaning up the code and replace my shitty programmer art with something fancy.
 
-I found a couple of pretty photographs of Koi and Clown fish on [Unsplash], that I could use as reference.
+I found a couple of pretty photographs of Koi and Clown fish on [Unsplash] that I could use as reference.
 Then I decided to do vector tracing in Inkscape, which has a great tool for automatic tracing of images,
 so I would get SVG art that can be exported to any other image format with high quality.
 
@@ -128,7 +138,9 @@ I was pretty happy with the result:
 Then it's just a matter of exporting it as a small PNG and use it in the simulation.
 Done.
 
-**Next up, the background.**
+# Shader
+
+Next up was the background.
 
 I wanted rays of light on the surface and a gradual shift down to deep darkness at the bottom.
 I was initially using a SVG colour gradient, easy but dirty, until I got the bright (heh) idea to use a shader.
@@ -172,11 +184,11 @@ func Fragment(position vec4, texCoord vec2, color vec4) vec4 {
 }
 ```
 
-It was easy enough to twiddle the alpha levels for the rays and the screen pixels,
-but that `sunRay()` function just reeks of dark, mathematical magic of trigonometry.
-Love it.
+# Results
 
-![shader running]
+When done with all that, here's a small sample of the end product from the optimisations, art and shader magic.
+
+![school of clownfish]
 
 [Unsplash]: https://unsplash.com/
 [tracing fish in inkscape]: tracing-fish.png
@@ -184,12 +196,5 @@ Love it.
 [Ebitengine]: https://ebiten.org/
 [Kage]: https://ebiten.org/documents/shader.html
 [Shadertoy]: https://www.shadertoy.com/view/MdXGW7
-[shader running]: shader.mp4
+[school of clownfish]: boids.mp4
 
-<!-- # Result -->
-
-<!-- And that was another week with code clean ups and fidgeting with the graphics. -->
-<!-- The result? -->
-<!-- Awesomeness: -->
-
-<!-- <clip> -->
