@@ -77,7 +77,7 @@ feeds:
     url: https://torrentfreak.com/feed/
 
   - title: Tech - Hacker News
-    url: https://news.ycombinator.com/
+    url: https://news.ycombinator.com/rss
     parser:
-      rule: (?sU)class="titlelink"[^>]*>(?P<title>[^<]+)</a>.*<a href="(?P<url>[^"]*)">\d+&nbsp;comments
-      host: https://news.ycombinator.com/
+      rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
+      host: https://news.ycombinator.com/rss
