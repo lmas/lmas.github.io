@@ -13,8 +13,7 @@ This is a collection of interesting engineering and optimistic quotes by other p
 
 # Science
 
-> Young man, in mathematics you don't understand things.\
-> You just get used to them.
+> Young man, in mathematics you don't understand things. You just get used to them.
 >
 > - [John von Neumann](https://en.wikiquote.org/wiki/John_von_Neumann)
 
@@ -33,7 +32,7 @@ This is a collection of interesting engineering and optimistic quotes by other p
 >
 > - [Deina Kellezi & Demira Dimitrova](https://github.blog/2021-09-23-announcing-npms-new-access-token-format/)
 
-> The smaller part of the job of programming is writing a program so that the computer can read it; \
+> The smaller part of the job of programming is writing a program so that the computer can read it;
 > the larger part is writing it so that other humans can read it.
 >
 > - Steve McConnell, Code Complete
