@@ -153,7 +153,6 @@ pre > code {
 blockquote {
     padding-left: 3rem;
     position: relative;
-    width: max-content;
     font-style: italic;
 }
 blockquote:before {
