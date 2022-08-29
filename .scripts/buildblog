@@ -224,9 +224,9 @@ echo "$FILES" | while read -r srcfile; do
 
     elif dirname "$srcfile" | grep -q "$SRC/blog/*"; then
         printf 'abstract: "%s"\n' "$(getabstract "$srcfile")" >> "$TEMPO"
-        commit=$(getcommit "$srcfile")
-        printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
-        printf 'updated: %s\n' "$(echo "$commit" | cut -d ' ' -f 2)" >> "$TEMPO"
+        # commit=$(getcommit "$srcfile")
+        # printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
+        # printf 'updated: %s\n' "$(echo "$commit" | cut -d ' ' -f 2)" >> "$TEMPO"
     fi
 
     $PANDOC --lua-filter=.filters/copyright-year.lua $meta $toc --output="$dstfile" "$srcfile"
