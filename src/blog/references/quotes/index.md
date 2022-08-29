@@ -21,6 +21,9 @@ This is a collection of interesting engineering and optimistic quotes by other p
 >
 > - Jeremy Kun, A Programmer's Introduction to Mathematics
 
+> Computer science is when you understand a problem well enough to be able to explain it to a computer.
+>
+> - Donald Knuth, Luleå University of Technology, 2018
 
 # Engineering
 
