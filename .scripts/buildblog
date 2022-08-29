@@ -211,7 +211,7 @@ echo "$FILES" | while read -r srcfile; do
         toc="--toc --toc-depth=2"
     fi
     meta="--metadata-file=$TEMPO"
-    echo -n > "$TEMPO" # clears the file
+    printf "" > "$TEMPO" # clears the file
 
     # HACK: somewhat messy way to handle certain files differently, but it works
     if [ "$srcfile" = "$SRC/index.md" ]; then
@@ -222,7 +222,7 @@ echo "$FILES" | while read -r srcfile; do
         echo "blog-posts:" >> "$TEMPO"
         echo "$blogposts" >> "$TEMPO"
 
-    elif echo "$(dirname "$srcfile")" | grep -q "$SRC/blog/*"; then
+    elif dirname "$srcfile" | grep -q "$SRC/blog/*"; then
         printf 'abstract: "%s"\n' "$(getabstract "$srcfile")" >> "$TEMPO"
         commit=$(getcommit "$srcfile")
         printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
