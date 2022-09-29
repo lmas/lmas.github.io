@@ -1,6 +1,14 @@
 
 # TODO
 
+- rewrite github workflow:
+  https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
+  https://github.com/actions/starter-workflows/blob/main/pages/static.yml
+
+- rm Home link, replace with About?
+
+- build stats.txt
+
 - Reinvestigate favicons:
   https://news.ycombinator.com/item?id=25520655
   https://stackoverflow.com/a/23734416
