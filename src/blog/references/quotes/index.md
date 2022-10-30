@@ -11,6 +11,8 @@ This is a collection of interesting engineering and optimistic quotes by other p
 
 *I'll try to keep track of the original authors and linkable sources as best as I can.*
 
+
+
 # Science
 
 > Young man, in mathematics you don't understand things. You just get used to them.
@@ -24,6 +26,11 @@ This is a collection of interesting engineering and optimistic quotes by other p
 > Computer science is when you understand a problem well enough to be able to explain it to a computer.
 >
 > - Donald Knuth, Luleå University of Technology, 2018
+
+> The best way to predict the future is to invent it.
+>
+> - [Alan Kay](https://www.ted.com/speakers/alan_kay)
+
 
 # Engineering
 
@@ -39,6 +46,7 @@ This is a collection of interesting engineering and optimistic quotes by other p
 > the larger part is writing it so that other humans can read it.
 >
 > - Steve McConnell, Code Complete
+
 
 
 # Fun
