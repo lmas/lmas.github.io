@@ -12,23 +12,21 @@ feeds:
     url: http://oglaf.com/feeds/rss/
   - title: Comics - Order of the Stick
     url: https://www.giantitp.com/comics/oots.rss
-  - title: Comics - Schlock
-    url: https://www.schlockmercenary.com/rss/
   - title: Comics - xkcd
     url: https://xkcd.com/rss.xml
-  - title: Comics - The Weekly Roll
-    url: https://old.reddit.com/r/theweeklyroll/top/.rss?sort=top&t=week&limit=20
+  #- title: Comics - Schlock
+  #  url: https://www.schlockmercenary.com/rss/
 
   - title: News - SVT Norrbotten
     url: https://www.svt.se/nyheter/lokalt/norrbotten/rss.xml
-  - title: News - SVT Inrikes
-    url: https://www.svt.se/nyheter/inrikes/rss.xml
-  - title: News - SVT Utrikes
-    url: https://www.svt.se/nyheter/utrikes/rss.xml
   - title: News - SVT Vetenskap
     url: https://www.svt.se/nyheter/vetenskap/rss.xml
-  - title: News - SVT Ekonomi
-    url: https://www.svt.se/nyheter/ekonomi/rss.xml
+  #- title: News - SVT Inrikes
+  #  url: https://www.svt.se/nyheter/inrikes/rss.xml
+  #- title: News - SVT Utrikes
+  #  url: https://www.svt.se/nyheter/utrikes/rss.xml
+  #- title: News - SVT Ekonomi
+  #  url: https://www.svt.se/nyheter/ekonomi/rss.xml
 
   - title: LTU - Nyheter
     url: https://www.ltu.se/ltu/media/news?mode=rss
@@ -37,10 +35,6 @@ feeds:
   - title: LTU - Studentnotiser
     url: https://www.ltu.se/student/Studentnotiser?mode=rss
 
-  - title: Blogs - Wait But Why
-    url: https://waitbutwhy.com/feed
-  - title: Blogs - Ardan Labs
-    url: https://www.ardanlabs.com/blog/index.xml
   - title: Blogs - research!rsc
     url: https://research.swtch.com/feed.atom
   - title: Blogs - Filippo Valsorda
@@ -56,8 +50,6 @@ feeds:
     url: https://letsencrypt.org/feed.xml
   - title: Services - Mozilla
     url: https://blog.mozilla.org/security/feed/
-  - title: Services - Github
-    url: https://github.blog/feed/
   - title: Services - Libera.chat
     url: https://libera.chat/atom.xml
   - title: Services - SourceHut
@@ -67,17 +59,20 @@ feeds:
   - title: Services - FreeBSD
     url: https://www.freebsd.org/news/feed.xml
 
-  - title: Tech - /r/Golang
-    url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week&limit=20
   - title: Tech - /r/Programming
     url: https://old.reddit.com/r/programming/top/.rss?sort=top&t=week&limit=20
-  - title: Tech - /r/Netsec
-    url: https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week&limit=20
-  - title: Tech - TorrentFreak
-    url: https://torrentfreak.com/feed/
-
+  #- title: Tech - /r/Golang
+  #  url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week&limit=20
+  #- title: Tech - /r/Netsec
+  #  url: https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week&limit=20
+  #- title: Tech - TorrentFreak
+  #  url: https://torrentfreak.com/feed/
   - title: Tech - Hacker News
-    url: https://news.ycombinator.com/rss
+    url: https://hnrss.org/frontpage?link=comments&comments=25&points=50
     parser:
-      rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
-      host: https://news.ycombinator.com/rss
+      rule: (?sU)<item>.*<title><!\[CDATA\[(?P<title>[^\]]+)\]\]></title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
+      host: https://hnrss.org/frontpage?link=comments&comments=25&points=50
+    #url: https://news.ycombinator.com/rss
+    #parser:
+    #  rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
+    #  host: https://news.ycombinator.com/rss
