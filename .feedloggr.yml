@@ -68,10 +68,10 @@ feeds:
   #- title: Tech - TorrentFreak
   #  url: https://torrentfreak.com/feed/
   - title: Tech - Hacker News
-    url: https://hnrss.org/frontpage?link=comments&comments=25&points=50
-    parser:
-      rule: (?sU)<item>.*<title><!\[CDATA\[(?P<title>[^\]]+)\]\]></title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
-      host: https://hnrss.org/best?link=comments&comments=25&points=50
+    url: https://hnrss.org/best?link=comments&comments=25&points=50
+    # parser:
+    #   rule: (?sU)<item>.*<title><!\[CDATA\[(?P<title>[^\]]+)\]\]></title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
+    #   host: https://hnrss.org/best?link=comments&comments=25&points=50
     #url: https://news.ycombinator.com/rss
     #parser:
     #  rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
