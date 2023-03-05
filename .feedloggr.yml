@@ -43,6 +43,8 @@ feeds:
     url: https://www.schneier.com/blog/atom.xml
   - title: Blogs - Bartosz Ciechanowski
     url: https://ciechanow.ski/atom.xml
+  - title: Blogs - Muffin Man
+    url: https://muffinman.io/atom.xml
 
   - title: Services - DuckDuckGo
     url: https://spreadprivacy.com/rss/
