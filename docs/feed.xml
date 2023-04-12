@@ -4,11 +4,11 @@
 <subtitle>The latest posts from Larus.se</subtitle>
 <link href="https://www.larus.se" />
 <link rel="self" href="https://www.larus.se/feed.xml" />
-<updated>2022-10-30T14:57:00Z</updated>
+<updated>2023-04-12T09:55:00Z</updated>
 <author>
 <name>Alex</name>
 </author>
-<rights>Copyright © 2022 Alex</rights>
+<rights>Copyright © 2023 Alex</rights>
 <id>https://www.larus.se/</id>
 <entry>
 <title>Introducing an aquatic simulation of Boids</title>
@@ -22,7 +22,7 @@
 <id>https://www.larus.se/blog/references/quotes/index.html</id>
 <link href="https://www.larus.se/blog/references/quotes/index.html" />
 <updated>2022-07-15T00:00:00Z</updated>
-<summary>This is a collection of interesting engineering and optimistic quotes by other people.</summary>
+<summary>This is a personal collection of engineering quotes by other people.</summary>
 </entry>
 <entry>
 <title>The drunken bishop</title>
