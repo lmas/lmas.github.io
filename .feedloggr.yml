@@ -50,10 +50,6 @@ feeds:
     url: https://letsencrypt.org/feed.xml
   - title: Services - Mozilla
     url: https://blog.mozilla.org/security/feed/
-  - title: Services - Libera.chat
-    url: https://libera.chat/atom.xml
-  - title: Services - SourceHut
-    url: https://sourcehut.org/blog/index.xml
   - title: Services - Golang
     url: https://go.dev/blog/feed.atom
   - title: Services - FreeBSD
