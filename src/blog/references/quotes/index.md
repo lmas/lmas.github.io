@@ -7,7 +7,7 @@ banner-author: capnsnap
 banner-source: https://unsplash.com/photos/utYSgMOIm5w
 ---
 
-This is a collection of interesting engineering and optimistic quotes by other people.
+This is a personal collection of engineering quotes by other people.
 
 *I'll try to keep track of the original authors and linkable sources as best as I can.*
 
