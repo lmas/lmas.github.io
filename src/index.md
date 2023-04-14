@@ -14,7 +14,7 @@ abstract: The personal homepage for Alex
 > You can find me and my projects on [Github](https://github.com/lmas)
 >
 > or contact me directly via [Mail](mailto:hello@larus.se) or
-[Mastodon](https://social.larus.se/@lmas).
+<a rel="me" href="https://social.larus.se/@lmas">Mastodon</a>.
 
 </div>
 
