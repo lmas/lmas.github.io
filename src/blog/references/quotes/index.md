@@ -31,6 +31,10 @@ This is a personal collection of engineering quotes by other people.
 >
 > - [Alan Kay](https://www.ted.com/speakers/alan_kay)
 
+> Entropy is the logarithmic measure for information predictability.
+>
+> - [Deina Kellezi & Demira Dimitrova](https://github.blog/2021-09-23-announcing-npms-new-access-token-format/)
+
 
 # Engineering
 
@@ -38,14 +42,14 @@ This is a personal collection of engineering quotes by other people.
 >
 > - Titus Winters
 
-> Entropy is the logarithmic measure for information predictability.
->
-> - [Deina Kellezi & Demira Dimitrova](https://github.blog/2021-09-23-announcing-npms-new-access-token-format/)
-
 > The smaller part of the job of programming is writing a program so that the computer can read it;
 > the larger part is writing it so that other humans can read it.
 >
 > - Steve McConnell, Code Complete
+
+> Software engineering is what happens to programming when you add time and other programmers.
+>
+> - [Russ Cox](https://research.swtch.com/vgo-eng)
 
 
 
