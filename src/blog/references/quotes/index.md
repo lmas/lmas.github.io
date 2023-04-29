@@ -52,6 +52,12 @@ This is a personal collection of engineering quotes by other people.
 > - [Russ Cox](https://research.swtch.com/vgo-eng)
 
 
+# Optimism
+
+> There are better things ahead than any we leave behind.
+>
+> - [C. S. Lewis](https://literature.stackexchange.com/a/8832)
+
 
 # Fun
 
