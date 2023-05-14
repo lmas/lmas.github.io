@@ -51,6 +51,10 @@ This is a personal collection of engineering quotes by other people.
 >
 > - [Russ Cox](https://research.swtch.com/vgo-eng)
 
+> I didn’t pay enough attention to security.
+>
+> - [Vint Cerf](https://spectrum.ieee.org/vint-cerf-mistakes)
+
 
 # Optimism
 
