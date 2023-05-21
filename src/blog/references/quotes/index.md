@@ -55,6 +55,12 @@ This is a personal collection of engineering quotes by other people.
 >
 > - [Vint Cerf](https://spectrum.ieee.org/vint-cerf-mistakes)
 
+> Dawson’s first law of computing:
+> O(n^2) is the sweet spot of badly scaling algorithms - fast enough to make it into production,
+> but slow enough to make things fall down once it gets there.
+>
+> - [Bruce Dawnson](https://randomascii.wordpress.com/2021/02/16/arranging-invisible-icons-in-quadratic-time/)
+
 
 # Optimism
 
