@@ -53,6 +53,8 @@ feeds:
   - title: Services - FreeBSD
     url: https://www.freebsd.org/news/feed.xml
 
+  - title: Tech - programming.dev
+    url: https://programming.dev/feeds/local.xml?sort=TopWeek
   - title: Tech - /r/Programming
     url: https://old.reddit.com/r/programming/top/.rss?sort=top&t=week&limit=20
   #- title: Tech - /r/Golang
