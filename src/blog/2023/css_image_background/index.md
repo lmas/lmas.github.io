@@ -7,6 +7,7 @@ A nice, simple way of producing colourful backgrounds for single images,
 for example while showing cover art or profile pictures,
 can be done by reusing the image itself as a background,
 but heavily blurred.
+
 I learned this trick from [Tao of Mac].
 
 The HTML is stupid simple:
