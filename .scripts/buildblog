@@ -23,7 +23,7 @@ getfilemeta() {
 }
 
 getmeta() (
-    # Get meta data field
+    # Get site-wide meta data field
     # arg 1: field name
 
     # uses a sub shell here to scope vars locally (notice the parens for the func declaration)
@@ -39,7 +39,7 @@ getabstract() {
     # Double quotes has to be stripped.
     # arg 1: source file
 
-    cat "$1" | sed -e '1,/^---$/d' | awk 'BEGIN{RS=ORS="\n\n"} NR==1 {$1=$1; print}' | tr -d '"'
+    sed -e '1,/^---$/d' < "$1" | awk 'BEGIN{RS=ORS="\n\n"} NR==1 {$1=$1; print}' | tr -d '"'
 }
 
 getcommit() {
@@ -59,9 +59,10 @@ getdestination() (
 
 getmdfiles() {
     # Find all markdown files in src dir and sort them by date and title
+    # arg 1: src dir
 
     (
-        find "$SRC" -iname "*.md" | while read -r file; do
+        find "$1" -iname "*.md" | while read -r file; do
             date=$(getfilemeta date "$file")
             title=$(getfilemeta title "$file")
             # Placement of the tab is important here, to avoid unwanted white space
@@ -74,21 +75,22 @@ getmdfiles() {
     done
 }
 
-filterblogposts() (
-    # Filter out blog posts from a list of src files and optionally return max <no> of posts
-    # arg 1: file list
-    # arg 2: optional max number of files to return
+getfilteredmdfiles() {
+    # Find all markdown files in src dir using "getmdfiles", then filters out
+    # the root post and optionally limits the max number of files
+    # arg 1: src dir
+    # arg 2: optional max number of files
 
-    posts=$(echo "$1" | grep "$SRC/blog" | grep -v "/blog/index.md")
-    if [ "$#" -gt 1 ]; then
-        echo "$posts" | head -n "$2"
+    files=$(getmdfiles "$1" | grep -v "$1/index.md")
+    if [ "$2" -gt 0 ]; then
+        echo "$files" | head -n "$2"
     else
-        echo "$posts"
+        echo "$files"
     fi
-)
+}
 
 condensepost() (
-    # Summarises a blog post to a single line item
+    # Summarises a markdown file, as a post, to a single line item
     # arg 1: post file
 
     src="$1"
@@ -116,7 +118,7 @@ DST=${2%/}
 SITE=$(getmeta site "$META") && SITE="${SITE%/}"
 TITLE=$(getmeta title-prefix "$META")
 AUTHOR=$(getmeta author "$META")
-FILES=$(getmdfiles)
+FILES=$(getmdfiles "$SRC")
 
 # Temporary file for quick 'n dirty file writes
 TEMPO=$(mktemp)
@@ -129,6 +131,7 @@ trap 'rm -f $TEMPO' 0 1 2 3 15
 find "$SRC" -type d | while read -r srcdir; do
     dstdir=${srcdir#"$SRC/"}
     dstdir="$DST/$dstdir"
+
     mkdir -p "$dstdir"
 done
 
@@ -147,6 +150,7 @@ EOF
 
 echo "$FILES" | while read -r srcfile; do
     dstfile=$(getdestination "$srcfile")
+
     cat << EOF >> "$sitemap"
 <url>
 <loc>$SITE/$dstfile</loc>
@@ -175,12 +179,13 @@ cat << EOF > "$feed"
 <id>$SITE/</id>
 EOF
 
-filterblogposts "$FILES" 25 | while read -r srcfile; do
+getfilteredmdfiles "$SRC/blog" 25 | while read -r srcfile; do
     dstfile=$(getdestination "$srcfile")
     title=$(getfilemeta title "$srcfile")
     # Only got a date but the feed spec wants a full RFC-3339 datetime. Just tack zero time at the end
     date=$(getfilemeta date "$srcfile")
     abstract=$(getabstract "$srcfile")
+
     cat << EOF >> "$feed"
 <entry>
 <title>$title</title>
@@ -197,11 +202,6 @@ echo "</feed>" >> "$feed"
 ########################################################################################################################
 # Build markdown files
 
-blogposts=$(filterblogposts "$FILES" | while read -r srcfile; do
-    post=$(condensepost "$srcfile")
-    echo "  - $post"
-done)
-
 echo "$FILES" | while read -r srcfile; do
     dstfile=$(getdestination "$srcfile")
     dstfile="$DST/$dstfile"
@@ -213,21 +213,28 @@ echo "$FILES" | while read -r srcfile; do
     meta="--metadata-file=$TEMPO"
     printf "" > "$TEMPO" # clears the file
 
-    # HACK: somewhat messy way to handle certain files differently, but it works
-    if [ "$srcfile" = "$SRC/index.md" ]; then
-        echo "blog-posts:" >> "$TEMPO"
-        echo "$blogposts" | head -n 5 >> "$TEMPO"
-
-    elif [ "$srcfile" = "$SRC/blog/index.md" ]; then
-        echo "blog-posts:" >> "$TEMPO"
-        echo "$blogposts" >> "$TEMPO"
-
-    elif dirname "$srcfile" | grep -q "$SRC/blog/*"; then
+    hasabstract=$(getfilemeta abstract "$srcfile")
+    if [ -z "$hasabstract" ]; then
         printf 'abstract: "%s"\n' "$(getabstract "$srcfile")" >> "$TEMPO"
-        # commit=$(getcommit "$srcfile")
-        # printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
-        # printf 'updated: %s\n' "$(echo "$commit" | cut -d ' ' -f 2)" >> "$TEMPO"
     fi
+
+    hasdirlist=$(getfilemeta dirlist "$srcfile")
+    if [ -n "$hasdirlist" ]; then
+        srcdir=$(dirname "$srcfile")
+        dirfiles=$(getfilteredmdfiles "$srcdir" "$hasdirlist")
+        dirposts=$(echo "$dirfiles" | while read -r postfile; do
+            post=$(condensepost "$postfile")
+            echo "  - $post"
+        done)
+
+        echo "post-list:" >> "$TEMPO"
+        echo "$dirposts" >> "$TEMPO"
+    fi
+
+    # TODO:
+    # commit=$(getcommit "$srcfile")
+    # printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
+    # printf 'updated: %s\n' "$(echo "$commit" | cut -d ' ' -f 2)" >> "$TEMPO"
 
     $PANDOC --lua-filter=.filters/copyright-year.lua $meta $toc --output="$dstfile" "$srcfile"
 done
