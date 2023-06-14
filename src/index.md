@@ -1,6 +1,7 @@
 ---
 pagetitle: Home
 abstract: The personal homepage for Alex
+dirlist: 5
 ---
 
 <div class="row">
