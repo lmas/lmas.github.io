@@ -4,12 +4,19 @@
 <subtitle>The latest posts from Larus.se</subtitle>
 <link href="https://www.larus.se" />
 <link rel="self" href="https://www.larus.se/feed.xml" />
-<updated>2023-06-13T10:45:00Z</updated>
+<updated>2023-06-14T18:31:00Z</updated>
 <author>
 <name>Alex</name>
 </author>
 <rights>Copyright © 2023 Alex</rights>
 <id>https://www.larus.se/</id>
+<entry>
+<title>CSS simple image background</title>
+<id>https://www.larus.se/blog/2023/css_image_background/index.html</id>
+<link href="https://www.larus.se/blog/2023/css_image_background/index.html" />
+<updated>2023-06-14T00:00:00Z</updated>
+<summary>A nice, simple way of producing colourful backgrounds for single images, for example while showing cover art or profile pictures, can be done by reusing the image itself as a background, but heavily blurred. I learned this trick from [Tao of Mac].</summary>
+</entry>
 <entry>
 <title>Introducing an aquatic simulation of Boids</title>
 <id>https://www.larus.se/blog/2022/boids/index.html</id>

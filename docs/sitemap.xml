@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.larus.se</loc>
-<lastmod>2023-06-13</lastmod>
+<lastmod>2023-06-14</lastmod>
+</url>
+<url>
+<loc>https://www.larus.se/blog/2023/css_image_background/index.html</loc>
 </url>
 <url>
 <loc>https://www.larus.se/blog/2022/boids/index.html</loc>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="generator" content="pandoc" />
+<meta name="author" content="Alex" />
+<meta name="dcterms.date" content="2023-06-14" />
+<meta name="description" content="A nice, simple way of producing colourful
+backgrounds for single images, for example while showing cover art or profile
+pictures, can be done by reusing the image itself as a background, but heavily
+blurred. I learned this trick from [Tao of Mac]." />
+<title>CSS simple image background – Larus.se</title>
+<link rel="stylesheet" href="/style/theme.css" />
+<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+<link rel="sitemap" type="application/xml" title="sitemap" href="/sitemap.xml" />
+<link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
+</head>
+<body>
+
+<nav>
+<span class="logo"><a href="/">Larus.se</a></span>
+<input type="checkbox" id="hamburger" />
+<label for="hamburger">&#9776;</label>
+<a href="/">Home</a>
+<a href="/blog/">Blog</a>
+<a href="/news/">News</a>
+<a href="https://github.com/lmas" rel="noopener nofollow">Github</a>
+</nav>
+
+<main>
+<article>
+
+<header>
+<time class="header-date">2023-06-14</time>
+<h1>CSS simple image background</h1>
+<hr>
+</header>
+
+
+
+<p>A nice, simple way of producing colourful backgrounds for single images, for
+example while showing cover art or profile pictures, can be done by reusing the
+image itself as a background, but heavily blurred. I learned this trick from <a
+href="https://taoofmac.com/space/blog/2021/12/01/1920#the-pretty">Tao of
+Mac</a>.</p>
+<p>The HTML is stupid simple:</p>
+<pre><code>&lt;div class=&quot;cover&quot; id=&quot;some_id&quot;&gt;
+    &lt;img src=&quot;path_to_img&quot;&gt;
+&lt;/div&gt;</code></pre>
+<p>The CSS is a bit longer but it's mostly aligning things, the interesting part
+is the <code>:before</code> rules:</p>
+<pre><code>.cover &gt; img {
+    border-radius: 5px;
+    filter: drop-shadow(0px 10px 10px black);
+}
+.cover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Prevent &quot;.cover:before&quot; from moving outside this container */
+}
+.cover:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1; /* Don&#39;t hide child elements behind this one */
+    content: &quot;&quot;; /* Required for showing the background */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vw 100vh;
+    filter: blur(50px);
+}
+#some_id:before {
+    /* This property could be put directly in the above rule,
+    but it was seperated out so all of the above rules could be kept generalised and easily resued.
+    There isn&#39;t a way to reuse HTML properties of child elements, using plain CSS. */
+    background-image: url(&quot;path_to_img&quot;);
+}</code></pre>
+<p>These two blocks of code can then produce the following result (with some
+extra code for demonstration pruposes):</p>
+<style>
+.cover > img {
+    border-radius: 5px;
+    filter: drop-shadow(0px 10px 10px black);
+}
+.cover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.cover:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vw 100vh;
+    filter: blur(50px);
+}
+
+/* Extra fluff for the demo */
+.columns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.columns div {
+    padding: 50px;
+}
+#red:before {
+    background-image: url("fish.jpg");
+}
+#green:before {
+    background-image: url("kelp.jpg");
+}
+#blue:before {
+    background-image: url("ocean.jpg");
+}
+</style>
+
+<span class="columns">
+<div class="cover" id="red">
+    <img src="fish.jpg">
+    <p>Photo by <a href="https://unsplash.com/photos/Gv-Cx3_clZ4">David Clode</a>.</p>
+</div>
+    <div class="cover" id="green">
+        <img src="kelp.jpg">
+        <p>Photo by <a href="https://unsplash.com/photos/4IyllFjr3Rw">Shane Stagner</a>.</p>
+    </div>
+    <div class="cover" id="blue">
+        <img src="ocean.jpg">
+        <p>Photo by <a href="https://unsplash.com/photos/wc9avd2RaN0">Christoffer Engström</a>.</p>
+    </div>
+</span>
+
+<p>On the blog, the background was also rotated 180 degrees although it isn't
+explained why, I guess it was for making it less obvious that the image was
+reused. Making it less obvious doesn't matter that much for myself but was worth
+noting down anyway.</p>
+<p>One thing I did want to do though was to increase the contrast between the
+image and the background so that the image itself would stand out some more. One
+way it could be done is by fiddling with the <a
+href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSL values</a> using plain CSS
+or by using some other <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_filter_effects">CSS
+filter</a>.</p>
+<p>The blur effect can also be seen bleeding over the elements' containers which
+might be unwanted and should be taken cared of, but that have to be done some
+other day.</p>
+
+
+
+</article>
+</main>
+
+<footer>
+<a href="/feed.xml">Feed</a>
+<a href="/sitemap.xml">Sitemap</a>
+<a href="https://github.com/lmas/lmas.github.io" rel="noopener nofollow">Source</a>
+<p>Copyright © 2023 Alex</p>
+</footer>
+<script data-goatcounter="https://lmas.goatcounter.com/count" src="//gc.zgo.at/count.js" async></script>
+<noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
+</body>
+</html>
