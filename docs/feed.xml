@@ -4,7 +4,7 @@
 <subtitle>The latest posts from Larus.se</subtitle>
 <link href="https://www.larus.se" />
 <link rel="self" href="https://www.larus.se/feed.xml" />
-<updated>2023-06-14T18:31:00Z</updated>
+<updated>2023-06-14T20:45:00Z</updated>
 <author>
 <name>Alex</name>
 </author>
@@ -25,13 +25,6 @@
 <summary>While I was having a summer vacation, I wanted to do a short and simple weekend project trying to simulate a school of fish floating around on the screen. I also wanted to focus on making it look good and smooth, as a way for me to release some sort of artistic creativity during those sunny days.</summary>
 </entry>
 <entry>
-<title>Quotes</title>
-<id>https://www.larus.se/blog/references/quotes/index.html</id>
-<link href="https://www.larus.se/blog/references/quotes/index.html" />
-<updated>2022-07-15T00:00:00Z</updated>
-<summary>This is a personal collection of engineering quotes by other people.</summary>
-</entry>
-<entry>
 <title>The drunken bishop</title>
 <id>https://www.larus.se/blog/2021/the_drunken_bishop/index.html</id>
 <link href="https://www.larus.se/blog/2021/the_drunken_bishop/index.html" />
@@ -44,13 +37,6 @@
 <link href="https://www.larus.se/blog/2021/http_live_streaming/index.html" />
 <updated>2021-06-20T00:00:00Z</updated>
 <summary>HTTP Live Streaming is a protocol originally developed by Apple and it allows you to stream A/V media over HTTP.</summary>
-</entry>
-<entry>
-<title>Markdown reference</title>
-<id>https://www.larus.se/blog/references/markdown/index.html</id>
-<link href="https://www.larus.se/blog/references/markdown/index.html" />
-<updated>2021-06-13T00:00:00Z</updated>
-<summary>A quick reference page for most of this blog's flavour of Markdown.</summary>
 </entry>
 <entry>
 <title>Hello world</title>

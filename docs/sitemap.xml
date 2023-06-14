@@ -11,7 +11,7 @@
 <loc>https://www.larus.se/blog/2022/boids/index.html</loc>
 </url>
 <url>
-<loc>https://www.larus.se/blog/references/quotes/index.html</loc>
+<loc>https://www.larus.se/ref/quotes/index.html</loc>
 </url>
 <url>
 <loc>https://www.larus.se/blog/2021/the_drunken_bishop/index.html</loc>
@@ -20,10 +20,13 @@
 <loc>https://www.larus.se/blog/2021/http_live_streaming/index.html</loc>
 </url>
 <url>
-<loc>https://www.larus.se/blog/references/markdown/index.html</loc>
+<loc>https://www.larus.se/ref/markdown/index.html</loc>
 </url>
 <url>
 <loc>https://www.larus.se/blog/2021/hello_world/index.html</loc>
+</url>
+<url>
+<loc>https://www.larus.se/ref/index.html</loc>
 </url>
 <url>
 <loc>https://www.larus.se/blog/index.html</loc>
