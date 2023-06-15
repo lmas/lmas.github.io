@@ -6,6 +6,8 @@ settings:
   verbose: true
 
 feeds:
+  - title: Comics - Ten Earth Shattering Blows
+    url: https://tenearthshatteringblows.com/feed
   - title: Comics - Kill Six Billion Demons
     url: https://killsixbilliondemons.com/feed/
   - title: Comics - Oglaf
@@ -55,14 +57,6 @@ feeds:
 
   - title: Tech - programming.dev
     url: https://programming.dev/feeds/local.xml?sort=TopWeek
-  - title: Tech - /r/Programming
-    url: https://old.reddit.com/r/programming/top/.rss?sort=top&t=week&limit=20
-  #- title: Tech - /r/Golang
-  #  url: https://old.reddit.com/r/golang/top/.rss?sort=top&t=week&limit=20
-  #- title: Tech - /r/Netsec
-  #  url: https://old.reddit.com/r/netsec/top/.rss?sort=top&t=week&limit=20
-  #- title: Tech - TorrentFreak
-  #  url: https://torrentfreak.com/feed/
   - title: Tech - Hacker News
     url: https://hnrss.org/best?link=comments&comments=25&points=50
     # parser:
