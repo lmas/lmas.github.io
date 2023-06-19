@@ -57,6 +57,8 @@ feeds:
 
   - title: Tech - programming.dev
     url: https://programming.dev/feeds/local.xml?sort=TopWeek
+  - title: Tech - beehaw.org/c/programming
+    url: https://beehaw.org/feeds/c/programming.xml?sort=TopWeek
   - title: Tech - Hacker News
     url: https://hnrss.org/best?link=comments&comments=25&points=50
     # parser:
