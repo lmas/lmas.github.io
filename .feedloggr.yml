@@ -55,10 +55,12 @@ feeds:
   - title: Services - FreeBSD
     url: https://www.freebsd.org/news/feed.xml
 
-  - title: Tech - programming.dev
-    url: https://programming.dev/feeds/local.xml?sort=TopWeek
+  - title: Tech - programming.dev/c/programming
+    url: https://programming.dev/feeds/c/programming.xml?sort=TopWeek
   - title: Tech - beehaw.org/c/programming
     url: https://beehaw.org/feeds/c/programming.xml?sort=TopWeek
+  - title: Tech - kbin.social/m/programming
+    url: https://kbin.social/rss?magazine=programming&sortBy=top
   - title: Tech - Hacker News
     url: https://hnrss.org/best?link=comments&comments=25&points=50
     # parser:
