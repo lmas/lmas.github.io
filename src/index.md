@@ -19,4 +19,4 @@ dirlist: 5
 
 </div>
 
-# Latest blog posts
+# Latest Posts
