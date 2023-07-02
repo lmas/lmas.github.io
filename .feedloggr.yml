@@ -61,6 +61,10 @@ feeds:
     url: https://beehaw.org/feeds/c/programming.xml?sort=TopWeek
   - title: Tech - kbin.social/m/programming
     url: https://kbin.social/rss?magazine=programming&sortBy=top
+  - title: Tech - lobste.rs
+    url: https://lobste.rs/top.rss
+    parser:
+      rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
   - title: Tech - Hacker News
     url: https://hnrss.org/best?link=comments&comments=25&points=50
     # parser:
