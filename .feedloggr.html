@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="generator" content="{{.Generator.Name}}" />
+<title>News for {{.Today | shortdate}}</title>
+<link href="/style/theme.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<nav>
+<span class="logo"><a href="/">Larus.se</a></span>
+<a href="./news-{{.Today | prevday | shortdate}}.html">Previous</a>
+<a href="./index.html">Latest</a>
+<a href="./news-{{.Today | nextday | shortdate}}.html">Next</a>
+</nav>
+
+<main>
+<article>
+<header>
+<time class="header-date">{{.Today | shortdate}}</time>
+<h1>Latest News</h1>
+<p class="banner-author">Random photo by <a href="https://unsplash.com">Unsplash.com</a></p>
+<img class="banner" width="960" height="200" decoding="async" alt="Random banner image of ocean, fish or kelp from Unsplash.com" src="https://source.unsplash.com/random/960x200?ocean,fish,kelp">
+</header>
+
+{{range .Feeds}}
+<section class="news">
+<h2>{{.Conf.Title}} <a class="pilcrow" href="{{.Conf.Source}}">&para;</a></h2>
+{{if .Error}}
+<p>Error while updating feed:<br />{{.Error}}</p>
+{{else}}
+<ul>{{range .Items}}
+<li><a href="{{.Url}}" rel="nofollow">{{.Title}}</a></li>
+{{end}}</ul>
+{{end}}
+</section>
+{{else}}
+<p>Sorry, no news for today!</p>
+{{end}}
+</article>
+</main>
+
+<br><br>
+<footer>
+<p>Generated with <a href="{{.Generator.Source}}">{{.Generator.Name}} {{.Generator.Version}}</a>.</p>
+<p>Copyright belongs to the original authors.</p>
+</footer>
+</body>
+</html>

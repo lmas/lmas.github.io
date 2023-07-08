@@ -1,8 +1,10 @@
 settings:
   output: docs/news/
+  template: .feedloggr.html
+  maxdays: 30
   maxitems: 30
-  throttle: 2
   timeout: 30
+  jitter: 5
   verbose: true
 
 feeds:
@@ -23,10 +25,10 @@ feeds:
     url: https://www.svt.se/nyheter/lokalt/norrbotten/rss.xml
   - title: News - SVT Vetenskap
     url: https://www.svt.se/nyheter/vetenskap/rss.xml
-  #- title: News - SVT Inrikes
-  #  url: https://www.svt.se/nyheter/inrikes/rss.xml
-  #- title: News - SVT Utrikes
-  #  url: https://www.svt.se/nyheter/utrikes/rss.xml
+  - title: News - SVT Inrikes
+    url: https://www.svt.se/nyheter/inrikes/rss.xml
+  - title: News - SVT Utrikes
+    url: https://www.svt.se/nyheter/utrikes/rss.xml
   #- title: News - SVT Ekonomi
   #  url: https://www.svt.se/nyheter/ekonomi/rss.xml
 
