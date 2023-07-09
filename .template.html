@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 <meta name="generator" content="pandoc" />
@@ -23,9 +22,7 @@ $endif$
 <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 <link rel="sitemap" type="application/xml" title="sitemap" href="/sitemap.xml" />
 <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
-</head>
-<body>
-
+</head><body>
 <nav>
 $if(title-prefix)$
 <span class="logo"><a href="/">$title-prefix$</a></span>
@@ -38,10 +35,7 @@ $header$
 $endfor$
 $endif$
 </nav>
-
-<main>
-<article>
-
+<main><article>
 $if(title)$
 <header>
 $if(date)$
@@ -59,16 +53,13 @@ $else$
 $endif$
 </header>
 $endif$
-
 $if(toc)$$if(table-of-contents)$
 <details class="toc">
 <summary>Contents</summary>
 $table-of-contents$
 </details>
 $endif$$endif$
-
 $body$
-
 $if(post-list)$
 <ul class="post-list">
 $for(post-list)$
@@ -76,14 +67,10 @@ $post-list$
 $endfor$
 </ul>
 $endif$
-
 $if(commit)$
 <p>Last updated on <a href="https://github.com/lmas/lmas.github.io/commit/$commit$">$updated$</a>.</p>
 $endif$
-
-</article>
-</main>
-
+</article></main>
 <footer>
 $for(footer)$
 $footer$
@@ -92,5 +79,4 @@ $endfor$
 </footer>
 <script data-goatcounter="https://lmas.goatcounter.com/count" src="//gc.zgo.at/count.js" async></script>
 <noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
-</body>
-</html>
+</body></html>
