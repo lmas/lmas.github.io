@@ -162,7 +162,7 @@ blockquote {
     font-style: italic;
 }
 blockquote:before {
-    content: '❝';
+    content: open-quote;
     font-size: 3rem;
     position: absolute;
     left: 0.5rem;
@@ -175,7 +175,7 @@ ul li {
     list-style-type: none;
 }
 ul li:before {
-    content: '-';
+    content: "-";
     padding-right: 0.5rem;
     font-weight: bold;
 }
@@ -239,7 +239,7 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
     align-items: center;
 }
 .post-list li:before {
-    content: '';
+    content: none;
     padding: 0;
 }
 .post-list time {
@@ -254,12 +254,6 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 .footnotes li p {
     display: inline;
 }
-.news h2 a {
-    display: none;
-}
-.news h2:hover a {
-    display: inline;
-}
 .news ul li:before {
     content: none;
 }
@@ -268,4 +262,13 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 }
 .news ul li a {
     border: 0px;
+}
+.pilcrow a {
+    display: none;
+}
+.pilcrow a:before {
+    content: "\00B6";
+}
+.pilcrow:hover a {
+    display: inline;
 }
