@@ -162,7 +162,7 @@ blockquote {
     font-style: italic;
 }
 blockquote:before {
-    content: open-quote;
+    content: "\201C"; /* Left, double quotation mark */
     font-size: 3rem;
     position: absolute;
     left: 0.5rem;
@@ -266,9 +266,9 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 .pilcrow a {
     display: none;
 }
-.pilcrow a:before {
-    content: "\00B6";
-}
 .pilcrow:hover a {
     display: inline;
+}
+.pilcrow:hover a:before {
+    content: "\00B6"; /* Pilcrow sign */
 }
