@@ -26,7 +26,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          go install github.com/lmas/feedloggr@v0.4.0
+          go install github.com/lmas/feedloggr@v0.4.1
           sed -e 's/.feedloggr.html/tmpl/g' .feedloggr.yml > conf
           cp .feedloggr.html tmpl
           cp .scripts/randomcommitmsg randmsg
