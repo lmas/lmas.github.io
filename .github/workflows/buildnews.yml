@@ -37,6 +37,9 @@ jobs:
           git switch $branch
           feedloggr -conf conf run
 
+      - name: Get banner
+        run: curl -L "https://source.unsplash.com/random/960x200?ocean,fish,kelp" > docs/news/bg.jpeg
+
       - name: Deploy build
         run: |
           git add --all docs/news
