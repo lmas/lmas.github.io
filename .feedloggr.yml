@@ -25,12 +25,6 @@ feeds:
     url: https://www.svt.se/nyheter/lokalt/norrbotten/rss.xml
   - title: News - SVT Vetenskap
     url: https://www.svt.se/nyheter/vetenskap/rss.xml
-  - title: News - SVT Inrikes
-    url: https://www.svt.se/nyheter/inrikes/rss.xml
-  - title: News - SVT Utrikes
-    url: https://www.svt.se/nyheter/utrikes/rss.xml
-  #- title: News - SVT Ekonomi
-  #  url: https://www.svt.se/nyheter/ekonomi/rss.xml
 
   - title: LTU - Nyheter
     url: https://www.ltu.se/ltu/media/news?mode=rss
@@ -61,6 +55,8 @@ feeds:
     url: https://programming.dev/feeds/c/programming.xml?sort=TopWeek
   - title: Tech - beehaw.org/c/programming
     url: https://beehaw.org/feeds/c/programming.xml?sort=TopWeek
+    parser:
+      rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
   - title: Tech - kbin.social/m/programming
     url: https://kbin.social/rss?magazine=programming&sortBy=top
   - title: Tech - lobste.rs
