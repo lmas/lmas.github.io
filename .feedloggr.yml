@@ -51,8 +51,6 @@ feeds:
   - title: Services - FreeBSD
     url: https://www.freebsd.org/news/feed.xml
 
-  - title: Tech - programming.dev/c/programming
-    url: https://programming.dev/feeds/c/programming.xml?sort=TopWeek
   - title: Tech - beehaw.org/c/programming
     url: https://beehaw.org/feeds/c/programming.xml?sort=TopWeek
     parser:
