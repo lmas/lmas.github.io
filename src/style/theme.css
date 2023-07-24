@@ -79,12 +79,11 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    gap: var(--spacing);
-    margin-bottom: var(--spacing);
+    font-size: 0.75rem;
+    column-gap: var(--spacing);
+    margin: var(--spacing) 0;
 }
 footer p {
-    /* Forces the copyright notice onto it's own line */
-    flex-basis: 100%;
     margin-bottom: 0;
 }
 
@@ -101,13 +100,14 @@ border-color, li:before, blockquote:before {
 time {
     display: block;
 }
-hr, a {
+hr {
     border-bottom: var(--border);
 }
 /* Links */
 a {
-    text-decoration: none;
     color: var(--primary);
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--flair);
 }
 a:hover {
     color: var(--color-light);
@@ -262,6 +262,7 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 }
 .news ul li a {
     border: 0px;
+    text-decoration: none;
 }
 .news ul li a:visited {
     color: var(--shadow);
