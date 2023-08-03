@@ -4,7 +4,7 @@
 <subtitle>The latest posts from Larus.se</subtitle>
 <link href="https://www.larus.se" />
 <link rel="self" href="https://www.larus.se/feed.xml" />
-<updated>2023-07-24T14:36:00Z</updated>
+<updated>2023-08-03T07:04:00Z</updated>
 <author>
 <name>Alex</name>
 </author>
@@ -12,37 +12,65 @@
 <id>https://www.larus.se/</id>
 <entry>
 <title>CSS simple image background</title>
-<id>https://www.larus.se/blog/2023/css_image_background/index.html</id>
-<link href="https://www.larus.se/blog/2023/css_image_background/index.html" />
+<id>https://www.larus.se/doc/blog/2023/css_image_background/index.html</id>
+<link href="https://www.larus.se/doc/blog/2023/css_image_background/index.html" />
 <updated>2023-06-14T00:00:00Z</updated>
 <summary>A nice, simple way of producing colourful backgrounds for single images, for example while showing cover art or profile pictures, can be done by reusing the image itself as a background, but heavily blurred.</summary>
 </entry>
 <entry>
 <title>Introducing an aquatic simulation of Boids</title>
-<id>https://www.larus.se/blog/2022/boids/index.html</id>
-<link href="https://www.larus.se/blog/2022/boids/index.html" />
+<id>https://www.larus.se/doc/blog/2022/boids/index.html</id>
+<link href="https://www.larus.se/doc/blog/2022/boids/index.html" />
 <updated>2022-08-21T00:00:00Z</updated>
 <summary>While I was having a summer vacation, I wanted to do a short and simple weekend project trying to simulate a school of fish floating around on the screen. I also wanted to focus on making it look good and smooth, as a way for me to release some sort of artistic creativity during those sunny days.</summary>
 </entry>
 <entry>
+<title>Quotes</title>
+<id>https://www.larus.se/doc/ref/quotes/index.html</id>
+<link href="https://www.larus.se/doc/ref/quotes/index.html" />
+<updated>2022-07-15T00:00:00Z</updated>
+<summary>This is a personal collection of engineering quotes by other people.</summary>
+</entry>
+<entry>
 <title>The drunken bishop</title>
-<id>https://www.larus.se/blog/2021/the_drunken_bishop/index.html</id>
-<link href="https://www.larus.se/blog/2021/the_drunken_bishop/index.html" />
+<id>https://www.larus.se/doc/blog/2021/the_drunken_bishop/index.html</id>
+<link href="https://www.larus.se/doc/blog/2021/the_drunken_bishop/index.html" />
 <updated>2021-08-27T00:00:00Z</updated>
 <summary>How do you easily compare long, complex strings such as digital fingerprints or cryptographic hashes?</summary>
 </entry>
 <entry>
 <title>HTTP Live Streaming</title>
-<id>https://www.larus.se/blog/2021/http_live_streaming/index.html</id>
-<link href="https://www.larus.se/blog/2021/http_live_streaming/index.html" />
+<id>https://www.larus.se/doc/blog/2021/http_live_streaming/index.html</id>
+<link href="https://www.larus.se/doc/blog/2021/http_live_streaming/index.html" />
 <updated>2021-06-20T00:00:00Z</updated>
 <summary>HTTP Live Streaming is a protocol originally developed by Apple and it allows you to stream A/V media over HTTP.</summary>
 </entry>
 <entry>
+<title>Markdown reference</title>
+<id>https://www.larus.se/doc/ref/markdown/index.html</id>
+<link href="https://www.larus.se/doc/ref/markdown/index.html" />
+<updated>2021-06-13T00:00:00Z</updated>
+<summary>A quick reference page for most of this blog's flavour of Markdown.</summary>
+</entry>
+<entry>
 <title>Hello world</title>
-<id>https://www.larus.se/blog/2021/hello_world/index.html</id>
-<link href="https://www.larus.se/blog/2021/hello_world/index.html" />
+<id>https://www.larus.se/doc/blog/2021/hello_world/index.html</id>
+<link href="https://www.larus.se/doc/blog/2021/hello_world/index.html" />
 <updated>2021-06-12T00:00:00Z</updated>
 <summary>Hello world! This is the introduction and documentation of my site.</summary>
+</entry>
+<entry>
+<title>Reference Archive</title>
+<id>https://www.larus.se/doc/ref/index.html</id>
+<link href="https://www.larus.se/doc/ref/index.html" />
+<updated>T00:00:00Z</updated>
+<summary>Various reference material, mostly from third parties.</summary>
+</entry>
+<entry>
+<title>Blog Archive</title>
+<id>https://www.larus.se/doc/blog/index.html</id>
+<link href="https://www.larus.se/doc/blog/index.html" />
+<updated>T00:00:00Z</updated>
+<summary>My personal words and notes.</summary>
 </entry>
 </feed>

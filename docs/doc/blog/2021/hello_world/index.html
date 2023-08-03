@@ -10,18 +10,17 @@ documentation of my site." />
 <title>Hello world – Larus.se</title>
 <link rel="stylesheet" href="/style/theme.css" />
 <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-<link rel="sitemap" type="application/xml" title="sitemap" href="/sitemap.xml" />
 <link rel="alternate" type="application/atom+xml" title="feed" href="/feed.xml" />
 </head><body>
 <nav>
 <span class="logo"><a href="/">Larus.se</a></span>
 <input type="checkbox" id="hamburger" />
 <label for="hamburger">&#9776;</label>
-<a href="/">Home</a>
-<a href="/blog/">Blog</a>
-<a href="/ref/">Ref</a>
+<a href="/">Top</a>
+<a href="/doc/blog/">Blog</a>
+<a href="/doc/ref/">Ref</a>
 <a href="/news/">News</a>
-<a href="https://github.com/lmas" rel="noopener nofollow">Github</a>
+<a href="https://github.com/lmas" rel="noopener nofollow">Git</a>
 </nav>
 <main><article>
 <header>
@@ -56,10 +55,10 @@ documentation and whatever else that I might tinker with.</p>
 <p>Let's get started with how I built this site.</p>
 <h2 id="site-source">Site source</h2>
 <p>It's all just static "web" files with content mostly generated from simple <a
-href="/blog/2021-06-13_markdown_reference/">Markdown</a> files. The initial
-version of the blog was running on my home made tool, but I decided to instead
-replace it with <a href="https://pandoc.org/">Pandoc</a> to cut down on future
-maintenance costs.</p>
+href="/doc/ref/markdown">Markdown</a> files. The initial version of the blog was
+running on my home made tool, but I decided to instead replace it with <a
+href="https://pandoc.org/">Pandoc</a> to cut down on future maintenance
+costs.</p>
 <p>The whole source for this site can be found on <a
 href="https://github.com/lmas/lmas.github.io">Github</a>, so it's just easier to
 go browse that if you want any details.</p>
@@ -68,8 +67,6 @@ found on a web server:</p>
 <ul>
 <li><a href="http://www.robotstxt.org/">robots.txt</a>: Tell any indexing bots
 and other crawlers to play nice.</li>
-<li><a href="https://en.wikipedia.org/wiki/Site_map">sitemap.xml</a>: Offers a
-convenient map of the site to search engines and their bots.</li>
 <li><a href="https://en.wikipedia.org/wiki/Atom_(Web_standard)">feed.xml</a>:
 Allows humans to subscribe to the blog. RSS/Atom is not dead.</li>
 <li><a href="https://securitytxt.org/">security.txt</a>: Quick info for
@@ -208,9 +205,7 @@ and low maintenance. And it just works™.</p>
 <p>Alright, that's everything for now.</p>
 </article></main>
 <footer>
-<a href="/feed.xml">Feed</a>
-<a href="/sitemap.xml">Sitemap</a>
-<a href="https://github.com/lmas/lmas.github.io" rel="noopener nofollow">Source</a>
+
 <p>Copyright © 2021 Alex</p>
 </footer>
 <script data-goatcounter="https://lmas.goatcounter.com/count" src="//gc.zgo.at/count.js" async></script>
