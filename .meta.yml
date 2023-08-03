@@ -4,11 +4,11 @@ author: Alex
 css: /style/theme.css
 
 header:
-  - <a href="/">Home</a>
-  - <a href="/blog/">Blog</a>
-  - <a href="/ref/">Ref</a>
+  - <a href="/">Top</a>
+  - <a href="/doc/blog/">Blog</a>
+  - <a href="/doc/ref/">Ref</a>
   - <a href="/news/">News</a>
-  - <a href="https://github.com/lmas" rel="noopener nofollow">Github</a>
+  - <a href="https://github.com/lmas" rel="noopener nofollow">Git</a>
 
 footer:
   # - <a href="/feed.xml">Feed</a>

@@ -136,7 +136,7 @@ find "$SRC" -type d | while read -r srcdir; do
 done
 
 ########################################################################################################################
-# Build blog feed
+# Build site feed
 
 feed="$DST/feed.xml"
 cat << EOF > "$feed"
@@ -154,7 +154,7 @@ cat << EOF > "$feed"
 <id>$SITE/</id>
 EOF
 
-getfilteredmdfiles "$SRC/blog" 25 | while read -r srcfile; do
+getfilteredmdfiles "$SRC/doc" 25 | while read -r srcfile; do
     dstfile=$(getdestination "$srcfile")
     title=$(getfilemeta title "$srcfile")
     # Only got a date but the feed spec wants a full RFC-3339 datetime. Just tack zero time at the end
