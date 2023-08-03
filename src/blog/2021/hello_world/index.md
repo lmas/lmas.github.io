@@ -34,7 +34,6 @@ The whole source for this site can be found on [Github], so it's just easier to 
 Some references for the more common (or not) static files semi expected to be found on a web server:
 
 - [robots.txt]: Tell any indexing bots and other crawlers to play nice.
-- [sitemap.xml]: Offers a convenient map of the site to search engines and their bots.
 - [feed.xml]: Allows humans to subscribe to the blog. RSS/Atom is not dead.
 - [security.txt]: Quick info for "security researchers" scanning the web.
 - [humans.txt]: Quick info for "other developers" spelunking the web.
@@ -43,7 +42,6 @@ Some references for the more common (or not) static files semi expected to be fo
 [Pandoc]: https://pandoc.org/
 [Github]: https://github.com/lmas/lmas.github.io
 [robots.txt]: http://www.robotstxt.org/
-[sitemap.xml]: https://en.wikipedia.org/wiki/Site_map
 [security.txt]: https://securitytxt.org/
 [humans.txt]: https://humanstxt.org/
 [feed.xml]: https://en.wikipedia.org/wiki/Atom_(Web_standard)
