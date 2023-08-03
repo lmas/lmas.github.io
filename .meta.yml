@@ -12,7 +12,6 @@ header:
 
 footer:
   - <a href="/feed.xml">Feed</a>
-  - <a href="/sitemap.xml">Sitemap</a>
   - <a href="https://github.com/lmas/lmas.github.io" rel="noopener nofollow">Source</a>
   # - <a href="/stats/">Visitors</a>
   # - <a href="/legal/">Legal</a>
