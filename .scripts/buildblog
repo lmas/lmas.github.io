@@ -154,7 +154,7 @@ cat << EOF > "$feed"
 <id>$SITE/</id>
 EOF
 
-getfilteredmdfiles "$SRC/doc" 25 | while read -r srcfile; do
+getfilteredmdfiles "$SRC/docs" 25 | while read -r srcfile; do
     dstfile=$(getdestination "$srcfile")
     title=$(getfilemeta title "$srcfile")
     # Only got a date but the feed spec wants a full RFC-3339 datetime. Just tack zero time at the end
