@@ -41,6 +41,8 @@ feeds:
     url: https://www.schneier.com/blog/atom.xml
   - title: Blogs - Bartosz Ciechanowski
     url: https://ciechanow.ski/atom.xml
+  - title: Blogs - Ploum.net
+    url: https://ploum.net/atom_en.xml
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
@@ -50,6 +52,8 @@ feeds:
     url: https://go.dev/blog/feed.atom
   - title: Services - FreeBSD
     url: https://www.freebsd.org/news/feed.xml
+  - title: Services - Debian
+    url: https://www.debian.org/News/news
 
   - title: Tech - beehaw.org/c/programming
     url: https://beehaw.org/feeds/c/programming.xml?sort=TopWeek
