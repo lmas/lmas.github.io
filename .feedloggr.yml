@@ -18,6 +18,8 @@ feeds:
     url: https://www.giantitp.com/comics/oots.rss
   - title: Comics - xkcd
     url: https://xkcd.com/rss.xml
+  - title: Comics - Rising Sand
+    url: http://risingsand.glass/feed/
   #- title: Comics - Schlock
   #  url: https://www.schlockmercenary.com/rss/
 
