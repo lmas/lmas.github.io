@@ -86,7 +86,8 @@ down into shader magic. And it was only supposed to be a fun, quick thing for a
 day.</p>
 <p><em>Skip down to <a href="#results">Results</a> for a sample clip of how it
 looks.</em></p>
-<h2 id="optimisations">Optimisations</h2>
+<h2 id="optimisations">Optimisations<a href="#optimisations"
+class="anchor"></a></h2>
 <p><em>I've left out the code to keep this page shorter and instead recommend
 taking a look at the <a href="https://github.com/lmas/akvarium">project
 repo</a>.</em></p>
@@ -131,7 +132,7 @@ benchmark tanked. At this point I realised how low my CPU usage was while
 running the simulation and that I already could run 10 000 boids at the same
 time at a somewhat stable 60 FPS. Well, no further optimisations was actually
 needed so I dropped my buggy k-d tree and moved on.</p>
-<h2 id="art">Art</h2>
+<h2 id="art">Art<a href="#art" class="anchor"></a></h2>
 <p>Happy with the results from a week of optimisations, I decided to instead
 focus on cleaning up the code and replace my shitty programmer art with
 something fancy.</p>
@@ -147,7 +148,7 @@ overlaps and nudging things around). I was pretty happy with the result:</p>
 <p><img src="boid-clownfish.png" alt="finished clownfish boid" /></p>
 <p>Then it's just a matter of exporting it as a small PNG and use it in the
 simulation. Done.</p>
-<h2 id="shader">Shader</h2>
+<h2 id="shader">Shader<a href="#shader" class="anchor"></a></h2>
 <p>Next up was the background.</p>
 <p>I wanted rays of light on the surface and a gradual shift down to deep
 darkness at the bottom. I was initially using a SVG colour gradient, easy but
@@ -190,7 +191,7 @@ func Fragment(position vec4, texCoord vec2, color vec4) vec4 {
 
         return fragColor
 }</code></pre>
-<h2 id="results">Results</h2>
+<h2 id="results">Results<a href="#results" class="anchor"></a></h2>
 <p>When done with all that, here's a small sample of the end product from the
 optimisations, art and shader magic.</p>
 <p><video src="boids.mp4" controls=""><a href="boids.mp4">school of
