@@ -2,7 +2,7 @@ settings:
   output: docs/news/
   template: .feedloggr.html
   maxdays: 30
-  maxitems: 20
+  maxitems: 10
   timeout: 30
   jitter: 5
   verbose: true
@@ -20,6 +20,10 @@ feeds:
     url: https://xkcd.com/rss.xml
   - title: Comics - Rising Sand
     url: http://risingsand.glass/feed/
+  - title: Comics - Saga
+    url: https://imagecomics.com/comics/list/series/saga/releases
+    parser:
+      rule: (?sU)cover-image.+<a\shref="(?P<url>[^"]+)">.*<span>(?P<title>[^<]+)\s*</span>
   #- title: Comics - Schlock
   #  url: https://www.schlockmercenary.com/rss/
 
@@ -45,6 +49,8 @@ feeds:
     url: https://ciechanow.ski/atom.xml
   - title: Blogs - Ploum.net
     url: https://ploum.net/atom_en.xml
+  - title: Blogs - nicole@web
+    url: https://ntietz.com/atom.xml
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
