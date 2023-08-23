@@ -20,7 +20,7 @@
 <img class="banner" width="960" height="200" decoding="async" alt="Random image of ocean, fish or kelp from Unsplash.com" src="bg.jpeg">
 </header>
 {{range .Feeds}}<section class="news">
-<h2 class="pilcrow">{{.Conf.Title}} <a href="{{.Conf.Source}}"></a></h2>
+<h2>{{.Conf.Title}} <a class="anchor" href="{{.Conf.Source}}"></a></h2>
 {{if .Error}}<p>Error: {{.Error}}</p>
 {{else}}<ul>
 {{range .Items}}<li><a href="{{.Url}}" rel="nofollow">{{.Title}}</a></li>

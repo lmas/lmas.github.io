@@ -104,8 +104,9 @@ hr {
     border-bottom: var(--border);
 }
 /* Links */
-a {
+a, h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
     color: var(--primary);
+    text-decoration-line: underline;
     text-decoration-thickness: 2px;
     text-decoration-color: var(--flair);
 }
@@ -113,7 +114,15 @@ a:hover {
     color: var(--color-light);
     background-color: var(--flair);
     border-radius: var(--corner);
-
+}
+.anchor {
+    display: inline;
+    color: var(--shadow);
+    margin-left: 1rem;
+    text-decoration: none;
+}
+.anchor:before {
+    content: "\00B6";
 }
 /* Headings */
 header, h2, h3, h4, h5, h6 {
@@ -219,9 +228,6 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
     float: right;
     font-size: 0.75rem;
 }
-.banner-author a {
-    border-bottom: 1px solid var(--flair);
-}
 .row {
     display: flex;
     justify-content: center;
@@ -266,13 +272,4 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 }
 .news ul li a:visited {
     color: var(--shadow);
-}
-.pilcrow a {
-    display: none;
-}
-.pilcrow:hover a {
-    display: inline;
-}
-.pilcrow:hover a:before {
-    content: "\00B6"; /* Pilcrow sign */
 }
