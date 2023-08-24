@@ -9,7 +9,7 @@
 /* Default theme */
 
 :root {
-    --font-regular: Arial, Helvetica, sans-serif;
+    --font-regular: "Lato", Arial, Helvetica, sans-serif;
     --font-code: "Courier New", Courier, monospace;
     --spacing: 1rem;
     --border: 2px solid var(--flair);
@@ -25,6 +25,23 @@
         --secondary: #313137;
         --shadow: #414146;
     }
+}
+@font-face {
+    /* License: /style/fonts/lato-regular-license.txt */
+    font-family: "Lato";
+    src: url("/style/fonts/lato-regular.woff2") format("woff2");
+    font-display: swap;
+}
+@font-face {
+    /* NOTE: this font is displayed in a noticable smaller size than regular fonts,
+    so if it can't be shown (for whatever reason) the replacement font will
+    take up a lot more space in the header!
+    CSS can't specify individual sizes for each font family used.. */
+
+    /* License: /style/fonts/fontleroybrown-license.txt */
+    font-family: "FontleroyBrown";
+    src: url("/style/fonts/fontleroybrown.woff2") format("woff2");
+    font-display: swap;
 }
 
 /**************************************************************************************************/
@@ -50,7 +67,7 @@ body {
 nav {
     font-size: 1.2rem;
     font-weight: bold;
-    align-items: center;
+    align-items: baseline;
     gap: var(--spacing);
     margin: var(--spacing) 0;
 }
@@ -215,7 +232,7 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 
 .logo {
     flex-grow: 1;
-    font-size: 2rem;
+    font: italic normal 4rem "FontleroyBrown", serif;
 }
 .banner {
     width: 100%;
