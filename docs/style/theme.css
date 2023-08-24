@@ -189,6 +189,7 @@ pre > code {
 }
 blockquote {
     padding-left: 3rem;
+    line-height: 1rem;
     position: relative;
     font-style: italic;
 }
