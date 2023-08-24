@@ -60,7 +60,7 @@ body {
     font: normal 16px/1.6 var(--font-regular);
     line-height: 1.6rem;
     min-height: 100vh;
-    max-width: 960px;
+    max-width: 100ch;
     padding: 0 4rem;
     margin: auto;
 }
@@ -74,9 +74,8 @@ nav {
 nav #hamburger, nav label {
     display: none;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 50ch) {
     body {
-        max-width: 480px;
         padding: 0 2rem;
     }
     nav {
@@ -88,6 +87,10 @@ nav #hamburger, nav label {
     }
     nav label, nav input:checked ~ a {
         display: block;
+    }
+    .row {
+        flex-direction: column;
+        align-items: center;
     }
 }
 main {
@@ -171,13 +174,14 @@ math {
 code {
     display: inline;
     padding: 0.2rem 0.25rem;
-    font-size: 14px;
+    font-size: 0.75rem;
 }
 details > *:nth-child(2) {
     margin-top: var(--spacing);
 }
 pre {
     overflow-x: auto;
+    line-height: 1rem;
 }
 pre > code {
     padding: 0;
@@ -251,12 +255,6 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
     justify-content: center;
     gap: var(--spacing);
     margin-bottom: var(--spacing);
-}
-@media screen and (max-width: 480px){
-    .row {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 .post-list li {
     display: flex;
