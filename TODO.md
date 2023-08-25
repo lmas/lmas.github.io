@@ -1,21 +1,34 @@
 
 # TODO
 
-- rewrite github workflow:
-  https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-  https://github.com/actions/starter-workflows/blob/main/pages/static.yml
+Fun things for a rainy day.
 
-- rm Home link, replace with About?
+## High
 
-- build stats.txt
+- Build stats.txt
+  https://muffinman.io/stats/
 
-- Reinvestigate favicons:
+- Paint better seagull, using Larus Fuscus (save reference img here too)
+  Also fix outline or something, so it doesn't disappear on white bg.
+
+- Reinvestigate favicons and update with new seagull.
   https://news.ycombinator.com/item?id=25520655
   https://stackoverflow.com/a/23734416
 
-- Fix outline or something for the seagull, so it doesn't disappear on white bg (or add black icon)
+## Medium
 
-- Save ref image of seagull in repo? larus fuscus has better pics
+- Rewrite github workflow.
+  Or simply move host and setup plain git hooks ffs..
+  https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
+  https://github.com/actions/starter-workflows/blob/main/pages/static.yml
+
+- Find some way to monitor web traffic better.
+  Or simply move host and monitor the logs ffs..
+
+## Low
+
+- Personal start up page? Inspired by Russ Cox and his page:
+  https://swtch.com/cmd/
 
 - Blog web ring?
   https://git.sr.ht/~sircmpwn/openring
@@ -30,11 +43,6 @@
 - Other fun indie web stuff:
   https://indieweb.org/IndieMark
 
-- Walking seagull on the hidden page:
-  http://vanilla-js.com/
-  https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3
-  http://astronautz.com/wordpress/animateNelly.js
-  ~https://www.pixijs.com/~
-  https://old.reddit.com/r/programming/comments/itquio/we_will_all_become_game_programmers_all_around/
+- Live katex editor for making quick latex equations?
+  https://katex.org/
 
-- Find some way to monitor web traffic better.
