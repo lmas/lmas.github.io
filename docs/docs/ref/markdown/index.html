@@ -199,8 +199,9 @@ Some more.
 <p>Some text with a <a href="http://www.example.com" title="title">link</a>.
 Some more.</p>
 <h2 id="images">Images<a href="#images" class="anchor"></a></h2>
-<pre><code>![image](/style/larus.png)</code></pre>
-<p><img src="/style/larus.png" alt="image" /></p>
+<pre><code>![image](/style/larus.png &quot;title for the img&quot;)</code></pre>
+<p><img src="/style/larus.png" title="title for the img" loading="lazy"
+alt="image" /></p>
 <h2 id="lists">Lists<a href="#lists" class="anchor"></a></h2>
 <h3 id="unordered-list">Unordered list<a href="#unordered-list"
 class="anchor"></a></h3>
@@ -234,10 +235,10 @@ class="anchor"></a></h3>
 </ul>
 <h2 id="math">Math<a href="#math" class="anchor"></a></h2>
 <p>This is an extension to Commonmark.</p>
-<p>Full syntax for LaTeX can be found at
-https://en.wikibooks.org/wiki/LaTeX/Mathematics.</p>
-<pre><code>$\sqrt{3x-1}+(1+x)^2$</code></pre>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msqrt><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sqrt{3x-1}+(1+x)^2</annotation></semantics></math></p>
+<p>Full syntax for LaTeX can be found at <a
+href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">Wikibooks</a>.</p>
+<pre><code>$\sqrt{3x-1} + (1+x)^2 \times \alpha$</code></pre>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msqrt><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>×</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\sqrt{3x-1} + (1+x)^2 \times \alpha</annotation></semantics></math></p>
 <h2 id="raw-html">Raw HTML<a href="#raw-html" class="anchor"></a></h2>
 <p>Lines can begin with a standard HTML tag to produce corresponding raw HTML in
 the output. Whitelisted HTML tags:</p>
@@ -298,5 +299,5 @@ role="doc-backlink">↩︎</a></p></li>
 <p>Copyright © 2021 Alex</p>
 </footer>
 <script data-goatcounter="https://lmas.goatcounter.com/count" src="//gc.zgo.at/count.js" async></script>
-<noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
+<noscript><img src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
 </body></html>

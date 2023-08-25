@@ -28,7 +28,8 @@ sunny days." />
 <main><article>
 <header>
 <time class="header-date">2022-08-21</time>
-<p class="banner-author">Photo by <a href="https://unsplash.com/photos/tQk3y00flv4">David
+<p class="banner-author">Photo by <a href="<a
+href="https://unsplash.com/photos/tQk3y00flv4">https://unsplash.com/photos/tQk3y00flv4</a>">David
 Dvořáček</a></p>
 <h1>Introducing an aquatic simulation of Boids</h1>
 <img class="banner" decoding="async" width="960" height="100" src="banner.jpg" alt="School
@@ -63,7 +64,7 @@ to simulate the emergent flocking behaviour of animals. Never mind it was
 originally used to simulate flocks of birds, it looks equally great when applied
 to schools of fish.</p>
 <p>Now then, the three rules are:</p>
-<p><img src="rules.png" alt="boid rules" /></p>
+<p><img src="rules.png" loading="lazy" alt="boid rules" /></p>
 <ul>
 <li><strong>Cohesion:</strong> A single Boid tries to move towards the center of
 a nearby group of other Boids.</li>
@@ -141,11 +142,13 @@ href="https://unsplash.com/">Unsplash</a> that I could use as reference. Then I
 decided to do vector tracing in Inkscape, which has a great tool for automatic
 tracing of images, so I would get SVG art that can be exported to any other
 image format with high quality.</p>
-<p><img src="tracing-fish.png" alt="tracing fish in inkscape" /></p>
+<p><img src="tracing-fish.png" loading="lazy"
+alt="tracing fish in inkscape" /></p>
 <p>Then with the trace done there was a couple of hours of cleaning up the trace
 and making smaller adjustments until satisfaction (mostly fixing small details,
 overlaps and nudging things around). I was pretty happy with the result:</p>
-<p><img src="boid-clownfish.png" alt="finished clownfish boid" /></p>
+<p><img src="boid-clownfish.png" loading="lazy"
+alt="finished clownfish boid" /></p>
 <p>Then it's just a matter of exporting it as a small PNG and use it in the
 simulation. Done.</p>
 <h2 id="shader">Shader<a href="#shader" class="anchor"></a></h2>
@@ -194,8 +197,8 @@ func Fragment(position vec4, texCoord vec2, color vec4) vec4 {
 <h2 id="results">Results<a href="#results" class="anchor"></a></h2>
 <p>When done with all that, here's a small sample of the end product from the
 optimisations, art and shader magic.</p>
-<p><video src="boids.mp4" controls=""><a href="boids.mp4">school of
-clownfish</a></video></p>
+<p><video src="boids.mp4" loading="lazy" controls=""><a href="boids.mp4">school
+of clownfish</a></video></p>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
@@ -223,5 +226,5 @@ role="doc-backlink">↩︎</a></p></li>
 <p>Copyright © 2022 Alex</p>
 </footer>
 <script data-goatcounter="https://lmas.goatcounter.com/count" src="//gc.zgo.at/count.js" async></script>
-<noscript><img alt="" src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
+<noscript><img src="https://lmas.goatcounter.com/count?p=noscript"></noscript>
 </body></html>
