@@ -16,7 +16,6 @@ which in turn is based on the [Commonmark Specification].
 [Commonmark Specification]: https://commonmark.org/
 
 
-
 # Inline formatting
 
 | Code | Formatted text |
@@ -196,9 +195,9 @@ Some more.
 
 # Images
 
-    ![image](/style/larus.png)
+    ![image](/style/larus.png "title for the img")
 
-![image](/style/larus.png)
+![image](/style/larus.png "title for the img")
 
 # Lists
 
