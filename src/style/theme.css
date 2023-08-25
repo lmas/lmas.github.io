@@ -126,6 +126,7 @@ a, h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:ho
     text-decoration-line: underline;
     text-decoration-thickness: var(--border);
     text-decoration-color: var(--flair);
+    transition: all 0.2s ease;
 }
 a:hover {
     color: var(--color-light);
