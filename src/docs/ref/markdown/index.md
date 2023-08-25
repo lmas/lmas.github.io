@@ -238,11 +238,15 @@ This is an extension to Commonmark.
 
 This is an extension to Commonmark.
 
-Full syntax for LaTeX can be found at https://en.wikibooks.org/wiki/LaTeX/Mathematics.
+Full syntax for LaTeX can be found at [Wikibooks].
 
-    $\sqrt{3x-1}+(1+x)^2$
+    $\sqrt{3x-1} + (1+x)^2 \times \alpha$
 
-$\sqrt{3x-1}+(1+x)^2$
+$\sqrt{3x-1} + (1+x)^2 \times \alpha$
+
+[Wikibooks]: https://en.wikibooks.org/wiki/LaTeX/Mathematics
+
+
 
 # Raw HTML
 
