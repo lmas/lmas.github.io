@@ -12,7 +12,7 @@
     --font-regular: "Lato", Arial, Helvetica, sans-serif;
     --font-code: "Courier New", Courier, monospace;
     --spacing: 1rem;
-    --border: 2px solid var(--flair);
+    --border: 2px;
     --corner: 5px;
     --primary: #313137;
     --secondary: #FFFEF7;
@@ -57,11 +57,10 @@ body {
     flex-direction: column;
     color: var(--primary);
     background-color: var(--secondary);
-    font: normal 16px/1.6 var(--font-regular);
-    line-height: 1.6rem;
+    font: normal 16px/1.6rem var(--font-regular);
     min-height: 100vh;
     max-width: 100ch;
-    padding: 0 4rem;
+    padding: 0 3vw;
     margin: auto;
 }
 nav {
@@ -75,9 +74,6 @@ nav #hamburger, nav label {
     display: none;
 }
 @media screen and (max-width: 50ch) {
-    body {
-        padding: 0 2rem;
-    }
     nav {
         flex-direction: column;
         align-items: center;
@@ -122,13 +118,13 @@ time {
     display: block;
 }
 hr {
-    border-bottom: var(--border);
+    border-bottom: var(--border) solid var(--flair);
 }
 /* Links */
 a, h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
     color: var(--primary);
     text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: var(--border);
     text-decoration-color: var(--flair);
 }
 a:hover {
@@ -139,11 +135,11 @@ a:hover {
 .anchor {
     display: inline;
     color: var(--shadow);
-    margin-left: 1rem;
+    margin-left: var(--spacing);
     text-decoration: none;
 }
 .anchor:before {
-    content: "\00B6";
+    content: "\00B6"; /* Pilcrow symbol */
 }
 /* Headings */
 header, h2, h3, h4, h5, h6 {
@@ -160,6 +156,7 @@ blockquote, pre, code, math, details {
     background-color: var(--shadow);
     padding: var(--spacing);
     border-radius: var(--corner);
+    line-height: 1rem;
 }
 blockquote *:last-child, details *:last-child {
     margin-bottom: 0;
@@ -173,7 +170,7 @@ math {
 }
 code {
     display: inline;
-    padding: 0.2rem 0.25rem;
+    padding: calc(var(--spacing)/4);
     font-size: 0.75rem;
 }
 details > *:nth-child(2) {
@@ -181,15 +178,13 @@ details > *:nth-child(2) {
 }
 pre {
     overflow-x: auto;
-    line-height: 1rem;
 }
 pre > code {
     padding: 0;
     background-color: unset;
 }
 blockquote {
-    padding-left: 3rem;
-    line-height: 1rem;
+    padding-left: calc(var(--spacing) * 2);
     position: relative;
     font-style: italic;
 }
@@ -197,7 +192,7 @@ blockquote:before {
     content: "\201C"; /* Left, double quotation mark */
     font-size: 3rem;
     position: absolute;
-    left: 0.5rem;
+    left: calc(var(--spacing) / 2);
 }
 /* Text lists */
 ol li {
@@ -208,7 +203,7 @@ ul li {
 }
 ul li:before {
     content: "-";
-    padding-right: 0.5rem;
+    padding-right: calc(var(--spacing)/2);
     font-weight: bold;
 }
 /* Text tables */
@@ -218,11 +213,11 @@ table {
 }
 th, td {
     text-align: left;
-    padding: var(--spacing);
+    padding: calc(var(--spacing) / 2) var(--spacing);
 }
 th {
     font-weight: bold;
-    border-bottom: var(--border);
+    border-bottom: var(--border) solid var(--flair);
 }
 tbody tr:nth-child(odd) td {
     background-color: var(--shadow);
@@ -281,10 +276,10 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
     content: none;
 }
 .news ul li {
-    border-image: linear-gradient(to right, var(--flair), 10%, var(--secondary)) 0 0 100% 0 / 2px;
+    border-image: linear-gradient(to right, var(--flair), 10%, var(--secondary)) 0 0 100% 0 / var(--border);
 }
 .news ul li a {
-    border: 0px;
+    border: 0;
     text-decoration: none;
 }
 .news ul li a:visited {
