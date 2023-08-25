@@ -101,16 +101,16 @@ These two blocks of code can then produce the following result
 }
 </style>
 <span class="columns">
-<div class="cover" id="red">
-    <img src="fish.jpg">
-    <p>Photo by <a href="https://unsplash.com/photos/Gv-Cx3_clZ4">David Clode</a>.</p>
-</div>
+    <div class="cover" id="red">
+        <img loading="lazy" src="fish.jpg">
+        <p>Photo by <a href="https://unsplash.com/photos/Gv-Cx3_clZ4">David Clode</a>.</p>
+    </div>
     <div class="cover" id="green">
-        <img src="kelp.jpg">
+        <img loading="lazy" src="kelp.jpg">
         <p>Photo by <a href="https://unsplash.com/photos/4IyllFjr3Rw">Shane Stagner</a>.</p>
     </div>
     <div class="cover" id="blue">
-        <img src="ocean.jpg">
+        <img loading="lazy" src="ocean.jpg">
         <p>Photo by <a href="https://unsplash.com/photos/wc9avd2RaN0">Christoffer Engström</a>.</p>
     </div>
 </span>

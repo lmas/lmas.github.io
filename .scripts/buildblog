@@ -211,7 +211,10 @@ echo "$FILES" | while read -r srcfile; do
     # printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
     # printf 'updated: %s\n' "$(echo "$commit" | cut -d ' ' -f 2)" >> "$TEMPO"
 
-    $PANDOC --lua-filter=.filters/heading-anchor.lua --lua-filter=.filters/copyright-year.lua $meta $toc --output="$dstfile" "$srcfile"
+    $PANDOC $meta $toc --output="$dstfile" "$srcfile" \
+    --lua-filter=.filters/heading-anchor.lua \
+    --lua-filter=.filters/image-loading.lua \
+    --lua-filter=.filters/copyright-year.lua
 done
 
 ########################################################################################################################
