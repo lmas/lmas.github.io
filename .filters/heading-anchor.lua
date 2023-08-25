@@ -1,14 +1,14 @@
 -- Adds anchor links to headings with ids.
 
-function Header(head)
-    if not head.identifier then
-        return head
+function Header(el)
+    if not el.identifier then
+        return el
     end
 
     local content = ''
-    local target = '#' .. head.identifier
+    local target = '#' .. el.identifier
     local title = ''
     local attr = {class = 'anchor'}
-    head.content:insert(pandoc.Link(content, target, title, attr))
-    return head
+    el.content:insert(pandoc.Link(content, target, title, attr))
+    return el
 end
