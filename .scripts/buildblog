@@ -108,7 +108,7 @@ condensepost() (
 META=".meta.yml"
 PANDOC="pandoc --standalone --mathml --columns=80 --shift-heading-level-by=1 \
 --metadata-file=$META --template=.template.html \
---write=html5 --read=gfm+tex_math_dollars+footnotes-autolink_bare_uris"
+--write=html5 --read=gfm+tex_math_dollars+footnotes"
 
 # Source and destination dirs (with optional trailing slash trimmed)
 SRC=${1%/}

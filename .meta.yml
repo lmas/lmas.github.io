@@ -2,6 +2,7 @@ site: https://www.larus.se
 title-prefix: Larus.se
 author: Alex
 css: /style/theme.css
+lang: en
 
 header:
   - <a href="/">Top</a>
