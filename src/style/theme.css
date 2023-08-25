@@ -27,9 +27,9 @@
     }
 }
 @font-face {
-    /* License: /style/fonts/lato-regular-license.txt */
+    /* License: /style/fonts/latolatin-regular-license.txt */
     font-family: "Lato";
-    src: url("/style/fonts/lato-regular.woff2") format("woff2");
+    src: url("/style/fonts/latolatin-regular.woff2") format("woff2");
     font-display: swap;
 }
 @font-face {
