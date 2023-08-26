@@ -160,7 +160,11 @@ Simple footnote[^1]
 
 # Links
 
-## Autolink
+Autolinking of plain URLs (like https://www.example.com) must be kept disabled,
+otherwise URLs in the meta data, for example, will also be autolinked
+and will break parts of the page rendering (like banner URLs).
+
+## Enclosed link
 
     <https://www.example.com>
 

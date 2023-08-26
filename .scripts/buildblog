@@ -106,9 +106,12 @@ condensepost() (
 # Initalize
 
 META=".meta.yml"
+
+# NOTE: autolinks must be kept disabled! Otherwise it will mangle metadata URLs
+# and banner links, for example.
 PANDOC="pandoc --standalone --mathml --columns=80 --shift-heading-level-by=1 \
 --metadata-file=$META --template=.template.html \
---write=html5 --read=gfm+tex_math_dollars+footnotes"
+--write=html5 --read=gfm+tex_math_dollars+footnotes-autolink_bare_uris"
 
 # Source and destination dirs (with optional trailing slash trimmed)
 SRC=${1%/}
