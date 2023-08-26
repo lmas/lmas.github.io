@@ -16,8 +16,8 @@
 <header>
 <time class="header-date">{{.Today | shortdate}}</time>
 <h1>Latest News</h1>
-<p class="banner-author">Random photo by <a href="https://unsplash.com">Unsplash.com</a></p>
 <img class="banner" width="960" height="200" decoding="async" alt="Random image of ocean, fish or kelp from Unsplash.com" src="bg.jpeg">
+<p class="banner-author">Random photo by <a href="https://unsplash.com">Unsplash.com</a></p>
 </header>
 {{range .Feeds}}<section class="news">
 <h2>{{.Conf.Title}} <a class="anchor" href="{{.Conf.Source}}"></a></h2>
