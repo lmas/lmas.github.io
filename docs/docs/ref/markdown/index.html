@@ -28,6 +28,7 @@ flavour of Markdown." />
 <h1>Markdown reference</h1>
 <img class="banner" decoding="async" width="960" height="100" src="./banner.jpg" alt="Markdown
 code and shell script">
+<p class="banner-author">Photo by <a href="/">me</a></p>
 </header>
 <details class="toc">
 <summary>Contents</summary>
@@ -179,7 +180,11 @@ class="anchor"></a></h2>
 <pre><code>---</code></pre>
 <hr />
 <h2 id="links">Links<a href="#links" class="anchor"></a></h2>
-<h3 id="autolink">Autolink<a href="#autolink" class="anchor"></a></h3>
+<p>Autolinking of plain URLs (like https://www.example.com) must be kept
+disabled, otherwise URLs in the meta data, for example, will also be autolinked
+and will break parts of the page rendering (like banner URLs).</p>
+<h3 id="enclosed-link">Enclosed link<a href="#enclosed-link"
+class="anchor"></a></h3>
 <pre><code>&lt;https://www.example.com&gt;</code></pre>
 <p><a href="https://www.example.com">https://www.example.com</a></p>
 <h3 id="inline-link">Inline link<a href="#inline-link" class="anchor"></a></h3>
