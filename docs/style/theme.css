@@ -273,16 +273,18 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 .footnotes li p {
     display: inline;
 }
-.news ul li:before {
+.news .anchor {
+    color: #fff0;
+}
+.news li:before {
     content: none;
 }
-.news ul li {
+.news li {
     border-image: linear-gradient(to right, var(--flair), 10%, var(--secondary)) 0 0 100% 0 / var(--border);
 }
-.news ul li a {
-    border: 0;
+.news li a {
     text-decoration: none;
 }
-.news ul li a:visited {
+.news li a:visited {
     color: var(--shadow);
 }
