@@ -51,6 +51,8 @@ feeds:
     url: https://ploum.net/atom_en.xml
   - title: Blogs - nicole@web
     url: https://ntietz.com/atom.xml
+  - title: Blogs - Halfspace
+    url: https://buttondown.email/j2kun/rss
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
