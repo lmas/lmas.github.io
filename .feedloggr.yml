@@ -53,6 +53,10 @@ feeds:
     url: https://ntietz.com/atom.xml
   - title: Blogs - Halfspace
     url: https://buttondown.email/j2kun/rss
+  - title: Blogs - Julia Evans
+    url: https://jvns.ca/atom.xml
+  - title: Blogs - Space Station 14
+    url: https://spacestation14.io/index.xml
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
