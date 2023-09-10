@@ -57,6 +57,10 @@ feeds:
     url: https://jvns.ca/atom.xml
   - title: Blogs - Space Station 14
     url: https://spacestation14.io/index.xml
+  - title: Blogs - Evan Prodromou
+    url: https://evanp.me/feed/
+  - title: Blogs - Factorio
+    url: https://factorio.com/blog/rss
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
