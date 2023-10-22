@@ -61,6 +61,9 @@ This is a personal collection of engineering quotes by other people.
 >
 > - [Bruce Dawnson](https://randomascii.wordpress.com/2021/02/16/arranging-invisible-icons-in-quadratic-time/)
 
+> Testing shows the presence, not the absence of bugs.
+>
+> - [Edsger W. Dijkstra](https://en.wikiquote.org/wiki/Edsger_W._Dijkstra#1960s)
 
 # Optimism
 
