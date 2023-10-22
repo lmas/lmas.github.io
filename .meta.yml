@@ -5,7 +5,7 @@ css: /style/theme.css
 lang: en
 
 header:
-  - <a href="/">Top</a>
+  - <a href="/">Root</a>
   - <a href="/docs/blog/">Blog</a>
   - <a href="/docs/ref/">Ref</a>
   - <a href="/news/">News</a>
