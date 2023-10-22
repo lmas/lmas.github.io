@@ -24,8 +24,6 @@ feeds:
     url: https://imagecomics.com/comics/list/series/saga/releases
     parser:
       rule: (?sU)cover-image.+<a\shref="(?P<url>[^"]+)">.*<span>(?P<title>[^<]+)\s*</span>
-  #- title: Comics - Schlock
-  #  url: https://www.schlockmercenary.com/rss/
 
   - title: News - SVT Norrbotten
     url: https://www.svt.se/nyheter/lokalt/norrbotten/rss.xml
