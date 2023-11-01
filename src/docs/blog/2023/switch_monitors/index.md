@@ -99,4 +99,4 @@ Here's the initial version for brevity:
 [xrandr]: https://xorg-team.pages.debian.net/xorg/howto/use-xrandr.html
 [bspwm]: https://github.com/baskerville/bspwm
 [#893]: https://github.com/baskerville/bspwm/issues/893#issuecomment-447555862
-[refreshmonitor]: https://gist.github.com/lmas/1c71e379987ef82df04fe7f6d300c991
+[refreshmonitor]: https://gist.github.com/lmas/14abd69cac40b5fb012a4bdcd24fca44
