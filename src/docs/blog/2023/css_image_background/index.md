@@ -3,13 +3,12 @@ title: CSS simple image background
 date: 2023-06-14
 ---
 
-A nice, simple way of producing colourful backgrounds for single images,
-for example while showing cover art or profile pictures,
-can be done by reusing the image itself as a background,
-but heavily blurred.
+A simple way of showing nice and colourful backgrounds for images is by reusing
+the image itself as a background and then applying a large amount of blur on top of it.
 
-I learned this trick from [Tao of Mac].
-
+I learned this trick from [Tao of Mac], where the author showed an example with
+album art for music but it could also be applied for profile pictures or image
+galleries for example.
 The HTML is stupid simple:
 
     <div class="cover" id="some_id">

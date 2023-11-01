@@ -8,11 +8,11 @@ banner-author: David Dvořáček
 banner-source: https://unsplash.com/photos/tQk3y00flv4
 ---
 
-While I was having a summer vacation,
-I wanted to do a short and simple weekend project trying to simulate a school of fish floating around on the screen.
-I also wanted to focus on making it look good and smooth,
-as a way for me to release some sort of artistic creativity during those sunny days.
+During summer vacation, I wanted to do a short weekend project and try to
+simulate a school of fish that would swim around on the screen.
 
+I also wanted to focus on making it look good and smooth, as a way for me to
+release some sort of artistic creativity during those sunny days.
 So what's the simplest way to simulate life-like fish?
 With Boids of course.
 
