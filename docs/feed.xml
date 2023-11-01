@@ -4,25 +4,32 @@
 <subtitle>The latest posts from Larus.se</subtitle>
 <link href="https://www.larus.se" />
 <link rel="self" href="https://www.larus.se/feed.xml" />
-<updated>2023-10-22T08:59:00Z</updated>
+<updated>2023-11-01T21:48:00Z</updated>
 <author>
 <name>Alex</name>
 </author>
 <rights>Copyright © 2023 Alex</rights>
 <id>https://www.larus.se/</id>
 <entry>
+<title>How to switch between monitors from the terminal</title>
+<id>https://www.larus.se/docs/blog/2023/switch_monitors/index.html</id>
+<link href="https://www.larus.se/docs/blog/2023/switch_monitors/index.html" />
+<updated>2023-11-01T00:00:00Z</updated>
+<summary>...using xrandr and shell hacks?</summary>
+</entry>
+<entry>
 <title>CSS simple image background</title>
 <id>https://www.larus.se/docs/blog/2023/css_image_background/index.html</id>
 <link href="https://www.larus.se/docs/blog/2023/css_image_background/index.html" />
 <updated>2023-06-14T00:00:00Z</updated>
-<summary>A nice, simple way of producing colourful backgrounds for single images, for example while showing cover art or profile pictures, can be done by reusing the image itself as a background, but heavily blurred.</summary>
+<summary>A simple way of showing nice and colourful backgrounds for images is by reusing the image itself as a background and then applying a large amount of blur on top of it.</summary>
 </entry>
 <entry>
 <title>Introducing an aquatic simulation of Boids</title>
 <id>https://www.larus.se/docs/blog/2022/boids/index.html</id>
 <link href="https://www.larus.se/docs/blog/2022/boids/index.html" />
 <updated>2022-08-21T00:00:00Z</updated>
-<summary>While I was having a summer vacation, I wanted to do a short and simple weekend project trying to simulate a school of fish floating around on the screen. I also wanted to focus on making it look good and smooth, as a way for me to release some sort of artistic creativity during those sunny days.</summary>
+<summary>During summer vacation, I wanted to do a short weekend project and try to simulate a school of fish that would swim around on the screen.</summary>
 </entry>
 <entry>
 <title>Quotes</title>
