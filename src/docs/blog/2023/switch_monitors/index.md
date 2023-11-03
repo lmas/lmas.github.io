@@ -3,6 +3,7 @@ title: How to switch between monitors from the terminal
 date: 2023-11-01
 toc: true
 banner: ./banner.jpg
+banner-alt: Top of a keyboard in the foreground and bottoms of two blurry monitors in the background
 banner-author: Fotis Fotopoulos
 banner-source: https://unsplash.com/photos/black-computer-keyboard-DuHKoV44prg
 ---
