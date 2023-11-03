@@ -10,11 +10,10 @@ dirlist: 5
 
 > Hello I'm Alex,
 >
-> I write open source software.
+> I write open source software and this page is my technical notes.
 >
 > You can find me and my projects on [Github](https://github.com/lmas)
->
-> or contact me directly via [Mail](mailto:hello@larus.se) or
+> or contact me directly via [Mail](mailto:hi@larus.se) or
 <a rel="me" href="https://social.larus.se/@lmas">Mastodon</a>.
 
 </div>
