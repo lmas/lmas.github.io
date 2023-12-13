@@ -11,6 +11,10 @@ It's simply a way for myself to document my own struggles and experiences with t
 and one day I would like expand on them.
 All credits and copyrights belong to the original authors.
 
+- go http client reuse problems: https://github.com/superseriousbusiness/gotosocial/issues/1847
+
+- Reference list of useful HTML elements https://catskull.net/html.html
+
 - setting up a freebsd gateway at home (dns, dhcp, firewall, wifi, storage etc.)
 
 - publishing go code:
@@ -18,7 +22,7 @@ All credits and copyrights belong to the original authors.
   https://golang.org/doc/modules/release-workflow#first-stable
   https://stackoverflow.com/questions/29599209/how-to-build-a-release-version-binary-in-go
 
-- running single file scripts without using go modules? Per william's mail
+- running single file scripts without using go modules? Per William's mail
   https://blog.golang.org/go116-module-changes
 
 - type safe data in templates:
@@ -30,7 +34,7 @@ All credits and copyrights belong to the original authors.
 - current best practices for making favicons:
   https://stackoverflow.com/q/2268204
   https://news.ycombinator.com/item?id=25520655
-  Simplest thing to do is a 32x32px PNG, rename it to `favicon.ico` and add tag:
+  Simplest thing to do is a 32x32 px PNG, rename it to `favicon.ico` and add tag:
   <link rel="shortcut icon" type="image/png" href="/favicon.ico">
 
 - easiest way to make a css only dark mode:
@@ -41,3 +45,6 @@ All credits and copyrights belong to the original authors.
 - easily clean up PRs on your repo:
   https://news.ycombinator.com/item?id=30503901
   https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork
+
+- https://www.rfc-editor.org/info/rfc9402 (so mysterious!)
+
