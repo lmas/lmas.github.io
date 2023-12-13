@@ -57,8 +57,8 @@ instead? Well, my window manager (<a
 href="https://github.com/baskerville/bspwm">bspwm</a>) would mess up the screen
 dimension if you were already logged in and running the X server, and I was too
 lazy to fix that. It was so much quicker to just run xrandr during login.</p>
-<h2 id="shell-scripting-ahoy">Shell scripting ahoy<a
-href="#shell-scripting-ahoy" class="anchor"></a></h2>
+<h2 id="shell-scripting-ahoy"><a href="#shell-scripting-ahoy"
+class="anchor"></a>Shell scripting ahoy</h2>
 <p>I finally sat down and made a proper script, first I had to check if the
 external monitor was connected using</p>
 <pre><code>xrandr -q | grep -q &quot;HDMI-2 connected&quot;</code></pre>
@@ -66,7 +66,7 @@ external monitor was connected using</p>
 <pre><code>xrandr  --output eDP-1 --off  --output HDMI-2 --primary --auto</code></pre>
 <p>as an example. Having a separate script and removing the login hack fixed the
 first issue.</p>
-<h2 id="issue-two">Issue two<a href="#issue-two" class="anchor"></a></h2>
+<h2 id="issue-two"><a href="#issue-two" class="anchor"></a>Issue two</h2>
 <p>Next, I had to fix the annoying problem with the messed up screen dimensions.
 I found one partial solution in the closed bspwm issue <a
 href="https://github.com/baskerville/bspwm/issues/893#issuecomment-447555862">#893</a>
@@ -78,8 +78,8 @@ bspc monitor -g &quot;$rect&quot;</code></pre>
 <p>My shell didn't like having <code>\d</code> in the grep pattern, so for now
 it's a long pattern with <code>[0-9]</code> and I'll leave it as a clean up task
 for the future instead.</p>
-<h2 id="and-a-third-issue">And a third issue<a href="#and-a-third-issue"
-class="anchor"></a></h2>
+<h2 id="and-a-third-issue"><a href="#and-a-third-issue" class="anchor"></a>And a
+third issue</h2>
 <p>While doing the research I also noticed some extra settings for bspwm that
 seemed like a good idea to enable:</p>
 <pre><code>bspc config remove_disabled_monitors true
@@ -99,8 +99,8 @@ again):</p>
 <p>Then jump back to this desktop ID after the switch, using:</p>
 <pre><code>bspc desktop -f &quot;$desk&quot;</code></pre>
 <p>It's a ugly hack but it works for now I guess?</p>
-<h2 id="the-final-script">The final script<a href="#the-final-script"
-class="anchor"></a></h2>
+<h2 id="the-final-script"><a href="#the-final-script" class="anchor"></a>The
+final script</h2>
 <p>All said and done, let's clean up everything and call this script <a
 href="https://gist.github.com/lmas/14abd69cac40b5fb012a4bdcd24fca44">refreshmonitor</a>
 (it felt nicer to start typing the first couple of letters of "refresh" using
