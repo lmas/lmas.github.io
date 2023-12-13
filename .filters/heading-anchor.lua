@@ -9,6 +9,7 @@ function Header(el)
     local target = '#' .. el.identifier
     local title = ''
     local attr = {class = 'anchor'}
-    el.content:insert(pandoc.Link(content, target, title, attr))
+    -- Inserts the new element before existing content
+    el.content:insert(1, pandoc.Link(content, target, title, attr))
     return el
 end

@@ -135,12 +135,12 @@ a:hover {
 }
 .anchor {
     display: inline;
-    color: var(--shadow);
-    margin-left: var(--spacing);
+    color: var(--flair);
+    margin-right: var(--spacing);
     text-decoration: none;
 }
 .anchor:before {
-    content: "\00B6"; /* Pilcrow symbol */
+    content: "#";
 }
 /* Headings */
 header, h2, h3, h4, h5, h6 {
@@ -272,9 +272,6 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 }
 .footnotes li p {
     display: inline;
-}
-.news .anchor {
-    color: #fff0;
 }
 .news li:before {
     content: none;

@@ -20,7 +20,7 @@
 <p class="banner-author">Random photo by <a href="https://unsplash.com">Unsplash.com</a></p>
 </header>
 {{range .Feeds}}<section class="news">
-<h2>{{.Conf.Title}} <a class="anchor" href="{{.Conf.Source}}"></a></h2>
+<h2><a class="anchor" href="{{.Conf.Source}}"></a> {{.Conf.Title}}</h2>
 {{if .Error}}<p>Error: {{.Error}}</p>
 {{else}}<ul>
 {{range .Items}}<li><a href="{{.Url}}" rel="nofollow">{{.Title}}</a></li>
