@@ -1,11 +1,11 @@
--- Tries to read a local file and add it's contents as a code block.
+-- Tries to read a single, local file and add it's contents as a code block.
 
 function CodeBlock(el)
     if not el.classes:includes "include" then
         return
     end
 
-    local file = el.text:match("^(.-)\n")
+    local file = el.text:match("^([^\n]*)")
     local dir = pandoc.path.directory(PANDOC_STATE.input_files[1])
     if not file or dir == "" then
         return
