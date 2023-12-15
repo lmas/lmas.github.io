@@ -19,3 +19,5 @@ dirlist: 5
 </div>
 
 # Latest Posts
+
+You can subscribe to this page with the [Atom feed](/feed.xml).

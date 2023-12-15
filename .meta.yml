@@ -7,8 +7,9 @@ lang: en
 header:
   - <a href="https://github.com/lmas" rel="noopener nofollow">Git</a>
   - <a href="/news/">News</a>
-  - <a href="/docs/blog/">Notes</a>
-  - <a href="/docs/ref/">Refs</a>
+  - <a href="/docs/notes/">Notes</a>
+  - <a href="/docs/refs/">Refs</a>
+  - <a href="/docs/snips/">Snips</a>
 
 footer:
   # - <a href="/feed.xml">Feed</a>
