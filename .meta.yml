@@ -5,11 +5,10 @@ css: /style/theme.css
 lang: en
 
 header:
-  - <a href="/">Root</a>
-  - <a href="/docs/blog/">Blog</a>
-  - <a href="/docs/ref/">Ref</a>
-  - <a href="/news/">News</a>
   - <a href="https://github.com/lmas" rel="noopener nofollow">Git</a>
+  - <a href="/news/">News</a>
+  - <a href="/docs/blog/">Notes</a>
+  - <a href="/docs/ref/">Refs</a>
 
 footer:
   # - <a href="/feed.xml">Feed</a>
