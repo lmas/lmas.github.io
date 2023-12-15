@@ -136,11 +136,10 @@ a:hover {
 .anchor {
     display: inline;
     color: var(--flair);
-    margin-right: var(--spacing);
     text-decoration: none;
 }
 .anchor:before {
-    content: "#";
+    content: "# ";
 }
 /* Headings */
 header, h2, h3, h4, h5, h6 {
