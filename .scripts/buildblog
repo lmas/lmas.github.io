@@ -217,7 +217,8 @@ echo "$FILES" | while read -r srcfile; do
     $PANDOC $meta $toc --output="$dstfile" "$srcfile" \
     --lua-filter=.filters/heading-anchor.lua \
     --lua-filter=.filters/image-loading.lua \
-    --lua-filter=.filters/copyright-year.lua
+    --lua-filter=.filters/copyright-year.lua \
+    --lua-filter=.filters/include-file.lua
 done
 
 ########################################################################################################################
