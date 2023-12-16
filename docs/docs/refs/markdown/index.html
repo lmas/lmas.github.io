@@ -40,6 +40,7 @@ formatting</a></li>
 escapes</a></li>
 <li><a href="#blockquotes" id="toc-blockquotes">Blockquotes</a></li>
 <li><a href="#code-blocks" id="toc-code-blocks">Code blocks</a></li>
+<li><a href="#file-inclusion" id="toc-file-inclusion">File inclusion</a></li>
 <li><a href="#footnotes" id="toc-footnotes">Footnotes</a></li>
 <li><a href="#headings" id="toc-headings">Headings</a></li>
 <li><a href="#horizontal-ruler" id="toc-horizontal-ruler">Horizontal
@@ -156,6 +157,18 @@ import &quot;fmt&quot;
 func main(){
     fmt.Println(&quot;hello world&quot;)
 }</code></pre>
+<h2 id="file-inclusion"><a href="#file-inclusion" class="anchor"></a>File
+inclusion</h2>
+<p>This is a custom Pandoc filter.</p>
+<pre><code>```include
+hello.txt
+```</code></pre>
+<div class="includeheader">
+<a href="./hello.txt">hello.txt</a>
+<span>2023-12-16 14:56 UTC</span>
+</div>
+<pre class="includefile"><code>Hello world from a text file!
+</code></pre>
 <h2 id="footnotes"><a href="#footnotes" class="anchor"></a>Footnotes</h2>
 <p>This is an extension to Commonmark.</p>
 <pre><code>Simple footnote[^1]
