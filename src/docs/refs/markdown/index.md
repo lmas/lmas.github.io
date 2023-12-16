@@ -118,6 +118,18 @@ func main(){
 }
 ```
 
+# File inclusion
+
+This is a custom Pandoc filter.
+
+    ```include
+    hello.txt
+    ```
+
+```include
+hello.txt
+```
+
 # Footnotes
 
 This is an extension to Commonmark.
