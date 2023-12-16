@@ -4,79 +4,93 @@
 <subtitle>The latest posts from Larus.se</subtitle>
 <link href="https://www.larus.se" />
 <link rel="self" href="https://www.larus.se/feed.xml" />
-<updated>2023-12-15T14:57:00Z</updated>
+<updated>2023-12-16T14:48:00Z</updated>
 <author>
 <name>Alex</name>
 </author>
 <rights>Copyright © 2023 Alex</rights>
 <id>https://www.larus.se/</id>
 <entry>
+<title>Snippet - Rerun</title>
+<id>https://www.larus.se/docs/snips/rerun/index.html</id>
+<link href="https://www.larus.se/docs/snips/rerun/index.html" />
+<updated>2023-12-16T00:00:00Z</updated>
+<summary>A script that runs a command, watches for file changes in the local directory and then rerun the same command again.</summary>
+</entry>
+<entry>
 <title>How to switch between monitors from the terminal</title>
-<id>https://www.larus.se/docs/blog/2023/switch_monitors/index.html</id>
-<link href="https://www.larus.se/docs/blog/2023/switch_monitors/index.html" />
+<id>https://www.larus.se/docs/notes/2023/switch_monitors/index.html</id>
+<link href="https://www.larus.se/docs/notes/2023/switch_monitors/index.html" />
 <updated>2023-11-01T00:00:00Z</updated>
 <summary>...using xrandr and shell hacks?</summary>
 </entry>
 <entry>
 <title>CSS simple image background</title>
-<id>https://www.larus.se/docs/blog/2023/css_image_background/index.html</id>
-<link href="https://www.larus.se/docs/blog/2023/css_image_background/index.html" />
+<id>https://www.larus.se/docs/notes/2023/css_image_background/index.html</id>
+<link href="https://www.larus.se/docs/notes/2023/css_image_background/index.html" />
 <updated>2023-06-14T00:00:00Z</updated>
 <summary>A simple way of showing nice and colourful backgrounds for images is by reusing the image itself as a background and then applying a large amount of blur on top of it.</summary>
 </entry>
 <entry>
 <title>Introducing an aquatic simulation of Boids</title>
-<id>https://www.larus.se/docs/blog/2022/boids/index.html</id>
-<link href="https://www.larus.se/docs/blog/2022/boids/index.html" />
+<id>https://www.larus.se/docs/notes/2022/boids/index.html</id>
+<link href="https://www.larus.se/docs/notes/2022/boids/index.html" />
 <updated>2022-08-21T00:00:00Z</updated>
 <summary>During summer vacation, I wanted to do a short weekend project and try to simulate a school of fish that would swim around on the screen.</summary>
 </entry>
 <entry>
 <title>Quotes</title>
-<id>https://www.larus.se/docs/ref/quotes/index.html</id>
-<link href="https://www.larus.se/docs/ref/quotes/index.html" />
+<id>https://www.larus.se/docs/refs/quotes/index.html</id>
+<link href="https://www.larus.se/docs/refs/quotes/index.html" />
 <updated>2022-07-15T00:00:00Z</updated>
 <summary>This is a personal collection of engineering quotes by other people.</summary>
 </entry>
 <entry>
 <title>The drunken bishop</title>
-<id>https://www.larus.se/docs/blog/2021/the_drunken_bishop/index.html</id>
-<link href="https://www.larus.se/docs/blog/2021/the_drunken_bishop/index.html" />
+<id>https://www.larus.se/docs/notes/2021/the_drunken_bishop/index.html</id>
+<link href="https://www.larus.se/docs/notes/2021/the_drunken_bishop/index.html" />
 <updated>2021-08-27T00:00:00Z</updated>
 <summary>How do you easily compare long, complex strings such as digital fingerprints or cryptographic hashes?</summary>
 </entry>
 <entry>
 <title>HTTP Live Streaming</title>
-<id>https://www.larus.se/docs/blog/2021/http_live_streaming/index.html</id>
-<link href="https://www.larus.se/docs/blog/2021/http_live_streaming/index.html" />
+<id>https://www.larus.se/docs/notes/2021/http_live_streaming/index.html</id>
+<link href="https://www.larus.se/docs/notes/2021/http_live_streaming/index.html" />
 <updated>2021-06-20T00:00:00Z</updated>
 <summary>HTTP Live Streaming is a protocol originally developed by Apple and it allows you to stream A/V media over HTTP.</summary>
 </entry>
 <entry>
 <title>Markdown reference</title>
-<id>https://www.larus.se/docs/ref/markdown/index.html</id>
-<link href="https://www.larus.se/docs/ref/markdown/index.html" />
+<id>https://www.larus.se/docs/refs/markdown/index.html</id>
+<link href="https://www.larus.se/docs/refs/markdown/index.html" />
 <updated>2021-06-13T00:00:00Z</updated>
 <summary>A quick reference page for most of this blog's flavour of Markdown.</summary>
 </entry>
 <entry>
 <title>Hello world</title>
-<id>https://www.larus.se/docs/blog/2021/hello_world/index.html</id>
-<link href="https://www.larus.se/docs/blog/2021/hello_world/index.html" />
+<id>https://www.larus.se/docs/notes/2021/hello_world/index.html</id>
+<link href="https://www.larus.se/docs/notes/2021/hello_world/index.html" />
 <updated>2021-06-12T00:00:00Z</updated>
 <summary>Hello world! This is the introduction and documentation of my site.</summary>
 </entry>
 <entry>
-<title>Reference Archive</title>
-<id>https://www.larus.se/docs/ref/index.html</id>
-<link href="https://www.larus.se/docs/ref/index.html" />
+<title>Snippets Archive</title>
+<id>https://www.larus.se/docs/snips/index.html</id>
+<link href="https://www.larus.se/docs/snips/index.html" />
 <updated>T00:00:00Z</updated>
-<summary>Various reference material, mostly from third parties.</summary>
+<summary>A private collection of short scripts and snippets.</summary>
 </entry>
 <entry>
-<title>Blog Archive</title>
-<id>https://www.larus.se/docs/blog/index.html</id>
-<link href="https://www.larus.se/docs/blog/index.html" />
+<title>References Archive</title>
+<id>https://www.larus.se/docs/refs/index.html</id>
+<link href="https://www.larus.se/docs/refs/index.html" />
+<updated>T00:00:00Z</updated>
+<summary>Various reference materials, mostly from third parties.</summary>
+</entry>
+<entry>
+<title>Notes Archive</title>
+<id>https://www.larus.se/docs/notes/index.html</id>
+<link href="https://www.larus.se/docs/notes/index.html" />
 <updated>T00:00:00Z</updated>
 <summary>My personal words and notes.</summary>
 </entry>
