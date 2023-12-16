@@ -14,9 +14,10 @@ function CodeBlock(el)
 
     -- HACK: by using the zip module we can get contents AND modtime
     local entry = pandoc.zip.read_entry(path)
-    local time = os.date('!%Y-%m-%d %H:%M UTC', entry.modtime)
+    local time = pandoc.Span(os.date('!%Y-%m-%d %H:%M UTC', entry.modtime))
+    local link = pandoc.Link(file, pandoc.path.join({".", file}))
     return {
-        pandoc.Div(file .. ", " .. time, pandoc.Attr("", {"includeheader"})),
+        pandoc.Div({link, time}, pandoc.Attr("", {"includeheader"})),
         pandoc.CodeBlock(entry.contents(entry), pandoc.Attr("", {"includefile"})),
     }
 end

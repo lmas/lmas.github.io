@@ -275,10 +275,12 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 .includeheader {
     font: normal 0.75rem/1rem var(--font-code);
     padding: var(--spacing);
-    color: var(--secondary);
     background-color: var(--primary);
     border-top-left-radius: var(--corner);
     border-top-right-radius: var(--corner);
+}
+.includeheader * {
+    color: var(--secondary);
 }
 .includefile {
     border-top-left-radius: 0;
