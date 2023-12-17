@@ -77,12 +77,10 @@ feeds:
   - title: Services - Rust
     url: https://blog.rust-lang.org/feed.xml
 
-  - title: Tech - beehaw.org/c/programming
-    url: https://beehaw.org/feeds/c/programming.xml?sort=TopWeek
+  - title: Tech - programming.dev/c/programming
+    url: https://programming.dev/feeds/c/programming.xml?sort=TopWeek
     parser:
       rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
-  - title: Tech - kbin.social/m/programming
-    url: https://kbin.social/rss?magazine=programming&sortBy=top
   - title: Tech - lobste.rs
     url: https://lobste.rs/top.rss
     parser:
