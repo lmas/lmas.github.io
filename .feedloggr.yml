@@ -77,10 +77,6 @@ feeds:
   - title: Services - Rust
     url: https://blog.rust-lang.org/feed.xml
 
-  - title: Tech - programming.dev/c/programming
-    url: https://programming.dev/feeds/c/programming.xml?sort=TopWeek
-    parser:
-      rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
   - title: Tech - lobste.rs
     url: https://lobste.rs/top.rss
     parser:
