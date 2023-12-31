@@ -82,7 +82,7 @@ feeds:
     parser:
       rule: (?sU)<item>.*<title>(?P<title>[^<]+)</title>.*<comments>(?P<url>[^<]+)</comments>.*</item>
   - title: Tech - Hacker News
-    url: https://news.ycombinator.com/over?points=100
+    url: https://news.ycombinator.com/over?points=200
     parser:
       rule: (?sU)<span class="titleline"><a[^>]*>(?P<title>[^<]+)</a>.*<span class="age"[^>]*><a href="(?P<url>[^"]+)">
       host: https://news.ycombinator.com/best
