@@ -30,12 +30,14 @@ feeds:
   - title: News - SVT Vetenskap
     url: https://www.svt.se/nyheter/vetenskap/rss.xml
 
+  # - title: LTU - Nyheter
+    # url: https://www.ltu.se/ltu/media/news?mode=rss
+  # - title: LTU - Studentnyheter
+    # url: https://www.ltu.se/student/Studentnyheter?mode=rss
+  # - title: LTU - Studentnotiser
+    # url: https://www.ltu.se/student/Studentnotiser?mode=rss
   - title: LTU - Nyheter
-    url: https://www.ltu.se/ltu/media/news?mode=rss
-  - title: LTU - Studentnyheter
-    url: https://www.ltu.se/student/Studentnyheter?mode=rss
-  - title: LTU - Studentnotiser
-    url: https://www.ltu.se/student/Studentnotiser?mode=rss
+    url: https://www.ltu.se/4.110defe1188bd8d55c026619/12.110defe1188bd8d55c026626.portlet?state=rss&sv.contenttype=text/xml;charset=utf-8
 
   - title: Blogs - research!rsc
     url: https://research.swtch.com/feed.atom
@@ -63,6 +65,8 @@ feeds:
     url: https://blog.plover.com/index.rss
   - title: Blogs - Daemonic Dispatches
     url: https://www.daemonology.net/blog/index.rss
+  - title: Blogs - Beej's Home Page
+    url: https://mastodon.sdf.org/@beejjorgensen.rss
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
