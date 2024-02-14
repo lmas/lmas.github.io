@@ -23,7 +23,7 @@ feeds:
   - title: Comics - Saga
     url: https://imagecomics.com/comics/list/series/saga/releases
     parser:
-      rule: (?sU)cover-image.+<a\shref="(?P<url>[^"]+)">.*<span>(?P<title>[^<]+)\s*</span>
+      rule: (?sU)cover-image.+<a\shref="(?P<url>[^"]+)">.*<span[^>]*>(?P<title>[^<]+)\s*</span>
 
   - title: News - SVT Norrbotten
     url: https://www.svt.se/nyheter/lokalt/norrbotten/rss.xml
