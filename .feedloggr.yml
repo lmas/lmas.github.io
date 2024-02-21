@@ -65,8 +65,6 @@ feeds:
     url: https://blog.plover.com/index.rss
   - title: Blogs - Daemonic Dispatches
     url: https://www.daemonology.net/blog/index.rss
-  - title: Blogs - Beej's Home Page
-    url: https://mastodon.sdf.org/@beejjorgensen.rss
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
