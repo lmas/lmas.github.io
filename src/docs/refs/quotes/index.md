@@ -71,6 +71,10 @@ This is a personal collection of engineering quotes by other people.
 >
 > - [C. S. Lewis](https://literature.stackexchange.com/a/8832)
 
+> Happiness is a choice that requires effort at times.
+>
+> - [Aeschylus](https://en.wikipedia.org/wiki/Aeschylus)
+
 
 # Fun
 
