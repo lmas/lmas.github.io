@@ -4,103 +4,101 @@
 set -eu
 
 panic() {
-    # Print warning message to stderr and quit script
-    # arg 1: message
+	# Print warning message to stderr and quit script
+	# arg 1: message
 
-    echo "ERROR: $1" >&2
-    exit 1
+	echo "ERROR: $1" >&2
+	exit 1
 }
 
 getfilemeta() {
-    # Get frontmatter field from a file with yml frontmatter meta data
-    # arg 1: key field
-    # arg 2: source file
+	# Get frontmatter field from a file with yml frontmatter meta data
+	# arg 1: key field
+	# arg 2: source file
 
-    # Print everything between 1st line (---) to next --- line
-    # 2nd - From matched key field at sol, print value field until eol
-    sed -n "1,/^---$/p" "$2" | \
-    sed -n "s/^$1:[\t ]*\(.*\)$/\1/p"
+	# Print everything between 1st line (---) to next --- line
+	# 2nd - From matched key field at sol, print value field until eol
+	sed -n "1,/^---$/p" "$2" | sed -n "s/^$1:[\t ]*\(.*\)$/\1/p"
 }
 
-getmeta() (
-    # Get site-wide meta data field
-    # arg 1: field name
+getmeta() {
+	# Get site-wide meta data field
+	# arg 1: field name
 
-    # uses a sub shell here to scope vars locally (notice the parens for the func declaration)
-    val=$(getfilemeta "$1" "$META")
-    if [ -z "$val" ]; then
-        panic "Missing key '$1' in $META"
-    fi
-    echo "$val"
-)
+	# uses a sub shell here to scope vars locally (notice the parens for the func declaration)
+	val=$(getfilemeta "$1" "$META")
+	if [ -z "$val" ]; then
+		panic "Missing key '$1' in $META"
+	fi
+	echo "$val"
+}
 
 getabstract() {
-    # Get abstract of a markdown page (for now it's the first paragraph of the content).
-    # Double quotes has to be stripped.
-    # arg 1: source file
+	# Get abstract of a markdown page (for now it's the first paragraph of the content).
+	# Double quotes has to be stripped.
+	# arg 1: source file
 
-    sed -e '1,/^---$/d' < "$1" | awk 'BEGIN{RS=ORS="\n\n"} NR==1 {$1=$1; print}' | tr -d '"'
+	sed -e '1,/^---$/d' < "$1" | awk 'BEGIN{RS=ORS="\n\n"} NR==1 {$1=$1; print}' | tr -d '"'
 }
 
 getcommit() {
-    # Get the commit hash and date of a file's latest commit.
-    # arg 1: source file
+	# Get the commit hash and date of a file's latest commit.
+	# arg 1: source file
 
-    git log -1 --format="%h %cs" "$1"
+	git log -1 --format="%h %cs" "$1"
 }
 
-getdestination() (
-    # Strips src dir from a filepath and replaces .md extension with .html
-    # arg 1: path to src markdown file
+getdestination() {
+	# Strips src dir from a filepath and replaces .md extension with .html
+	# arg 1: path to src markdown file
 
-    dst=${1#"$SRC/"}
-    echo "${dst%.md}.html"
-)
+	dst=${1#"$SRC/"}
+	echo "${dst%.md}.html"
+}
 
 getmdfiles() {
-    # Find all markdown files in src dir and sort them by date and title
-    # arg 1: src dir
+	# Find all markdown files in src dir and sort them by date and title
+	# arg 1: src dir
 
-    (
-        find "$1" -iname "*.md" | while read -r file; do
-            date=$(getfilemeta date "$file")
-            title=$(getfilemeta title "$file")
-            # Placement of the tab is important here, to avoid unwanted white space
-            # Also have to use printf 'cuz POSIX don't have flags for echo cmd
-            printf '%s %s \t%s\n' "$date" "$title" "$file"
-        done
-    ) | sort -r | while read -r line; do
-        # split the line by the tab char and keep the last field only *by rev'ersing)
-        echo "$line" | rev | cut -f 1 | rev
-    done
+	files=$(find "$1" -iname "*.md" | while read -r file; do
+		date=$(getfilemeta date "$file")
+		title=$(getfilemeta title "$file")
+		# Placement of the tab is important here, to avoid unwanted white space
+		# Also have to use printf 'cuz POSIX don't have flags for echo cmd
+		printf '%s %s \t%s\n' "$date" "$title" "$file"
+	done)
+	echo "$files" | sort -r | while read -r line; do
+		# split the line by the tab char and keep the last field only *by rev'ersing)
+		echo "$line" | rev | cut -f 1 | rev
+	done
 }
 
 getfilteredmdfiles() {
-    # Find all markdown files in src dir using "getmdfiles", then filters out
-    # the root post and optionally limits the max number of files
-    # arg 1: src dir
-    # arg 2: optional max number of files
+	# Find all markdown files in src dir using "getmdfiles", then filters out
+	# the root post and optionally limits the max number of files
+	# arg 1: src dir
+	# arg 2: optional max number of files
 
-    files=$(getmdfiles "$1" | grep -v "$1/index.md")
-    if [ "$2" -gt 0 ]; then
-        echo "$files" | head -n "$2"
-    else
-        echo "$files"
-    fi
+	files=$(getmdfiles "$1" | grep -v "$1/index.md")
+	if [ "$2" -gt 0 ]; then
+		echo "$files" | head -n "$2"
+	else
+		echo "$files"
+	fi
 }
 
-condensepost() (
-    # Summarises a markdown file, as a post, to a single line item
-    # arg 1: post file
+condensepost() {
+	# Summarises a markdown file, as a post, to a single line item
+	# arg 1: post file
 
-    src="$1"
-    dst=$(getdestination "$src")
-    dst=$(dirname "$dst")
-    title=$(getfilemeta title "$src")
-    date=$(getfilemeta date "$src")
-    abstract=$(getabstract "$src")
-    echo "<time>$date</time><a href=\"/$dst/\">$title</a><span>$abstract</span>"
-)
+	src="$1"
+	dst=$(getdestination "$src")
+	dst=$(dirname "$dst")
+	title=$(getfilemeta title "$src")
+	date=$(getfilemeta date "$src")
+	abstract=$(getabstract "$src")
+	echo "<time>$date</time><a href=\"/$dst/\">$title</a><span>$abstract</span>"
+}
 
 ########################################################################################################################
 # Initalize
@@ -110,8 +108,8 @@ META=".meta.yml"
 # NOTE: autolinks must be kept disabled! Otherwise it will mangle metadata URLs
 # and banner links, for example.
 PANDOC="pandoc --standalone --mathml --columns=80 --shift-heading-level-by=1 \
---metadata-file=$META --template=.template.html \
---write=html5 --read=gfm+tex_math_dollars+footnotes-autolink_bare_uris"
+		--metadata-file=$META --template=.template.html \
+		--write=html5 --read=gfm+tex_math_dollars+footnotes-autolink_bare_uris"
 
 # Source and destination dirs (with optional trailing slash trimmed)
 SRC=${1%/}
@@ -132,10 +130,9 @@ trap 'rm -f $TEMPO' 0 1 2 3 15
 # Pre-make dir structure
 
 find "$SRC" -type d | while read -r srcdir; do
-    dstdir=${srcdir#"$SRC/"}
-    dstdir="$DST/$dstdir"
-
-    mkdir -p "$dstdir"
+	dstdir=${srcdir#"$SRC/"}
+	dstdir="$DST/$dstdir"
+	mkdir -p "$dstdir"
 done
 
 ########################################################################################################################
@@ -158,13 +155,12 @@ cat << EOF > "$feed"
 EOF
 
 getfilteredmdfiles "$SRC/docs" 25 | while read -r srcfile; do
-    dstfile=$(getdestination "$srcfile")
-    title=$(getfilemeta title "$srcfile")
-    # Only got a date but the feed spec wants a full RFC-3339 datetime. Just tack zero time at the end
-    date=$(getfilemeta date "$srcfile")
-    abstract=$(getabstract "$srcfile")
-
-    cat << EOF >> "$feed"
+	dstfile=$(getdestination "$srcfile")
+	title=$(getfilemeta title "$srcfile")
+	# Only got a date but the feed spec wants a full RFC-3339 datetime. Just tack zero time at the end
+	date=$(getfilemeta date "$srcfile")
+	abstract=$(getabstract "$srcfile")
+	cat << EOF >> "$feed"
 <entry>
 <title>$title</title>
 <id>$SITE/$dstfile</id>
@@ -181,51 +177,50 @@ echo "</feed>" >> "$feed"
 # Build markdown files
 
 echo "$FILES" | while read -r srcfile; do
-    dstfile=$(getdestination "$srcfile")
-    dstfile="$DST/$dstfile"
-    toc=""
-    hastoc=$(getfilemeta toc "$srcfile")
-    if [ "$hastoc" = "true" ]; then
-        toc="--toc --toc-depth=2"
-    fi
-    meta="--metadata-file=$TEMPO"
-    printf "" > "$TEMPO" # clears the file
+	dstfile=$(getdestination "$srcfile")
+	dstfile="$DST/$dstfile"
+	printf "" > "$TEMPO" # clears the file
 
-    hasabstract=$(getfilemeta abstract "$srcfile")
-    if [ -z "$hasabstract" ]; then
-        printf 'abstract: "%s"\n' "$(getabstract "$srcfile")" >> "$TEMPO"
-    fi
+	toc=""
+	hastoc=$(getfilemeta toc "$srcfile")
+	if [ "$hastoc" = "true" ]; then
+		toc="--toc --toc-depth=2"
+	fi
 
-    hasdirlist=$(getfilemeta dirlist "$srcfile")
-    if [ -n "$hasdirlist" ]; then
-        srcdir=$(dirname "$srcfile")
-        dirfiles=$(getfilteredmdfiles "$srcdir" "$hasdirlist")
-        dirposts=$(echo "$dirfiles" | while read -r postfile; do
-            post=$(condensepost "$postfile")
-            echo "- $post"
-        done)
+	hasabstract=$(getfilemeta abstract "$srcfile")
+	if [ -z "$hasabstract" ]; then
+		printf 'abstract: "%s"\n' "$(getabstract "$srcfile")" >> "$TEMPO"
+	fi
 
-        echo "post-list:" >> "$TEMPO"
-        echo "$dirposts" >> "$TEMPO"
-    fi
+	hasdirlist=$(getfilemeta dirlist "$srcfile")
+	if [ -n "$hasdirlist" ]; then
+		srcdir=$(dirname "$srcfile")
+		dirfiles=$(getfilteredmdfiles "$srcdir" "$hasdirlist")
+		dirposts=$(echo "$dirfiles" | while read -r postfile; do
+			post=$(condensepost "$postfile")
+			echo "- $post"
+		done)
+		echo "post-list:" >> "$TEMPO"
+		echo "$dirposts" >> "$TEMPO"
+	fi
 
-    # TODO:
-    # commit=$(getcommit "$srcfile")
-    # printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
-    # printf 'updated: %s\n' "$(echo "$commit" | cut -d ' ' -f 2)" >> "$TEMPO"
+	# TODO:
+	# commit=$(getcommit "$srcfile")
+	# printf 'commit: %s\n' "$(echo "$commit" | cut -d ' ' -f 1)" >> "$TEMPO"
+	# printf 'updated: %s\n' "$(echo "$commit" | cut -d ' ' -f 2)" >> "$TEMPO"
 
-    $PANDOC $meta $toc --output="$dstfile" "$srcfile" \
-    --lua-filter=.filters/heading-anchor.lua \
-    --lua-filter=.filters/image-loading.lua \
-    --lua-filter=.filters/copyright-year.lua \
-    --lua-filter=.filters/include-file.lua
+	$PANDOC $toc --output="$dstfile" "$srcfile" --metadata-file="$TEMPO" \
+		--lua-filter=.filters/heading-anchor.lua \
+		--lua-filter=.filters/image-loading.lua \
+		--lua-filter=.filters/copyright-year.lua \
+		--lua-filter=.filters/include-file.lua
 done
 
 ########################################################################################################################
 # Finally copy over all other static files (possibly overwriting previously files, if the user wants it)
 
 find "$SRC" -type f ! -iname "*.md" | while read -r srcfile; do
-    dstfile=${srcfile#"$SRC/"}
-    dstfile="$DST/$dstfile"
-    cp "$srcfile" "$dstfile"
+	dstfile=${srcfile#"$SRC/"}
+	dstfile="$DST/$dstfile"
+	cp "$srcfile" "$dstfile"
 done
