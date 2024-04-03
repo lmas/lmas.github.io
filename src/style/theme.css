@@ -254,20 +254,17 @@ tbody tr:nth-child(1) td:last-child { border-radius: 0 0 var(--corner) 0; }
 }
 .post-list li {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
 }
 .post-list li:before {
     content: none;
-    padding: 0;
 }
 .post-list time {
     margin-right: var(--spacing);
     margin-bottom: 0;
 }
-.post-list p {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
+.post-list span {
+	width: 100%;
 }
 .footnotes li p {
     display: inline;
