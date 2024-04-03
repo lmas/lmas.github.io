@@ -5,7 +5,7 @@ css: /style/theme.css
 lang: en
 
 header:
-  - <a href="https://github.com/lmas" rel="noopener nofollow">Git</a>
+  - <a href="https://github.com/lmas" rel="noopener nofollow">Code</a>
   - <a href="/news/">News</a>
   - <a href="/docs/notes/">Notes</a>
   - <a href="/docs/refs/">Refs</a>
