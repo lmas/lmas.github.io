@@ -61,10 +61,10 @@ feeds:
     url: https://evanp.me/feed/
   - title: Blogs - Factorio
     url: https://factorio.com/blog/rss
-  - title: Blogs - The Universe of Discourse
-    url: https://blog.plover.com/index.rss
   - title: Blogs - Daemonic Dispatches
     url: https://www.daemonology.net/blog/index.rss
+  - title: Blogs - Armin Ronacher's Thoughts and Writings
+    url: https://lucumr.pocoo.org/feed.atom
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
