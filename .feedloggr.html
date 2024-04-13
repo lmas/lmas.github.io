@@ -2,7 +2,7 @@
 <html><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-<meta name="generator" content="{{.Generator.Name}}" />
+<meta name="generator" content="{{.Generator.Name}} {{.Generator.Version}}" />
 <title>News for {{.Today | shortdate}}</title>
 <link href="/style/theme.css" rel="stylesheet" type="text/css">
 </head><body>
@@ -29,6 +29,6 @@
 </article></main>
 <br><br>
 <footer>
-<p>Generated with <a href="{{.Generator.Source}}">{{.Generator.Name}} {{.Generator.Version}}</a></p>
+<p>Generated with <a href="{{.Generator.Source}}">{{.Generator.Name}}</a></p>
 </footer>
 </body></html>
