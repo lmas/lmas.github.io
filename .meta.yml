@@ -5,7 +5,7 @@ css: /style/theme.css
 lang: en
 
 header:
-  - <a href="https://github.com/lmas" rel="noopener nofollow">Code</a>
+  - <a href="https://code.larus.se/">Code</a>
   - <a href="/news/">News</a>
   - <a href="/docs/notes/">Notes</a>
   - <a href="/docs/refs/">Refs</a>
@@ -13,7 +13,7 @@ header:
 
 footer:
   # - <a href="/feed.xml">Feed</a>
-  # - <a href="https://github.com/lmas/lmas.github.io" rel="noopener nofollow">Source</a>
+  # - <a href="repo_url" rel="noopener nofollow">Source</a>
   # - <a href="/stats/">Visitors</a>
   # - <a href="/legal/">Legal</a>
 
