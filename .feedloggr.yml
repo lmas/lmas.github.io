@@ -74,6 +74,8 @@ feeds:
     url: https://www.freebsd.org/news/feed.xml
   - title: Services - Debian
     url: https://www.debian.org/News/news
+  - title: Services - Forgejo
+    url: https://forgejo.org/rss.xml
 
   - title: Tech - lobste.rs
     url: https://lobste.rs/top.rss
