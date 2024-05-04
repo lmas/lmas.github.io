@@ -63,6 +63,8 @@ feeds:
     url: https://www.daemonology.net/blog/index.rss
   - title: Blogs - Armin Ronacher's Thoughts and Writings
     url: https://lucumr.pocoo.org/feed.atom
+  - title: Blogs - Tony Finch
+    url: https://dotat.at/@/blog.atom
 
   - title: Services - Let's Encrypt
     url: https://letsencrypt.org/feed.xml
