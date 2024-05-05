@@ -9,7 +9,7 @@
 /* Default theme */
 
 :root {
-	--font-regular: "Lato", Arial, Helvetica, sans-serif;
+	--font-regular: "Fira Sans", Arial, Helvetica, sans-serif;
 	--font-code: "Courier New", Courier, monospace;
 	--spacing: 1rem;
 	--border: 2px;
@@ -27,9 +27,9 @@
 	}
 }
 @font-face {
-	/* License: /style/fonts/latolatin-regular-license.txt */
-	font-family: "Lato";
-	src: url("/style/fonts/latolatin-regular.woff2") format("woff2");
+	/* License: /style/fonts/firasans-regular-license.txt */
+	font-family: "Fira Sans";
+	src: url("/style/fonts/firasans-regular.woff2") format("woff2");
 	font-display: swap;
 }
 /* NOTE: this font is displayed in a noticable smaller size than regular fonts,
