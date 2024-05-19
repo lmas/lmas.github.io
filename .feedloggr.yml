@@ -39,6 +39,8 @@ feeds:
   - title: LTU - Nyheter
     url: https://www.ltu.se/4.110defe1188bd8d55c026619/12.110defe1188bd8d55c026626.portlet?state=rss&sv.contenttype=text/xml;charset=utf-8
 
+  - title: Blogs - Larus
+    url: https://www.larus.se/feed.xml
   - title: Blogs - research!rsc
     url: https://research.swtch.com/feed.atom
   - title: Blogs - Filippo Valsorda
