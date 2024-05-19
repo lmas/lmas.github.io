@@ -15,7 +15,7 @@ dirlist: 5
 > You can find my latest projects on my [Forgejo] instance or out of date
 > archives on [Github].
 >
-> If you want to contact me directly, send a [Mail] or a message using
+> If you want to contact me directly, send a [mail] or a message using
 > <a rel="me" href="https://social.larus.se/@lmas">ActivityPub</a>
 > (aka Mastodon).
 
@@ -26,7 +26,7 @@ dirlist: 5
 You can subscribe to this page with the [Atom feed].
 
 [Logo for Larus.se]: /style/larus.png "Gus the Seagull"
-[Forgejo]: https://code.larus.se/
+[Forgejo]: https://code.larus.se/lmas
 [Github]: https://github.com/lmas
-[Mail]: mailto:spamorham@larus.se
+[mail]: mailto:spamorham@larus.se
 [Atom feed]: /feed.xml
