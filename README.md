@@ -1,6 +1,6 @@
 # Migrated
 
-**This repo has been migrated to https://code.larus.se/lmas/opensimplex.**
+**This repo has been migrated to https://code.larus.se/lmas/blog.**
 
 # larus.se / lmas.github.io
 
